@@ -6,6 +6,9 @@ import { useCallback, useEffect, useState } from "react";
 import background from "./assets/background.jpg";
 import preloadImage from "@/utils/preload-image";
 
+import css from "./style.module.css";
+import Section from "@/components/section";
+
 const images = [background.src];
 
 export default function Component() {
@@ -25,5 +28,11 @@ export default function Component() {
 		return <FullScreenLoading />;
 	}
 
-	return <img src={background.src} alt="background"></img>;
+	return (
+		<div>
+			<Section backgroundURL={background.src}>
+				<h1>THE WEDDING</h1>
+			</Section>
+		</div>
+	);
 }

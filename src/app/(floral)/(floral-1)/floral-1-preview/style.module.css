@@ -1,0 +1,8 @@
+.background {
+  position: absolute;
+}
+
+.background > img{
+  width: 100%;
+  object-fit: cover;
+}
