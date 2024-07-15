@@ -1,15 +1,15 @@
 "use client";
 
-import Spinner from "@/components/spinner";
+import FullScreenLoading from "@/components/fullscreen-loading";
 import { useState } from "react";
 
 export default function Page() {
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(true);
 
 	// TODO: load all asset (image, sound) before render the page
 
 	if (loading) {
-		return <Spinner />;
+		return <FullScreenLoading />;
 	}
 
 	return <div></div>;
