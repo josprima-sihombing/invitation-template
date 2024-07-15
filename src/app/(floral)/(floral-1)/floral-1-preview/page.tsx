@@ -4,6 +4,7 @@ import Component from "./component";
 
 export const metadata: Metadata = {
 	title: DATA.title,
+	description: DATA.date,
 };
 
 export default function Page() {
