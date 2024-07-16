@@ -1,8 +1,9 @@
-.background {
+.box {
+  border: 2px solid #fff;
+  border-radius: 0 20px 0 20px;
+  padding: 20px;
   position: absolute;
-}
-
-.background > img{
-  width: 100%;
-  object-fit: cover;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

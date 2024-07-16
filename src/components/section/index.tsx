@@ -14,7 +14,7 @@ export default function Section({ children, backgroundURL }: SectionProps) {
 				</div>
 			)}
 
-			{children}
+			<div className={css.content}>{children}</div>
 		</div>
 	);
 }
