@@ -10,8 +10,8 @@ import css from "./style.module.css";
 import Section from "@/components/section";
 import DATA from "./data";
 import Countdown from "react-countdown";
-
-const images = [background.src];
+import { Floral1 } from "./assets/floral-1";
+import { images } from "./assets";
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);
@@ -38,6 +38,10 @@ export default function Component() {
 					{DATA.firstPerson.name} & {DATA.secondPerson.name}
 				</h2>
 				<Countdown date={DATA.isoDate} />
+
+				<div className={css.floral_1}>
+					<Floral1 />
+				</div>
 			</div>
 		</Section>
 	);

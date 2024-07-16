@@ -1,0 +1,67 @@
+.floral {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.floral > img {
+  display: block;
+  position: absolute;
+}
+
+.floral_1 {
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  animation: show 2s ease-in 0s forwards, spin 4s ease 3s infinite alternate;
+}
+
+.floral_2 {
+  right: -20px;
+  bottom: 20px;
+  animation: show 2s ease-in 0s forwards, wave 3s ease 0s infinite alternate;
+  transform-origin: bottom center;
+}
+
+.floral_3 {
+  right: 40px;
+  bottom: -50px;
+  animation: show 2s ease-in 0s forwards, wave 4s ease-in 0s infinite alternate;
+  transform-origin: right center;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes wave {
+  from {
+    transform: rotate(-5deg);
+  }
+
+  to {
+    transform: rotate(5deg);
+  }
+}
