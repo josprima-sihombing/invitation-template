@@ -10,7 +10,8 @@ import css from "./style.module.css";
 import Section from "@/components/section";
 import DATA from "./data";
 import Countdown from "react-countdown";
-import { Floral1 } from "./assets/floral-1";
+import Floral1 from "./assets/floral-1";
+import Floral2 from "./assets/floral-2";
 import { images } from "./assets";
 
 export default function Component() {
@@ -33,14 +34,19 @@ export default function Component() {
 	return (
 		<Section backgroundURL={background.src}>
 			<div className={css.box}>
-				<h1>WEDDING INVITATION</h1>
-				<h2>
-					{DATA.firstPerson.name} & {DATA.secondPerson.name}
-				</h2>
-				<Countdown date={DATA.isoDate} />
-
 				<div className={css.floral_1}>
 					<Floral1 />
+				</div>
+				<div className={css.floral_2}>
+					<Floral2 />
+				</div>
+
+				<div className={css.content}>
+					<h1>WEDDING INVITATION</h1>
+					<h2>
+						{DATA.firstPerson.name} & {DATA.secondPerson.name}
+					</h2>
+					<Countdown date={DATA.isoDate} />
 				</div>
 			</div>
 		</Section>
