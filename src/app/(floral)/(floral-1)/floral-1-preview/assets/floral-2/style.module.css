@@ -13,9 +13,11 @@
   left: -30px;
   top: -30px;
   z-index: 1;
+  transform-origin: top left;
 }
 
 .floral_2 {
   left: -50px;
   top: -40px;
+  transform-origin: top left;
 }

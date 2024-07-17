@@ -15,29 +15,24 @@ export default function Floral1() {
 			const tl = gsap.timeline();
 
 			tl.fromTo(
-				`.${css.floral} img`,
-				{ opacity: 0, scale: 0 },
-				{ opacity: 1, scale: 1, duration: 2 },
-			);
-
-			tl.fromTo(
 				`.${css.floral_1}`,
-				{ rotation: 0 },
-				{ rotation: 90, duration: 5, repeat: -1, ease: "none", yoyo: true },
+				{ rotation: -4 },
+				{ rotation: 4, duration: 5, repeat: -1, ease: "none", yoyo: true },
+				0,
 			);
 
 			tl.fromTo(
 				`.${css.floral_2}`,
-				{ rotation: -2 },
-				{ rotation: 2, duration: 4, repeat: -1, ease: "sine", yoyo: true },
-				2,
+				{ rotation: -4 },
+				{ rotation: 4, duration: 4, repeat: -1, ease: "sine", yoyo: true },
+				0,
 			);
 
 			tl.fromTo(
 				`.${css.floral_3}`,
-				{ rotation: -2 },
-				{ rotation: 2, duration: 5, repeat: -1, ease: "circ", yoyo: true },
-				2,
+				{ rotation: -4 },
+				{ rotation: 4, duration: 5, repeat: -1, ease: "circ", yoyo: true },
+				0,
 			);
 		},
 		{

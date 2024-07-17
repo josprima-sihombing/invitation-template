@@ -13,6 +13,7 @@ import Countdown from "react-countdown";
 import Floral1 from "./assets/floral-1";
 import Floral2 from "./assets/floral-2";
 import { images } from "./assets";
+import { secondaryFont } from "@/fonts";
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);
@@ -42,10 +43,21 @@ export default function Component() {
 				</div>
 
 				<div className={css.content}>
-					<h1>WEDDING INVITATION</h1>
-					<h2>
-						{DATA.firstPerson.name} & {DATA.secondPerson.name}
-					</h2>
+					<h1 style={{ fontSize: "18px" }}>WEDDING INVITATION</h1>
+					<h1
+						className={secondaryFont.className}
+						style={{
+							fontSize: "68px",
+							fontWeight: "normal",
+							lineHeight: "52px",
+						}}
+					>
+						{DATA.firstPerson.name}
+						<br />
+						&
+						<br />
+						{DATA.secondPerson.name}
+					</h1>
 					<Countdown date={DATA.isoDate} />
 				</div>
 			</div>
