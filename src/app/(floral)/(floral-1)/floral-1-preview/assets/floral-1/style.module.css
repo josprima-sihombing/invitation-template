@@ -13,53 +13,16 @@
   right: 0;
   bottom: 0;
   z-index: 1;
-  animation: show 1s ease-in forwards, spin 4s ease 1s infinite alternate;
 }
 
 .floral_2 {
   right: -60px;
   bottom: 20px;
-  animation: show 2s ease-in 0s forwards, wave 3s ease 0s infinite alternate;
   transform-origin: bottom center;
 }
 
 .floral_3 {
   right: 40px;
   bottom: -50px;
-  animation: show 2s ease-in 0s forwards, wave 4s ease-in 0s infinite alternate;
   transform-origin: right center;
-}
-
-@keyframes show {
-  0% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 0.8;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(30deg);
-  }
-}
-
-@keyframes wave {
-  from {
-    transform: rotate(-5deg);
-  }
-
-  to {
-    transform: rotate(5deg);
-  }
 }
