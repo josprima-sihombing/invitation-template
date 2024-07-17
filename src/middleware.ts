@@ -6,19 +6,11 @@ export function middleware(request: NextRequest) {
 	const pathname = request.nextUrl.pathname;
 	const searchParams = request.nextUrl.searchParams.toString();
 
-	if (process.env.NODE_ENV === "development") {
-		return NextResponse.next();
-	}
-
 	if (host === "itsbirthday.com" || host === "www.itsbirthday.com") {
 		return NextResponse.rewrite(
-			`https://itsbirthday.com/birthday${pathname}?${searchParams}`,
+			`https://invitation-template-eight.vercel.app/birthday${pathname}?${searchParams}`,
 		);
 	}
-
-	return NextResponse.rewrite(
-		`https://invitation-template-eight.vercel.app/wedding${pathname}?${searchParams}`,
-	);
 }
 
 export const config = {
