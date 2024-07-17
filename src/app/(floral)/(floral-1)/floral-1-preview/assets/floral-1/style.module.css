@@ -7,22 +7,23 @@
 .floral > img {
   display: block;
   position: absolute;
+  transform: scale(0.6);
 }
 
 .floral_1 {
-  right: 0;
-  bottom: 0;
+  right: -30px;
+  bottom: -20px;
   z-index: 1;
 }
 
 .floral_2 {
   right: -60px;
-  bottom: 20px;
+  bottom: 10px;
   transform-origin: bottom center;
 }
 
 .floral_3 {
   right: 40px;
-  bottom: -50px;
+  bottom: -60px;
   transform-origin: right center;
 }

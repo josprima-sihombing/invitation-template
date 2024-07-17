@@ -7,17 +7,18 @@
 .floral > img {
   display: block;
   position: absolute;
+  transform: scale(0.6);
 }
 
 .floral_1 {
-  left: -30px;
-  top: -30px;
+  left: -10px;
+  top: -10px;
   z-index: 1;
   transform-origin: top left;
 }
 
 .floral_2 {
-  left: -50px;
-  top: -40px;
+  left: -20px;
+  top: -20px;
   transform-origin: top left;
 }
