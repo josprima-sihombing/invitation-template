@@ -17,18 +17,21 @@ import { FaBuilding, FaCalendarDay, FaClock } from "react-icons/fa6";
 import { DATA, drinks, foods } from "./data";
 import { schema } from "./schema";
 import css from "./style.module.css";
+import axios from "axios";
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);
-	const guestName = getName();
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
+		setValue,
 		watch,
 	} = useForm({
 		resolver: yupResolver(schema),
 	});
+
+	const guestName = getName();
 
 	const loadAssets = useCallback(async () => {
 		await Promise.all(images.map((imageUrl) => preloadImage(imageUrl)));
@@ -36,12 +39,22 @@ export default function Component() {
 		setLoading(false);
 	}, []);
 
-	const onSubmit = (values: any) => {
-		console.log(values, "<<< values");
+	const onSubmit = async (values: any) => {
+		try {
+			const response = await axios.post("/api/chairi", values);
+		} catch (error) {
+			// TODO: Display error message
+			console.log("Error");
+		}
 	};
 
 	// @ts-expect-error
 	const isAttend = watch("attend") === "true";
+
+	useEffect(() => {
+		setValue("drink", "");
+		setValue("food", "");
+	}, [isAttend]);
 
 	useEffect(() => {
 		loadAssets();

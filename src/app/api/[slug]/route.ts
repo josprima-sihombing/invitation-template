@@ -22,6 +22,13 @@ export async function POST(
 		return Response.json({ data: "Error!" }, { status: 500 });
 	}
 
+	const payload = await request.json();
+
+	// TODO: Validate payload
+
+	try {
+	} catch (error) {}
+
 	try {
 		const client = await auth.getClient();
 
@@ -38,7 +45,15 @@ export async function POST(
 			range: "Sheet1!A:E",
 			valueInputOption: "RAW",
 			resource: {
-				values: [["Test", "08126", "Yes", "Nasi Goreng", "Teh Manis"]],
+				values: [
+					[
+						payload.name,
+						payload.phoneNumber,
+						payload.attend ? "Yes" : "No",
+						payload.food,
+						payload.drink,
+					],
+				],
 			},
 		});
 

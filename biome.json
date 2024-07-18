@@ -17,7 +17,10 @@
 				"useSelfClosingElements": "off"
 			},
 			"suspicious": {
-				"noExplicitAny": "off"
+				"noExplicitAny": "warn"
+			},
+			"correctness": {
+				"useExhaustiveDependencies": "warn"
 			}
 		}
 	}
