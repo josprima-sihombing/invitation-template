@@ -10,20 +10,37 @@ import { images, image } from "./assets";
 
 import css from "./style.module.css";
 import Countdown from "react-countdown";
-import DATA from "./data";
+import { DATA, drinks, foods } from "./data";
 import formatDate from "@/utils/format-date";
 import { FaBuilding, FaCalendarDay, FaClock } from "react-icons/fa6";
 import getName from "@/utils/get-name";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { schema } from "./schema";
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);
 	const guestName = getName();
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+		watch,
+	} = useForm({
+		resolver: yupResolver(schema),
+	});
 
 	const loadAssets = useCallback(async () => {
 		await Promise.all(images.map((imageUrl) => preloadImage(imageUrl)));
 
 		setLoading(false);
 	}, []);
+
+	const onSubmit = (values) => {
+		console.log(values, "<<< values");
+	};
+
+	const isAttend = watch("attend") === "true";
 
 	useEffect(() => {
 		loadAssets();
@@ -99,22 +116,66 @@ export default function Component() {
 				<div className={css.box}>
 					<h1>RSVP</h1>
 
-					<form>
+					<form onSubmit={handleSubmit(onSubmit)}>
 						<div>
 							<label htmlFor="name">Your name:</label>
-							<input id="name" type="text" />
+							<input id="name" type="text" {...register("name")} />
+							<p>{errors.name?.message}</p>
 						</div>
 						<div>
 							<label htmlFor="name">Your Phone Number</label>
-							<input id="name" type="tel" />
+							<input id="name" type="tel" {...register("phoneNumber")} />
 						</div>
 
 						<div>
-							<input type="radio" id="attend1" name="attend" value="true" />
+							<input
+								type="radio"
+								id="attend1"
+								value="true"
+								{...register("attend")}
+							/>
 							<label htmlFor="attend1">Will Attend</label>
-							<input type="radio" id="attend1" name="attend" value="true" />
-							<label htmlFor="attend1">Will Not Attend</label>
+							<input
+								type="radio"
+								id="attend2"
+								value="false"
+								{...register("attend")}
+							/>
+							<label htmlFor="attend2">Will Not Attend</label>
+							<p>{errors.attend?.message}</p>
 						</div>
+
+						{isAttend && (
+							<>
+								<div>
+									<label htmlFor="food">Please choose your desired food</label>
+									<select id="food" {...register("food")} defaultValue="">
+										<option value="" disabled>
+											Choose one option
+										</option>
+										{foods.map((food) => (
+											<option key={food} value={food}>
+												{food}
+											</option>
+										))}
+									</select>
+								</div>
+
+								<div>
+									<label htmlFor="food">Please choose your drink</label>
+									<select id="food" {...register("drink")} defaultValue="">
+										<option value="" disabled>
+											Choose one option
+										</option>
+										{drinks.map((food) => (
+											<option key={food} value={food}>
+												{food}
+											</option>
+										))}
+									</select>
+								</div>
+							</>
+						)}
 
 						<div>
 							<button type="submit">Submit</button>

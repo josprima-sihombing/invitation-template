@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import DATA from "./data";
+import { DATA } from "./data";
 import Component from "./component";
 import formatDate from "@/utils/format-date";
 
