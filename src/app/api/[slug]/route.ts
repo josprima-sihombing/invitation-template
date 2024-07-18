@@ -30,7 +30,7 @@ export async function POST(
 			auth: client,
 		});
 
-		// @ts-ignore
+		// @ts-ignoree
 		await googleSheets.spreadsheets.values.append({
 			auth,
 			spreadsheetId: spreadSheetsId[id],
