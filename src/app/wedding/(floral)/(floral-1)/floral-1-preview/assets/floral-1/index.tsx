@@ -3,9 +3,9 @@ import image1 from "./1.png";
 import image2 from "./2.png";
 import image3 from "./3.png";
 
-import css from "./style.module.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import css from "./style.module.css";
 
 export default function Floral1() {
 	const containerRef = useRef(null);

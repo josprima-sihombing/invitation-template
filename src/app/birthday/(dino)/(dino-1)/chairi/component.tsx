@@ -6,17 +6,17 @@ import { useCallback, useEffect, useState } from "react";
 import preloadImage from "@/utils/preload-image";
 
 import Section from "@/components/section";
-import { images, image } from "./assets";
+import { image, images } from "./assets";
 
-import css from "./style.module.css";
-import Countdown from "react-countdown";
-import { DATA, drinks, foods } from "./data";
 import formatDate from "@/utils/format-date";
-import { FaBuilding, FaCalendarDay, FaClock } from "react-icons/fa6";
 import getName from "@/utils/get-name";
-import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import Countdown from "react-countdown";
+import { useForm } from "react-hook-form";
+import { FaBuilding, FaCalendarDay, FaClock } from "react-icons/fa6";
+import { DATA, drinks, foods } from "./data";
 import { schema } from "./schema";
+import css from "./style.module.css";
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);

@@ -3,18 +3,18 @@
 import FullScreenLoading from "@/components/fullscreen-loading";
 import { useCallback, useEffect, useState } from "react";
 
-import background from "./assets/background.jpg";
 import preloadImage from "@/utils/preload-image";
+import background from "./assets/background.jpg";
 
-import css from "./style.module.css";
 import Section from "@/components/section";
-import DATA from "./data";
-import Countdown from "react-countdown";
-import Floral1 from "./assets/floral-1";
-import Floral2 from "./assets/floral-2";
-import { images } from "./assets";
 import { secondaryFont } from "@/fonts";
 import formatDate from "@/utils/format-date";
+import Countdown from "react-countdown";
+import { images } from "./assets";
+import Floral1 from "./assets/floral-1";
+import Floral2 from "./assets/floral-2";
+import DATA from "./data";
+import css from "./style.module.css";
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);

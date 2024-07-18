@@ -24,11 +24,13 @@ export async function POST(
 
 	try {
 		const client = await auth.getClient();
+
 		const googleSheets = google.sheets({
 			version: "v4",
 			auth: client,
 		});
 
+		// @ts-ignore
 		await googleSheets.spreadsheets.values.append({
 			auth,
 			spreadsheetId: spreadSheetsId[id],

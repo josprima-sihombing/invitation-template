@@ -1,33 +1,42 @@
 {
-  "name": "invitation-template",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+	"name": "invitation-template",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "biome check",
+		"prepare": "husky"
+	},
+	"dependencies": {
+		"@gsap/react": "^2.1.1",
+		"@hookform/resolvers": "^3.9.0",
+		"dayjs": "^1.11.11",
+		"googleapis": "^140.0.1",
+		"gsap": "^3.12.5",
+		"next": "14.2.5",
+		"react": "^18",
+		"react-countdown": "^2.3.5",
+		"react-dom": "^18",
+		"react-hook-form": "^7.52.1",
+		"react-icons": "^5.2.1",
+		"sharp": "^0.33.4",
+		"yup": "^1.4.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"husky": "^9.0.11",
+		"tsc-files": "^1.1.4",
+		"typescript": "^5"
+	},
+	"husky": {
+    "pre-push": "lint-staged"
   },
-  "dependencies": {
-    "@gsap/react": "^2.1.1",
-    "@hookform/resolvers": "^3.9.0",
-    "dayjs": "^1.11.11",
-    "googleapis": "^140.0.1",
-    "gsap": "^3.12.5",
-    "next": "14.2.5",
-    "react": "^18",
-    "react-countdown": "^2.3.5",
-    "react-dom": "^18",
-    "react-hook-form": "^7.52.1",
-    "react-icons": "^5.2.1",
-    "sharp": "^0.33.4",
-    "yup": "^1.4.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.8.3",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "typescript": "^5"
-  }
+	"lint-staged": {
+		"**/*.ts": "tsc-files --noEmit"
+	}
 }
