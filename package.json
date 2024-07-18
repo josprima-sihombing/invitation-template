@@ -12,6 +12,7 @@
     "@gsap/react": "^2.1.1",
     "@hookform/resolvers": "^3.9.0",
     "dayjs": "^1.11.11",
+    "googleapis": "^140.0.1",
     "gsap": "^3.12.5",
     "next": "14.2.5",
     "react": "^18",
