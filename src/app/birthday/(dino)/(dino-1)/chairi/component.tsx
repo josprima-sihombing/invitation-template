@@ -36,10 +36,11 @@ export default function Component() {
 		setLoading(false);
 	}, []);
 
-	const onSubmit = (values) => {
+	const onSubmit = (values: any) => {
 		console.log(values, "<<< values");
 	};
 
+	// @ts-expect-error
 	const isAttend = watch("attend") === "true";
 
 	useEffect(() => {

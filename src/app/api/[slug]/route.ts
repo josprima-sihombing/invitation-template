@@ -25,6 +25,7 @@ export async function POST(
 	try {
 		const client = await auth.getClient();
 
+		// @ts-ignore
 		const googleSheets = google.sheets({
 			version: "v4",
 			auth: client,

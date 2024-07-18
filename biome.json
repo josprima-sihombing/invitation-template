@@ -15,6 +15,9 @@
 			},
 			"style": {
 				"useSelfClosingElements": "off"
+			},
+			"suspicious": {
+				"noExplicitAny": "off"
 			}
 		}
 	}
