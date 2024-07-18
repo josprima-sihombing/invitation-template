@@ -1,4 +1,5 @@
 import { primaryFont } from "@/fonts";
+
 import "./globals.css";
 
 export default function RootLayout({
@@ -7,7 +8,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="id" className={primaryFont.className}>
+		<html lang="en" className={primaryFont.className}>
 			<body>{children}</body>
 		</html>
 	);

@@ -34,7 +34,7 @@ export default function Component() {
 	}
 
 	return (
-		<Section backgroundURL={background.src}>
+		<Section>
 			<div className={css.box}>
 				<div className={css.floral_1}>
 					<Floral1 />
