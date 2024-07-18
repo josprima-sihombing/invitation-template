@@ -4,7 +4,7 @@
 		"enabled": false
 	},
 	"files": {
-		"ignore": [".next"]
+		"ignore": [".next", ".vercel", ".husky", "node_modules"]
 	},
 	"linter": {
 		"enabled": true,

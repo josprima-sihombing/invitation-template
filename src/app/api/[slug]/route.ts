@@ -71,6 +71,8 @@ export async function POST(
 			},
 		});
 
+		//TODO: send notification
+
 		return Response.json({ data: "Hello World" });
 	} catch (error) {
 		return Response.json({ data: "Error!" }, { status: 500 });
