@@ -1,5 +1,8 @@
 import { spreadSheetsId } from "@/spreadsheets-id";
 import { google } from "googleapis";
+import type { NextRequest } from "next/server";
+import { Ratelimit } from "@upstash/ratelimit";
+import { kv } from "@vercel/kv";
 
 const auth = new google.auth.GoogleAuth({
 	credentials: {
@@ -12,10 +15,24 @@ const auth = new google.auth.GoogleAuth({
 	scopes: "https://www.googleapis.com/auth/spreadsheets",
 });
 
+const ratelimit = new Ratelimit({
+	redis: kv,
+	// 5 requests from the same IP in 10 seconds
+	limiter: Ratelimit.slidingWindow(10, "10 s"),
+});
+
 export async function POST(
-	request: Request,
+	request: NextRequest,
 	{ params }: { params: { slug: string } },
 ) {
+	const ip = request.ip ?? "127.0.0.1";
+
+	const { success } = await ratelimit.limit(ip);
+
+	if (!success) {
+		return Response.json({ data: "Error!" }, { status: 500 });
+	}
+
 	const id = params.slug as keyof typeof spreadSheetsId;
 
 	if (!spreadSheetsId[id]) {
@@ -25,9 +42,6 @@ export async function POST(
 	const payload = await request.json();
 
 	// TODO: Validate payload
-
-	try {
-	} catch (error) {}
 
 	try {
 		const client = await auth.getClient();
