@@ -4,7 +4,7 @@
   display: flex;
 }
 
-.cover {
+.cover, .page1 {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -13,13 +13,13 @@
 .cover h1 {
   text-align: center;
   font-size: 18px;
-  color: #3e943e;
+  color: #647440;
   letter-spacing: 3px;
   margin-bottom: 18px;
 }
 
 .cover h4 {
-  color: #3e943e;
+  color: #647440;
   text-align: center;
   margin: 20px 0px;
   font-size: 16px;
@@ -37,19 +37,19 @@
   margin: auto;
   border-radius: 50%;
   border: 2px solid #fff;
-  box-shadow: 4px 4px 0px #3e943e;
+  box-shadow: 4px 4px 0px #647440;
 }
 
 .cover .button {
   border: none;
   padding: 12px 18px;
-  background-color: #3e943e;
+  background-color: #9fb966;
   color: #fff;
   font-weight: bold;
   font-size: 14px;
   line-height: 100%;
   border-radius: 5px;
-  box-shadow: 4px 4px 0px #3e943e;
+  box-shadow: 4px 4px 0px #647440;
   cursor: pointer;
   display: block;
   margin: auto;
@@ -65,7 +65,7 @@
 }
 
 .cover .title h3 {
-  color: #77DD77;
+  color: #9fb966;
   text-align: center;
   margin: 20px 0px;
   font-size: 62px;
@@ -86,4 +86,56 @@
   top: -20px;
   width: 70px;
   transform: rotate(40deg);
+}
+
+.page1 h1 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.page1 h2 {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+
+.page1 h3 {
+  font-size: 64px;
+  margin: 50px 0;
+  color: #fff;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 100%;
+  transform: rotate(-5deg);
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.countdown > div {
+  background-color: #c3dc8e;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px;
+  border: 2px solid #647440;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.countdown > div span:nth-child(1) {
+  color: #647440;
+  font-size: 28px;
+  line-height: 100%;
+}
+
+.countdown > div span:nth-child(2) {
+  color: #647440;
+  font-size: 14px;
+  line-height: 100%;
 }

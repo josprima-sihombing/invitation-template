@@ -143,14 +143,37 @@ export default function Component() {
 					</div>
 				</div>
 			</Section>
-			<Section id="section-2">
-				<div className={css.box}>
-					<div>
-						<h1>{guestName ? `Dear ${guestName}` : "Hello"}</h1>
-						<h2>Join us to celebrate</h2>
-						<h3>Chairi 1st Birthday</h3>
 
-						<Countdown date={DATA.isoDate} />
+			<Section id="section-2" bgColor="#9fb966" fullHeight={false}>
+				<div className={css.box}>
+					<div className={css.page1}>
+						<h1>{guestName ? `Dear ${guestName}` : "Hello"},</h1>
+						<h2>Join us to celebrate:</h2>
+						<h3 className={chalkboardFont.className}>Chairi 1st Birthday</h3>
+
+						<Countdown
+							date={DATA.isoDate}
+							renderer={({ days, hours, minutes, seconds }) => (
+								<div className={css.countdown}>
+									<div>
+										<span>{days}</span>
+										<span>Days</span>
+									</div>
+									<div>
+										<span>{hours}</span>
+										<span>Hours</span>
+									</div>
+									<div>
+										<span>{minutes}</span>
+										<span>Minutes</span>
+									</div>
+									<div>
+										<span>{seconds}</span>
+										<span>Seconds</span>
+									</div>
+								</div>
+							)}
+						/>
 					</div>
 				</div>
 			</Section>
