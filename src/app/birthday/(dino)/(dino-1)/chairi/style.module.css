@@ -1,9 +1,10 @@
 .box {
   padding: 40px 20px;
+  flex-grow: 1;
 }
 
 .box h3 {
-  color: #fff;
+  color: #77DD77;
   text-align: center;
   margin: 20px 0px;
   font-size: 62px;
@@ -13,7 +14,7 @@
 }
 
 .box h4 {
-  color: #fff;
+  color: #3e943e;
   text-align: center;
   margin: 20px 0px;
   font-size: 16px;
@@ -22,7 +23,7 @@
 .title {
   text-align: center;
   font-size: 18px;
-  color: #fff;
+  color: #77DD77;
   letter-spacing: 3px;
   margin-bottom: 18px;
 }
@@ -33,8 +34,8 @@
 
 .image img {
   display: block;
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   margin: auto;
   border-radius: 50%;
@@ -43,8 +44,8 @@
 .button {
   border: none;
   padding: 16px 28px;
-  background-color: #fff;
-  color: #77DD77;
+  background-color: #3e943e;
+  color: #fff;
   font-weight: bold;
   font-size: 14px;
   line-height: 100%;
@@ -53,4 +54,5 @@
   cursor: pointer;
   display: block;
   margin: auto;
+  border: 2px solid #fff;
 }

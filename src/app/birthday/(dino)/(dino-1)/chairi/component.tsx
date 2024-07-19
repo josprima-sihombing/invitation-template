@@ -68,9 +68,18 @@ export default function Component() {
 
 	return (
 		<div>
-			<Section bgColor="#77DD77">
-				<div className={css.box}>
-					<h1 className={css.title}>BIRTHDAY INVITATION</h1>
+			<Section bgColor="#f0fff0">
+				<div
+					className={css.box}
+					style={{
+						backgroundImage: `url(${image.b}), url(${image.c})`,
+						backgroundRepeat: "no-repeat, no-repeat",
+						backgroundPosition:
+							"bottom -8px left -10px, bottom -10px right -40px",
+						backgroundSize: "200px, 160px",
+					}}
+				>
+					<h1 className={css.title}>Birthday Invitation</h1>
 
 					<div className={css.image}>
 						<img src={image.person} alt="" />
@@ -83,12 +92,17 @@ export default function Component() {
 					<button
 						type="button"
 						className={classNames(css.button, prodasansFont.className)}
+						onClick={() => {
+							document.getElementById("section-2")?.scrollIntoView({
+								behavior: "smooth",
+							});
+						}}
 					>
 						Open Invitation
 					</button>
 				</div>
 			</Section>
-			<Section>
+			<Section id="section-2">
 				<div className={css.box}>
 					<h1>{guestName ? `Dear ${guestName}` : "Hello"}</h1>
 					<h2>Join us to celebrate</h2>
