@@ -111,6 +111,43 @@
   transform: rotate(-5deg);
 }
 
+.page1 h4 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.page1 .title {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.page1 .title .content {
+  position: relative;
+  flex-basis: 10px;
+}
+
+.page1 .title .decoration img{
+  position: absolute;
+}
+
+.page1 .title .decoration img:nth-child(1){
+  left: -30px;
+  top: 10px;
+  width: 50px;
+  transform: rotate(-10deg);
+}
+
+.page1 .title .decoration img:nth-child(2){
+  right: -40px;
+  bottom: 10px;
+  width: 30px;
+  transform: rotate(10deg);
+}
+
 .countdown {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

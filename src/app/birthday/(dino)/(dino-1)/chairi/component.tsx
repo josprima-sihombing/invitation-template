@@ -149,7 +149,21 @@ export default function Component() {
 					<div className={css.page1}>
 						<h1>{guestName ? `Dear ${guestName}` : "Hello"},</h1>
 						<h2>Join us to celebrate:</h2>
-						<h3 className={chalkboardFont.className}>Chairi 1st Birthday</h3>
+
+						<div className={css.title}>
+							<div className={css.content}>
+								<h3 className={chalkboardFont.className}>
+									Chairi 1st Birthday
+								</h3>
+
+								<div className={css.decoration}>
+									<img src={image.e} alt="" />
+									<img src={image.f} alt="" />
+								</div>
+							</div>
+						</div>
+
+						<h4>Countdown:</h4>
 
 						<Countdown
 							date={DATA.isoDate}
