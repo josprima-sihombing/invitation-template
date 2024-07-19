@@ -18,6 +18,7 @@ import {
 	FaCalendarDay,
 	FaClock,
 	FaEnvelope,
+	FaMapLocation,
 } from "react-icons/fa6";
 import { DATA, drinks, foods } from "./data";
 import { schema } from "./schema";
@@ -28,6 +29,7 @@ import classNames from "classnames";
 import Music from "@/components/music";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { PiShirtFoldedFill } from "react-icons/pi";
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);
@@ -192,12 +194,12 @@ export default function Component() {
 				</div>
 			</Section>
 
-			<Section>
+			<Section fullHeight={false}>
 				<div className={css.box}>
-					<div>
-						<h1>Save the Date</h1>
+					<div className={css.page2}>
+						<h1>Save the Date!</h1>
 
-						<div>
+						<div className={css.detail}>
 							<div>
 								<span>
 									<FaCalendarDay />
@@ -212,20 +214,36 @@ export default function Component() {
 							</div>
 							<div>
 								<span>
+									<PiShirtFoldedFill />
+								</span>
+								<span>
+									<b>Dress Code</b>
+									<br />
+									Pastel Green
+								</span>
+							</div>
+							<div>
+								<span>
 									<FaBuilding />
 								</span>
-								<span>{DATA.place}</span>
+								<span>
+									{DATA.place}
+									<br />
+									{DATA.placeAddress}
+								</span>
 							</div>
 						</div>
 
-						<div>
-							<button type="button">Detail Location</button>
-						</div>
+						<a
+							className={css.location}
+							href="https://maps.app.goo.gl/2Qv5dewnmHtRJJkB8"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<FaMapLocation />
 
-						<div>
-							<h1>Dress Code</h1>
-							<h2>Pastel Green</h2>
-						</div>
+							<span>Detail Location</span>
+						</a>
 					</div>
 				</div>
 			</Section>

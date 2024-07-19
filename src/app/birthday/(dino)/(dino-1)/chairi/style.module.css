@@ -4,7 +4,7 @@
   display: flex;
 }
 
-.cover, .page1 {
+.cover, .page1, .page2 {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -175,4 +175,51 @@
   color: #647440;
   font-size: 14px;
   line-height: 100%;
+}
+
+.page2 h1 {
+  text-align: center;
+  color: #647440;
+  margin-bottom: 20px;
+}
+
+.page2 .detail {
+  background-color: #c3dc8e;
+  padding: 20px 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.page2 .detail > div {
+  display: flex;
+  gap: 10px;
+}
+
+.page2 .detail > div span:first-child {
+  color: #647440;
+  font-size: 18px;
+}
+
+.page2 .detail > div span:nth-child(2) {
+  color: #647440;
+  font-size: 16px;
+}
+
+.page2 .location {
+  display: block;
+  text-align: center;
+  background-color: #647440;
+  border-radius: 5px;
+  width: fit-content;
+  margin: 20px auto;
+  padding: 10px 12px;
+  border: 2px solid #fff;
+  box-shadow: 4px 4px 0px #647440;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
