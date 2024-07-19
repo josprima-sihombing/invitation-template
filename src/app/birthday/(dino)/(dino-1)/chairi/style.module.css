@@ -2,7 +2,12 @@
   padding: 40px 20px;
   flex-grow: 1;
   display: flex;
-  align-items: center;
+}
+
+.spacer {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .box h3 {
@@ -41,7 +46,7 @@
   object-fit: cover;
   margin: auto;
   border-radius: 50%;
-  border: 2px solid #3e943e;
+  border: 2px solid #fff;
   box-shadow: 4px 4px 0px #3e943e;
 }
 
