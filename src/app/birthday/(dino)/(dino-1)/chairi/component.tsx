@@ -25,9 +25,12 @@ import css from "./style.module.css";
 import axios from "axios";
 import { chalkboardFont, prodasansFont } from "@/fonts";
 import classNames from "classnames";
+import Music from "@/components/music";
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);
+	const [play, setPlay] = useState(false);
+
 	const {
 		register,
 		handleSubmit,
@@ -73,6 +76,8 @@ export default function Component() {
 
 	return (
 		<div>
+			<Music musicURL="/musics/birthday-2.wav" play={play} setPlay={setPlay} />
+
 			<Section bgColor="#f0fff0">
 				<div
 					className={css.box}
@@ -101,6 +106,7 @@ export default function Component() {
 							document.getElementById("section-2")?.scrollIntoView({
 								behavior: "smooth",
 							});
+							setPlay(true);
 						}}
 					>
 						<FaEnvelope />
