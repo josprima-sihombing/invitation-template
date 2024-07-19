@@ -7,7 +7,7 @@ import preloadImage from "@/utils/preload-image";
 import background from "./assets/background.jpg";
 
 import Section from "@/components/section";
-import { secondaryFont } from "@/fonts";
+import { baileyFont } from "@/fonts";
 import formatDate from "@/utils/format-date";
 import Countdown from "react-countdown";
 import { images } from "./assets";
@@ -55,7 +55,7 @@ export default function Component() {
 						WEDDING INVITATION
 					</h1>
 					<h1
-						className={secondaryFont.className}
+						className={baileyFont.className}
 						style={{
 							fontSize: "120px",
 							fontWeight: "normal",
