@@ -1,4 +1,4 @@
-import { primaryFont } from "@/fonts";
+import { jaguarFont } from "@/fonts";
 
 import "./globals.css";
 
@@ -8,7 +8,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" className={primaryFont.className}>
+		<html lang="en">
 			<body>{children}</body>
 		</html>
 	);

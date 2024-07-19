@@ -18,6 +18,8 @@ import { DATA, drinks, foods } from "./data";
 import { schema } from "./schema";
 import css from "./style.module.css";
 import axios from "axios";
+import { chalkboardFont, prodasansFont } from "@/fonts";
+import classNames from "classnames";
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);
@@ -66,18 +68,24 @@ export default function Component() {
 
 	return (
 		<div>
-			<Section>
+			<Section bgColor="#77DD77">
 				<div className={css.box}>
-					<h1 className={css.title}>Birthday Invitation</h1>
+					<h1 className={css.title}>BIRTHDAY INVITATION</h1>
 
-					<img src={image.person} alt="" />
-					<h3>{DATA.title}</h3>
-
-					<div className={css.date}>
-						<h2>{formatDate(DATA.isoDate, "dddd, MMMM DD YYYY")}</h2>
+					<div className={css.image}>
+						<img src={image.person} alt="" />
 					</div>
 
-					<button type="button">Open Invitation</button>
+					<h3 className={chalkboardFont.className}>{DATA.title}</h3>
+
+					<h4>{formatDate(DATA.isoDate, "dddd, MMMM DD YYYY")}</h4>
+
+					<button
+						type="button"
+						className={classNames(css.button, prodasansFont.className)}
+					>
+						Open Invitation
+					</button>
 				</div>
 			</Section>
 			<Section>

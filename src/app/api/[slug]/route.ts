@@ -73,7 +73,7 @@ export async function POST(
 		});
 
 		//TODO: send notification
-		await sendEmail(payload);
+		// await sendEmail(payload);
 
 		return Response.json({ data: "Hello World" });
 	} catch (error) {

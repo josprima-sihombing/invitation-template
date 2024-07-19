@@ -16,6 +16,7 @@
 		"@upstash/ratelimit": "^2.0.0",
 		"@vercel/kv": "^2.0.0",
 		"axios": "^1.7.2",
+		"classnames": "^2.5.1",
 		"dayjs": "^1.11.11",
 		"googleapis": "^140.0.1",
 		"gsap": "^3.12.5",
