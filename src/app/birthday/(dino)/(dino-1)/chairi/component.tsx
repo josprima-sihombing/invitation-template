@@ -76,7 +76,11 @@ export default function Component() {
 
 	return (
 		<div>
-			<Music musicURL="/musics/birthday-2.wav" play={play} setPlay={setPlay} />
+			<Music
+				musicURL="/assets/musics/birthday-2.wav"
+				play={play}
+				setPlay={setPlay}
+			/>
 
 			<Section bgColor="#f0fff0">
 				<div
