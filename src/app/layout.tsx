@@ -1,5 +1,3 @@
-import { jaguarFont } from "@/fonts";
-
 import "./globals.css";
 
 export default function RootLayout({

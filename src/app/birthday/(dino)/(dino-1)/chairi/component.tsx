@@ -30,9 +30,11 @@ import Music from "@/components/music";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { PiShirtFoldedFill } from "react-icons/pi";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);
+	const [loadingForm, setLoadingForm] = useState(false);
 	const [play, setPlay] = useState(false);
 	const containerRef = useRef(null);
 	const coverRef = useRef(null);
@@ -43,6 +45,7 @@ export default function Component() {
 		formState: { errors },
 		setValue,
 		watch,
+		reset,
 	} = useForm({
 		resolver: yupResolver(schema),
 	});
@@ -56,11 +59,20 @@ export default function Component() {
 	}, []);
 
 	const onSubmit = async (values: any) => {
+		setLoadingForm(true);
+
 		try {
-			const response = await axios.post("/api/chairi", values);
+			await axios.post("/api/chairi", values);
+			toast.success("RSVP form submitted successfully!", {
+				position: "bottom-center",
+			});
+			reset();
 		} catch (error) {
-			// TODO: Display error message
-			console.log("Error");
+			toast.error("Opppsss, Error occured. Please try again", {
+				position: "bottom-center",
+			});
+		} finally {
+			setLoadingForm(false);
 		}
 	};
 
@@ -262,7 +274,7 @@ export default function Component() {
 									placeholder="Name..."
 									{...register("name")}
 								/>
-								<p>{errors.name?.message}</p>
+								<p className={css.input_error}>{errors.name?.message}</p>
 							</div>
 							<div>
 								<label htmlFor="name">Your Phone Number</label>
@@ -275,21 +287,37 @@ export default function Component() {
 							</div>
 
 							<div>
-								<input
-									type="radio"
-									id="attend1"
-									value="true"
-									{...register("attend")}
-								/>
-								<label htmlFor="attend1">Will Attend</label>
-								<input
-									type="radio"
-									id="attend2"
-									value="false"
-									{...register("attend")}
-								/>
-								<label htmlFor="attend2">Will Not Attend</label>
-								<p>{errors.attend?.message}</p>
+								<label
+									className={classNames(
+										css.radio_container,
+										prodasansFont.className,
+									)}
+								>
+									Will Attend
+									<input
+										type="radio"
+										id="attend1"
+										value="true"
+										{...register("attend")}
+									/>
+									<span className={css.radio_checkmark}></span>
+								</label>
+								<label
+									className={classNames(
+										css.radio_container,
+										prodasansFont.className,
+									)}
+								>
+									Not Attend
+									<input
+										type="radio"
+										id="attend2"
+										value="false"
+										{...register("attend")}
+									/>
+									<span className={css.radio_checkmark}></span>
+								</label>
+								<p className={css.input_error}>{errors.attend?.message}</p>
 							</div>
 
 							{isAttend && (
@@ -327,7 +355,9 @@ export default function Component() {
 							)}
 
 							<div>
-								<button type="submit">Submit</button>
+								<button type="submit" disabled={loadingForm}>
+									{loadingForm ? "Loading..." : "Submit"}
+								</button>
 							</div>
 						</form>
 					</div>
@@ -342,6 +372,8 @@ export default function Component() {
 					</div>
 				</div>
 			</Section>
+
+			<Toaster />
 		</div>
 	);
 }
