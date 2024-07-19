@@ -4,30 +4,13 @@
   display: flex;
 }
 
-.spacer {
+.cover {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
-.box h3 {
-  color: #77DD77;
-  text-align: center;
-  margin: 20px 0px;
-  font-size: 62px;
-  letter-spacing: 2px;
-  line-height: 80%;
-  transform: rotate(-5deg);
-}
-
-.box h4 {
-  color: #3e943e;
-  text-align: center;
-  margin: 20px 0px;
-  font-size: 16px;
-}
-
-.title {
+.cover h1 {
   text-align: center;
   font-size: 18px;
   color: #3e943e;
@@ -35,11 +18,18 @@
   margin-bottom: 18px;
 }
 
-.image {
+.cover h4 {
+  color: #3e943e;
+  text-align: center;
+  margin: 20px 0px;
+  font-size: 16px;
+}
+
+.cover .image {
   position: relative;
 }
 
-.image img {
+.cover .image img {
   display: block;
   width: 140px;
   height: 140px;
@@ -50,7 +40,7 @@
   box-shadow: 4px 4px 0px #3e943e;
 }
 
-.button {
+.cover .button {
   border: none;
   padding: 12px 18px;
   background-color: #3e943e;
@@ -67,4 +57,33 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.cover .title {
+  display: flex;
+  margin: 20px 0;
+}
+
+.cover .title h3 {
+  color: #77DD77;
+  text-align: center;
+  margin: 20px 0px;
+  font-size: 62px;
+  letter-spacing: 2px;
+  line-height: 90%;
+  transform: rotate(-5deg);
+}
+
+.cover .title .content {
+  position: relative;
+  width: 100px;
+  flex-grow: 1;
+}
+
+.cover .title .decoration {
+  position: absolute;
+  right: -30px;
+  top: -20px;
+  width: 70px;
+  transform: rotate(40deg);
 }

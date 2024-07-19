@@ -109,15 +109,20 @@ export default function Component() {
 						backgroundSize: "150px, 200px, 160px",
 					}}
 				>
-					<div ref={coverRef} className={css.spacer}>
-						<h1 className={css.title}>Birthday Invitation</h1>
+					<div ref={coverRef} className={css.cover}>
+						<h1>Birthday Invitation</h1>
 
 						<div style={{ margin: "auto" }}>
 							<div className={css.image}>
 								<img src={image.person} alt="" />
 							</div>
 
-							<h3 className={chalkboardFont.className}>{DATA.title}</h3>
+							<div className={css.title}>
+								<div className={css.content}>
+									<h3 className={chalkboardFont.className}>{DATA.title}</h3>
+									<img src={image.d} alt="" className={css.decoration} />
+								</div>
+							</div>
 
 							<h4>{formatDate(DATA.isoDate, "dddd, MMMM DD YYYY")}</h4>
 						</div>
