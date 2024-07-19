@@ -1,7 +1,7 @@
 "use client";
 
 import FullScreenLoading from "@/components/fullscreen-loading";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import preloadImage from "@/utils/preload-image";
 
@@ -26,10 +26,14 @@ import axios from "axios";
 import { chalkboardFont, prodasansFont } from "@/fonts";
 import classNames from "classnames";
 import Music from "@/components/music";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);
 	const [play, setPlay] = useState(false);
+	const containerRef = useRef(null);
+	const coverRef = useRef(null);
 
 	const {
 		register,
@@ -70,52 +74,66 @@ export default function Component() {
 		loadAssets();
 	}, [loadAssets]);
 
+	useGSAP(() => {
+		if (loading) {
+			return;
+		}
+
+		gsap.fromTo(
+			coverRef.current,
+			{ scale: 0.8, opacity: 0 },
+			{ scale: 1, opacity: 1, duration: 2, ease: "elastic" },
+		);
+	}, [loading]);
+
 	if (loading) {
 		return <FullScreenLoading />;
 	}
 
 	return (
-		<div>
+		<div ref={containerRef}>
 			<Music
 				musicURL="/assets/musics/birthday-2.wav"
 				play={play}
 				setPlay={setPlay}
 			/>
 
-			<Section bgColor="#f0fff0">
+			<Section bgColor="#fff">
 				<div
 					className={css.box}
 					style={{
-						backgroundImage: `url(${image.b}), url(${image.c})`,
-						backgroundRepeat: "no-repeat, no-repeat",
+						backgroundImage: `url(${image.a}), url(${image.b}), url(${image.c})`,
+						backgroundRepeat: "no-repeat, no-repeat, no-repeat",
 						backgroundPosition:
-							"bottom -8px left -10px, bottom -10px right -40px",
-						backgroundSize: "200px, 160px",
+							"top left, bottom -8px left -10px, bottom -10px right -40px",
+						backgroundSize: "150px, 200px, 160px",
 					}}
 				>
-					<h1 className={css.title}>Birthday Invitation</h1>
+					<div ref={coverRef}>
+						<h1 className={css.title}>Birthday Invitation</h1>
 
-					<div className={css.image}>
-						<img src={image.person} alt="" />
+						<div className={css.image}>
+							<img src={image.person} alt="" />
+						</div>
+
+						<h3 className={chalkboardFont.className}>{DATA.title}</h3>
+
+						<h4>{formatDate(DATA.isoDate, "dddd, MMMM DD YYYY")}</h4>
+
+						<button
+							type="button"
+							className={classNames(css.button, prodasansFont.className)}
+							onClick={() => {
+								document.getElementById("section-2")?.scrollIntoView({
+									behavior: "smooth",
+								});
+								setPlay(true);
+							}}
+						>
+							<FaEnvelope />
+							<span>Open Invitation</span>
+						</button>
 					</div>
-
-					<h3 className={chalkboardFont.className}>{DATA.title}</h3>
-
-					<h4>{formatDate(DATA.isoDate, "dddd, MMMM DD YYYY")}</h4>
-
-					<button
-						type="button"
-						className={classNames(css.button, prodasansFont.className)}
-						onClick={() => {
-							document.getElementById("section-2")?.scrollIntoView({
-								behavior: "smooth",
-							});
-							setPlay(true);
-						}}
-					>
-						<FaEnvelope />
-						<span>Open Invitation</span>
-					</button>
 				</div>
 			</Section>
 			<Section id="section-2">

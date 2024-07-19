@@ -9,7 +9,7 @@
   margin: 20px 0px;
   font-size: 62px;
   letter-spacing: 2px;
-  line-height: 100%;
+  line-height: 80%;
   transform: rotate(-5deg);
 }
 
@@ -23,7 +23,7 @@
 .title {
   text-align: center;
   font-size: 18px;
-  color: #77DD77;
+  color: #3e943e;
   letter-spacing: 3px;
   margin-bottom: 18px;
 }
@@ -34,11 +34,13 @@
 
 .image img {
   display: block;
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
   margin: auto;
   border-radius: 50%;
+  border: 2px solid #3e943e;
+  box-shadow: 4px 4px 0px #3e943e;
 }
 
 .button {
