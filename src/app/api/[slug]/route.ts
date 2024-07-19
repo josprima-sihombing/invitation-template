@@ -3,6 +3,7 @@ import { google } from "googleapis";
 import type { NextRequest } from "next/server";
 import { Ratelimit } from "@upstash/ratelimit";
 import { kv } from "@vercel/kv";
+import { sendEmail } from "@/utils/send-email";
 
 const auth = new google.auth.GoogleAuth({
 	credentials: {
@@ -17,7 +18,7 @@ const auth = new google.auth.GoogleAuth({
 
 const ratelimit = new Ratelimit({
 	redis: kv,
-	// 5 requests from the same IP in 10 seconds
+	// 10 requests from the same IP in 10 seconds
 	limiter: Ratelimit.slidingWindow(10, "10 s"),
 });
 
@@ -72,6 +73,7 @@ export async function POST(
 		});
 
 		//TODO: send notification
+		await sendEmail(payload);
 
 		return Response.json({ data: "Hello World" });
 	} catch (error) {

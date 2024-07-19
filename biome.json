@@ -14,10 +14,12 @@
 				"useAltText": "off"
 			},
 			"style": {
-				"useSelfClosingElements": "off"
+				"useSelfClosingElements": "off",
+				"noNonNullAssertion": "off"
 			},
 			"suspicious": {
-				"noExplicitAny": "warn"
+				"noExplicitAny": "warn",
+				"noAsyncPromiseExecutor": "off"
 			},
 			"correctness": {
 				"useExhaustiveDependencies": "warn"

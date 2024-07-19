@@ -10,6 +10,7 @@
 		"prepare": "husky"
 	},
 	"dependencies": {
+		"@aws-sdk/client-ses": "^3.616.0",
 		"@gsap/react": "^2.1.1",
 		"@hookform/resolvers": "^3.9.0",
 		"@upstash/ratelimit": "^2.0.0",
