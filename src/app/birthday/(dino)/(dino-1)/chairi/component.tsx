@@ -76,17 +76,17 @@ export default function Component() {
 		loadAssets();
 	}, [loadAssets]);
 
-	useGSAP(() => {
-		if (loading) {
-			return;
-		}
+	// useGSAP(() => {
+	// 	if (loading) {
+	// 		return;
+	// 	}
 
-		gsap.fromTo(
-			coverRef.current,
-			{ scale: 0.8, opacity: 0 },
-			{ scale: 1, opacity: 1, duration: 2, ease: "elastic", delay: 1 },
-		);
-	}, [loading]);
+	// 	gsap.fromTo(
+	// 		coverRef.current,
+	// 		{ scale: 0.8, opacity: 0 },
+	// 		{ scale: 1, opacity: 1, duration: 2, ease: "elastic", delay: 1 },
+	// 	);
+	// }, [loading]);
 
 	if (loading) {
 		return <FullScreenLoading />;
