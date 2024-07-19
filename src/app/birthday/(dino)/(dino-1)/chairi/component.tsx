@@ -100,7 +100,7 @@ export default function Component() {
 				setPlay={setPlay}
 			/>
 
-			<Section bgColor="#fff">
+			<Section>
 				<div
 					className={css.box}
 					style={{
@@ -248,20 +248,30 @@ export default function Component() {
 				</div>
 			</Section>
 
-			<Section>
+			<Section fullHeight={false} bgColor="#c3dc8e">
 				<div className={css.box}>
-					<div>
+					<div className={css.page3}>
 						<h1>RSVP</h1>
 
 						<form onSubmit={handleSubmit(onSubmit)}>
 							<div>
 								<label htmlFor="name">Your name:</label>
-								<input id="name" type="text" {...register("name")} />
+								<input
+									id="name"
+									type="text"
+									placeholder="Name..."
+									{...register("name")}
+								/>
 								<p>{errors.name?.message}</p>
 							</div>
 							<div>
 								<label htmlFor="name">Your Phone Number</label>
-								<input id="name" type="tel" {...register("phoneNumber")} />
+								<input
+									id="name"
+									type="tel"
+									placeholder="08xxx"
+									{...register("phoneNumber")}
+								/>
 							</div>
 
 							<div>
@@ -323,10 +333,10 @@ export default function Component() {
 					</div>
 				</div>
 			</Section>
-			<Section>
+			<Section fullHeight={false} bgColor="#647440">
 				<div className={css.box}>
-					<div>
-						<h1>See you there</h1>
+					<div className={css.page4}>
+						<h1>See you there,</h1>
 						<h2>Blessed parents</h2>
 						<h3>Radhi & Afira</h3>
 					</div>
