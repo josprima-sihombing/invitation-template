@@ -112,7 +112,7 @@ export default function Component() {
 					<div ref={coverRef} className={css.spacer}>
 						<h1 className={css.title}>Birthday Invitation</h1>
 
-						<div>
+						<div style={{ margin: "auto" }}>
 							<div className={css.image}>
 								<img src={image.person} alt="" />
 							</div>
