@@ -93,7 +93,7 @@ export default function Component() {
 	}
 
 	return (
-		<div ref={containerRef}>
+		<div ref={containerRef} style={{ height: "100%" }}>
 			<Music
 				musicURL="/assets/musics/birthday-2.wav"
 				play={play}

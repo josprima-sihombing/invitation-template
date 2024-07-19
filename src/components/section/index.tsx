@@ -18,7 +18,7 @@ export default function Section({
 			className={css.section}
 			style={{
 				backgroundColor: bgColor,
-				minHeight: fullHeight ? "100dvh" : "unset",
+				height: fullHeight ? "100%" : "unset",
 			}}
 			id={id}
 		>
