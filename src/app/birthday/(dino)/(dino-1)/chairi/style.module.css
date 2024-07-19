@@ -43,7 +43,7 @@
 
 .button {
   border: none;
-  padding: 16px 28px;
+  padding: 12px 18px;
   background-color: #3e943e;
   color: #fff;
   font-weight: bold;
@@ -55,4 +55,7 @@
   display: block;
   margin: auto;
   border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }

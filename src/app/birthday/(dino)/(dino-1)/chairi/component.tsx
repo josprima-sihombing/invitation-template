@@ -13,7 +13,12 @@ import getName from "@/utils/get-name";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Countdown from "react-countdown";
 import { useForm } from "react-hook-form";
-import { FaBuilding, FaCalendarDay, FaClock } from "react-icons/fa6";
+import {
+	FaBuilding,
+	FaCalendarDay,
+	FaClock,
+	FaEnvelope,
+} from "react-icons/fa6";
 import { DATA, drinks, foods } from "./data";
 import { schema } from "./schema";
 import css from "./style.module.css";
@@ -98,7 +103,8 @@ export default function Component() {
 							});
 						}}
 					>
-						Open Invitation
+						<FaEnvelope />
+						<span>Open Invitation</span>
 					</button>
 				</div>
 			</Section>
