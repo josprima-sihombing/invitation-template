@@ -82,7 +82,7 @@ export default function Component() {
 		gsap.fromTo(
 			coverRef.current,
 			{ scale: 0.8, opacity: 0 },
-			{ scale: 1, opacity: 1, duration: 2, ease: "elastic" },
+			{ scale: 1, opacity: 1, duration: 2, ease: "elastic", delay: 1 },
 		);
 	}, [loading]);
 
