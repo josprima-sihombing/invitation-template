@@ -6,9 +6,11 @@ import d from "./d.png";
 import e from "./e.png";
 import f from "./f.png";
 import g from "./g.png";
+import background from "./background.jpg";
 
 export const image = {
 	person: person.src,
+	background: background.src,
 	a: a.src,
 	b: b.src,
 	c: c.src,

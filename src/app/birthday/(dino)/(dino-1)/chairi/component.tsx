@@ -31,6 +31,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { PiShirtFoldedFill } from "react-icons/pi";
 import toast, { Toaster } from "react-hot-toast";
+import Ads from "@/components/ads";
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);
@@ -116,11 +117,12 @@ export default function Component() {
 				<div
 					className={css.box}
 					style={{
-						backgroundImage: `url(${image.a}), url(${image.g}), url(${image.b}), url(${image.c})`,
-						backgroundRepeat: "no-repeat, no-repeat, no-repeat, no-repeat",
+						backgroundImage: `url(${image.a}), url(${image.g}), url(${image.b}), url(${image.c}), url(${image.background})`,
+						backgroundRepeat:
+							"no-repeat, no-repeat, no-repeat, no-repeat, no-repeat",
 						backgroundPosition:
-							"top -10px left, top right, bottom -8px left -100px, bottom -10px right -80px",
-						backgroundSize: "180px, 180px, 280px, 180px",
+							"top -10px left, top right, bottom -8px left -80px, top 60px right 10px, center",
+						backgroundSize: "180px, 180px, 220px, 80px, cover",
 					}}
 				>
 					<div ref={coverRef} className={css.cover}>
@@ -374,6 +376,7 @@ export default function Component() {
 			</Section>
 
 			<Toaster />
+			<Ads />
 		</div>
 	);
 }
