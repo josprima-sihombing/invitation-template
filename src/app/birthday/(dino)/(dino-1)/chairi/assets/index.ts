@@ -5,6 +5,7 @@ import c from "./c.png";
 import d from "./d.png";
 import e from "./e.png";
 import f from "./f.png";
+import g from "./g.png";
 
 export const image = {
 	person: person.src,
@@ -14,6 +15,7 @@ export const image = {
 	d: d.src,
 	e: e.src,
 	f: f.src,
+	g: g.src,
 };
 
 export const images = Object.keys(image).map(

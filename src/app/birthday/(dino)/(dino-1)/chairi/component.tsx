@@ -116,11 +116,11 @@ export default function Component() {
 				<div
 					className={css.box}
 					style={{
-						backgroundImage: `url(${image.a}), url(${image.b}), url(${image.c})`,
-						backgroundRepeat: "no-repeat, no-repeat, no-repeat",
+						backgroundImage: `url(${image.a}), url(${image.g}), url(${image.b}), url(${image.c})`,
+						backgroundRepeat: "no-repeat, no-repeat, no-repeat, no-repeat",
 						backgroundPosition:
-							"top left, bottom -8px left -10px, bottom -10px right -40px",
-						backgroundSize: "150px, 200px, 160px",
+							"top -10px left, top right, bottom -8px left -100px, bottom -10px right -80px",
+						backgroundSize: "180px, 180px, 280px, 180px",
 					}}
 				>
 					<div ref={coverRef} className={css.cover}>
@@ -366,7 +366,7 @@ export default function Component() {
 			<Section fullHeight={false} bgColor="#647440">
 				<div className={css.box}>
 					<div className={css.page4}>
-						<h1>See you there,</h1>
+						<h1 className={chalkboardFont.className}>See you there,</h1>
 						<h2>Blessed parents</h2>
 						<h3>Radhi & Afira</h3>
 					</div>

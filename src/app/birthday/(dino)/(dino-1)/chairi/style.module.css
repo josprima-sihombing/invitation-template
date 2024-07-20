@@ -31,8 +31,8 @@
 
 .cover .image img {
   display: block;
-  width: 140px;
-  height: 140px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
   margin: auto;
   border-radius: 50%;
