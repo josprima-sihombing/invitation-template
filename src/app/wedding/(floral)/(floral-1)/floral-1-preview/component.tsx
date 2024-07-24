@@ -12,6 +12,7 @@ import css from "./style.module.css";
 import { hirarkiSignatureFont, solenoidalFont } from "@/fonts";
 import Countdown from "react-countdown";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import Ads from "@/components/ads";
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);
@@ -140,6 +141,31 @@ export default function Component() {
 					</h4>
 				</div>
 			</Section>
+
+			<Section>
+				<div className={css.page3}>
+					<img src={image.b} alt="" className={css.image1} />
+					<img src={image.c} alt="" className={css.image2} />
+				</div>
+			</Section>
+
+			<Section>
+				<div
+					className={css.page4}
+					style={{
+						backgroundImage: `url(${image.bg})`,
+					}}
+				>
+					<div>
+						<h1 className={hirarkiSignatureFont.className}>
+							Thank you for being a part of our special day.
+						</h1>
+						<h2 className={hirarkiSignatureFont.className}>with love</h2>
+						<h3 className={solenoidalFont.className}>Hendra and Fitri</h3>
+					</div>
+				</div>
+			</Section>
+			<Ads />
 		</>
 	);
 }
