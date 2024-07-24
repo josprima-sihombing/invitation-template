@@ -1,28 +1,76 @@
-.box {
-  border: 2px solid #fff;
-  border-radius: 0 20px 0 20px;
+.cover {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cover > h1 {
+  text-align: center;
+  color: #F7C362;
+  font-size: 20px;
+  line-height: 100%;
+}
+
+.cover > h2 {
+  color: #F7C362;
+  font-size: 12px;
+  line-height: 100%;
+  text-align: center;
+  font-weight: normal;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.cover > button {
+  border: 1px solid #F7C362;
+  background-color: transparent;
+  color: #F7C362;
+  padding: 12px 20px;
+  margin: auto;
+  display: block;
+}
+
+.cover .name_container {
+  flex-grow: 1;
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+}
+
+.cover .name {
+  position: relative;
+  width: 226px;
+}
+
+.cover .name span, .cover .name h1, .cover .name h2 {
   position: absolute;
+}
+
+.cover .name span {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
+  color: #FFA60040;
+  font-size: 96px;
 }
 
-.box .content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 80px 20px;
+.cover .name h1, .cover .name h2 {
+  font-size: 96px;
+  line-height: 100%;
+  color: #fff;
+  font-weight: normal;
 }
 
-.floral_1 {
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
+.cover .name h1 {
+  left: -10px;
+  top: 20px;
 }
 
-.floral_2 {
-  position: absolute;
-  top: -20px;
-  left: -20px;
+.cover .name h2 {
+  right: 5px;
+  bottom: 60px;
 }

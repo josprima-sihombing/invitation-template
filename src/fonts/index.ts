@@ -27,3 +27,9 @@ export const prodasansFont = localFont({
 		},
 	],
 });
+export const hirarkiSignatureFont = localFont({
+	src: "./Hirarki Signature.otf",
+});
+export const solenoidalFont = localFont({
+	src: "./Solenoidal.otf",
+});
