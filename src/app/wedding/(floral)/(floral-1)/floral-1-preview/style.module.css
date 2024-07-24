@@ -1,7 +1,10 @@
-.cover {
+.cover, .page2 {
   width: 100%;
   background-size: cover;
   background-position: center;
+}
+
+.cover {
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -106,7 +109,7 @@
 }
 
 .page1 h1 {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 200%;
   font-weight: normal;
   text-align: center;
@@ -152,6 +155,62 @@
 }
 
 .countdown > div span:nth-child(2) {
-  font-size: 8px;
+  font-size: 10px;
   text-align: center;
+}
+
+.page2 {
+  padding: 62px 48px;
+}
+
+.event {
+  margin-bottom: 48px;
+}
+
+.event h1 {
+  color: #F7C362;
+  font-size: 24px;
+  line-height: 100%;
+  font-weight: normal;
+  margin-bottom: 24px;
+}
+
+.event h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 100%;
+  margin-bottom: 12px;
+}
+
+.event h3 {
+  color: #fff;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 120%;
+  margin-bottom: 12px;
+}
+
+.event a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  padding: 2px 2px 4px 2px;
+  display: flex;
+  width: fit-content;
+  gap: 8px;
+  font-size: 15px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.event a svg {
+  font-size: 12px;
+}
+
+.page2 h4 {
+  color: #F7C362;
+  text-align: center;
+  font-size: 16px;
+  font-weight: normal;
 }

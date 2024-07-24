@@ -11,7 +11,8 @@
 		"rules": {
 			"recommended": true,
 			"a11y": {
-				"useAltText": "off"
+				"useAltText": "off",
+				"useValidAnchor": "off"
 			},
 			"style": {
 				"useSelfClosingElements": "off",

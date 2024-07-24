@@ -11,6 +11,7 @@ import DATA from "./data";
 import css from "./style.module.css";
 import { hirarkiSignatureFont, solenoidalFont } from "@/fonts";
 import Countdown from "react-countdown";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);
@@ -95,6 +96,48 @@ export default function Component() {
 							</div>
 						)}
 					/>
+				</div>
+			</Section>
+
+			<Section>
+				<div
+					className={css.page2}
+					style={{
+						backgroundImage: `url(${image.bg})`,
+					}}
+				>
+					<div className={css.event}>
+						<h1 className={hirarkiSignatureFont.className}>Akad Nikah</h1>
+						<h2 className={solenoidalFont.className}>January 24th, 2024</h2>
+						<h3 className={solenoidalFont.className}>
+							Start at 10.00am <br />
+							at Hotel Mulia Indonesia
+						</h3>
+
+						<a href="#" className={solenoidalFont.className}>
+							Map Location
+							<FaArrowUpRightFromSquare />
+						</a>
+					</div>
+
+					<div className={css.event}>
+						<h1 className={hirarkiSignatureFont.className}>Resepsi</h1>
+						<h2 className={solenoidalFont.className}>January 24th, 2024</h2>
+						<h3 className={solenoidalFont.className}>
+							Start at 18.00pm <br />
+							at Hotel Mulia Indonesia
+						</h3>
+
+						<a href="#" className={solenoidalFont.className}>
+							Map Location
+							<FaArrowUpRightFromSquare />
+						</a>
+					</div>
+
+					<h4 className={hirarkiSignatureFont.className}>
+						We hope to share this special day with you. Your presence would mean
+						the world to us.
+					</h4>
 				</div>
 			</Section>
 		</>
