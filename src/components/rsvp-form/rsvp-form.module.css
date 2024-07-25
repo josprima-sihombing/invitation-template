@@ -1,0 +1,96 @@
+.form {
+  padding: 32px;
+  backdrop-filter: blur(2px);
+}
+
+.form h1 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: normal;
+  color: #BC8A2E;
+  margin-bottom: 28px;
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form_field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form_field label {
+  font-size: 12px;
+}
+
+.form_field input[type="text"], .form_field textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #000;
+  font-size: 20px;
+  padding: 4px;
+}
+
+.form_field input[type="text"]::placeholder {
+  color: #cdcdcd;
+}
+
+.form button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.radio_container {
+  display: flex;
+  gap: 12px;
+}
+
+.radio {
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  flex-basis: 60px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.radio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.radio span {
+  background-color: transparent;
+  color: #000;
+  text-align: center;
+  display: block;
+  font-size: 18px;
+  border: 1px solid #000;
+  padding: 8px;
+}
+
+.radio input[type="radio"]:checked ~ span {
+  color: #fff;
+  background-color: #000;
+}
+
+.input_error {
+  color: #df4747;
+  font-style: italic;
+  font-size: 14px;
+}
