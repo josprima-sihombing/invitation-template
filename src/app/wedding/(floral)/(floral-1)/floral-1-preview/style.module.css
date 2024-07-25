@@ -87,19 +87,19 @@
   width: 100%;
 }
 
-.page1 .image1, .page1 .image2, .page3 .image1, .page3 .image2 {
+.page1 .image1, .page1 .image2 {
   display: block;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.page1 .image1, .page3 .image1 {
+.page1 .image1 {
   top: -150px;
   width: 80px;
 }
 
-.page1 .image2, .page3 .image2 {
+.page1 .image2 {
   bottom: -80px;
   width: 100px;
 }
@@ -216,6 +216,11 @@
   text-align: center;
   font-size: 16px;
   font-weight: normal;
+}
+
+.page3 {
+  display: flex;
+  align-items: center;
 }
 
 .page4 {

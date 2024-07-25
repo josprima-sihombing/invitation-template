@@ -56,7 +56,7 @@ export default function RsvpForm() {
 					<textarea
 						id="wish"
 						className={solenoidalFont.className}
-						rows={3}
+						rows={2}
 						{...register("wish")}
 					/>
 					<p className={css.input_error}>{errors.wish?.message}</p>

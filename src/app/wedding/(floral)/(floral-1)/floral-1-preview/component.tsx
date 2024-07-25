@@ -145,9 +145,6 @@ export default function Component() {
 
 			<Section>
 				<div className={css.page3}>
-					<img src={image.b} alt="" className={css.image1} />
-					<img src={image.c} alt="" className={css.image2} />
-
 					<RsvpForm />
 				</div>
 			</Section>
