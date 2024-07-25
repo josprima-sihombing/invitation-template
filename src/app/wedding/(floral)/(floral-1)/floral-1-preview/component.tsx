@@ -14,14 +14,30 @@ import Countdown from "react-countdown";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import Ads from "@/components/ads";
 import RsvpForm from "@/components/rsvp-form";
+import Music from "@/components/music";
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);
+	const [play, setPlay] = useState(false);
 
 	const loadAssets = useCallback(async () => {
 		await Promise.all(images.map((imageUrl) => preloadImage(imageUrl)));
 
 		setLoading(false);
+	}, []);
+
+	const openInvitation = () => {
+		document.body.style.overflow = "auto";
+		setPlay(true);
+
+		document.getElementById("page1")?.scrollIntoView({
+			behavior: "smooth",
+		});
+	};
+
+	useEffect(() => {
+		document.body.style.overflow = "hidden";
+		window.scrollTo(0, 0);
 	}, []);
 
 	useEffect(() => {
@@ -53,13 +69,17 @@ export default function Component() {
 					</div>
 
 					<h2 className={solenoidalFont.className}>January 24th, 2024</h2>
-					<button type="button" className={solenoidalFont.className}>
+					<button
+						type="button"
+						className={solenoidalFont.className}
+						onClick={openInvitation}
+					>
 						Open Invitation
 					</button>
 				</div>
 			</Section>
 
-			<Section>
+			<Section id="page1">
 				<div className={css.page1}>
 					<img src={image.b} alt="" className={css.image1} />
 					<img src={image.c} alt="" className={css.image2} />
@@ -166,6 +186,11 @@ export default function Component() {
 				</div>
 			</Section>
 			<Ads />
+			<Music
+				musicURL="/assets/musics/birthday-2.wav"
+				play={play}
+				setPlay={setPlay}
+			/>
 		</>
 	);
 }
