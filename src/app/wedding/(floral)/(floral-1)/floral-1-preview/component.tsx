@@ -19,6 +19,7 @@ import Music from "@/components/music";
 export default function Component() {
 	const [loading, setLoading] = useState(true);
 	const [play, setPlay] = useState(false);
+	const [hideMusic, setHideMusic] = useState(true);
 
 	const loadAssets = useCallback(async () => {
 		await Promise.all(images.map((imageUrl) => preloadImage(imageUrl)));
@@ -29,6 +30,7 @@ export default function Component() {
 	const openInvitation = () => {
 		document.body.style.overflow = "auto";
 		setPlay(true);
+		setHideMusic(false);
 
 		document.getElementById("page1")?.scrollIntoView({
 			behavior: "smooth",
@@ -163,7 +165,7 @@ export default function Component() {
 				</div>
 			</Section>
 
-			<Section>
+			<Section fullHeight={false}>
 				<div className={css.page3}>
 					<RsvpForm />
 				</div>
@@ -186,10 +188,12 @@ export default function Component() {
 				</div>
 			</Section>
 			<Ads />
+
 			<Music
 				musicURL="/assets/musics/birthday-2.wav"
 				play={play}
 				setPlay={setPlay}
+				hide={hideMusic}
 			/>
 		</>
 	);

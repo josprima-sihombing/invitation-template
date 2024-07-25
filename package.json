@@ -21,6 +21,7 @@
 		"googleapis": "^140.0.1",
 		"gsap": "^3.12.5",
 		"next": "14.2.5",
+		"next-scroll-restorer": "^0.9.7",
 		"react": "^18",
 		"react-countdown": "^2.3.5",
 		"react-dom": "^18",

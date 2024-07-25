@@ -15,9 +15,15 @@ type MusicProps = {
 	play: boolean;
 	setPlay: Dispatch<SetStateAction<boolean>>;
 	musicURL: string;
+	hide?: boolean;
 };
 
-export default function Music({ musicURL, play, setPlay }: MusicProps) {
+export default function Music({
+	musicURL,
+	play,
+	setPlay,
+	hide = true,
+}: MusicProps) {
 	const audio = useMemo(() => {
 		const music = new Audio(musicURL);
 
@@ -49,6 +55,10 @@ export default function Music({ musicURL, play, setPlay }: MusicProps) {
 			window.removeEventListener("blur", stopMusic);
 		};
 	}, []);
+
+	if (hide) {
+		return null;
+	}
 
 	if (play) {
 		return (
