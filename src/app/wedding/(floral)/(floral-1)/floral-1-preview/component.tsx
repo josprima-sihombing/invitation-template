@@ -13,6 +13,7 @@ import { hirarkiSignatureFont, solenoidalFont } from "@/fonts";
 import Countdown from "react-countdown";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import Ads from "@/components/ads";
+import RsvpForm from "@/components/rsvp-form";
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);
@@ -146,6 +147,8 @@ export default function Component() {
 				<div className={css.page3}>
 					<img src={image.b} alt="" className={css.image1} />
 					<img src={image.c} alt="" className={css.image2} />
+
+					<RsvpForm />
 				</div>
 			</Section>
 
