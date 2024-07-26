@@ -15,11 +15,14 @@ import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import Ads from "@/components/ads";
 import RsvpForm from "@/components/rsvp-form";
 import Music from "@/components/music";
+import formatDate from "@/utils/format-date";
+import getName from "@/utils/get-name";
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);
 	const [play, setPlay] = useState(false);
 	const [hideMusic, setHideMusic] = useState(true);
+	const guestName = getName();
 
 	const loadAssets = useCallback(async () => {
 		await Promise.all(images.map((imageUrl) => preloadImage(imageUrl)));
@@ -65,12 +68,18 @@ export default function Component() {
 						<div className={css.name}>
 							<img src={image.a} alt="" />
 							<span className={solenoidalFont.className}>&</span>
-							<h1 className={hirarkiSignatureFont.className}>H</h1>
-							<h2 className={hirarkiSignatureFont.className}>F</h2>
+							<h1 className={hirarkiSignatureFont.className}>
+								{DATA.firstPerson.name[0]}
+							</h1>
+							<h2 className={hirarkiSignatureFont.className}>
+								{DATA.secondPerson.name[0]}
+							</h2>
 						</div>
 					</div>
 
-					<h2 className={solenoidalFont.className}>January 24th, 2024</h2>
+					<h2 className={solenoidalFont.className}>
+						{formatDate(DATA.isoDate, "MMMM Do YYYY")}
+					</h2>
 					<button
 						type="button"
 						className={solenoidalFont.className}
@@ -87,14 +96,19 @@ export default function Component() {
 					<img src={image.c} alt="" className={css.image2} />
 
 					<h1 className={hirarkiSignatureFont.className}>
-						Dear Yudi and Family, <br />
+						{guestName ? `Dear ${guestName},` : "Hello,"}
+						<br />
 						You are invited to our wedding
 					</h1>
 
 					<div className={css.name}>
-						<h2 className={solenoidalFont.className}>Hendra Kusuma</h2>
+						<h2 className={solenoidalFont.className}>
+							{DATA.firstPerson.name}
+						</h2>
 						<h3 className={solenoidalFont.className}>and</h3>
-						<h2 className={solenoidalFont.className}>Fitri Aja</h2>
+						<h2 className={solenoidalFont.className}>
+							{DATA.secondPerson.name}
+						</h2>
 					</div>
 
 					<Countdown
@@ -130,33 +144,23 @@ export default function Component() {
 						backgroundImage: `url(${image.bg})`,
 					}}
 				>
-					<div className={css.event}>
-						<h1 className={hirarkiSignatureFont.className}>Akad Nikah</h1>
-						<h2 className={solenoidalFont.className}>January 24th, 2024</h2>
-						<h3 className={solenoidalFont.className}>
-							Start at 10.00am <br />
-							at Hotel Mulia Indonesia
-						</h3>
+					{DATA.events.map((event) => (
+						<div key={event.name} className={css.event}>
+							<h1 className={hirarkiSignatureFont.className}>{event.name}</h1>
+							<h2 className={solenoidalFont.className}>
+								{formatDate(event.date, "MMMM Do YYYY")}
+							</h2>
+							<h3
+								className={solenoidalFont.className}
+								dangerouslySetInnerHTML={{ __html: event.detail }}
+							/>
 
-						<a href="#" className={solenoidalFont.className}>
-							Map Location
-							<FaArrowUpRightFromSquare />
-						</a>
-					</div>
-
-					<div className={css.event}>
-						<h1 className={hirarkiSignatureFont.className}>Resepsi</h1>
-						<h2 className={solenoidalFont.className}>January 24th, 2024</h2>
-						<h3 className={solenoidalFont.className}>
-							Start at 18.00pm <br />
-							at Hotel Mulia Indonesia
-						</h3>
-
-						<a href="#" className={solenoidalFont.className}>
-							Map Location
-							<FaArrowUpRightFromSquare />
-						</a>
-					</div>
+							<a href="#" className={solenoidalFont.className}>
+								Map Location
+								<FaArrowUpRightFromSquare />
+							</a>
+						</div>
+					))}
 
 					<h4 className={hirarkiSignatureFont.className}>
 						We hope to share this special day with you. Your presence would mean
@@ -183,7 +187,9 @@ export default function Component() {
 							Thank you for being a part of our special day.
 						</h1>
 						<h2 className={hirarkiSignatureFont.className}>with love</h2>
-						<h3 className={solenoidalFont.className}>Hendra and Fitri</h3>
+						<h3 className={solenoidalFont.className}>
+							{DATA.firstPerson.name} and {DATA.secondPerson.name}
+						</h3>
 					</div>
 				</div>
 			</Section>
