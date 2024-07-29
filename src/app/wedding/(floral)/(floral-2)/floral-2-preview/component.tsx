@@ -1,11 +1,51 @@
+"use client";
+
 import Section from "@/components/section";
-import { image } from "./assets";
+import { image, images } from "./assets";
 
 import css from "./style.module.css";
 import { hirarkiSignatureFont, solenoidalFont } from "@/fonts";
 import { FaEnvelope } from "react-icons/fa6";
+import { useCallback, useEffect, useState } from "react";
+import Music from "@/components/music";
+import getName from "@/utils/get-name";
+import FullScreenLoading from "@/components/fullscreen-loading";
+import preloadImage from "@/utils/preload-image";
 
 export default function Component() {
+	const [loading, setLoading] = useState(true);
+	const [play, setPlay] = useState(false);
+	const [hideMusic, setHideMusic] = useState(true);
+	const guestName = getName();
+
+	const openInvitation = () => {
+		document.body.style.overflow = "auto";
+		setPlay(true);
+		setHideMusic(false);
+
+		document.getElementById("page1")?.scrollIntoView({
+			behavior: "smooth",
+		});
+	};
+
+	const loadAssets = useCallback(async () => {
+		await Promise.all(images.map((imageUrl) => preloadImage(imageUrl)));
+
+		setLoading(false);
+	}, []);
+
+	useEffect(() => {
+		document.body.style.overflow = "hidden";
+	}, []);
+
+	useEffect(() => {
+		loadAssets();
+	}, [loadAssets]);
+
+	if (loading) {
+		return <FullScreenLoading />;
+	}
+
 	return (
 		<>
 			<Section>
@@ -40,14 +80,31 @@ export default function Component() {
 						<h3 className={hirarkiSignatureFont.className}>and</h3>
 						<h2 className={hirarkiSignatureFont.className}>Fitri</h2>
 						<h4 className={solenoidalFont.className}>Kepada Yth.</h4>
-						<h5 className={solenoidalFont.className}>Tamu Undangan</h5>
-						<button type="button" className={solenoidalFont.className}>
+						<h5 className={solenoidalFont.className}>
+							{guestName ? guestName : "Tamu Undangan"}
+						</h5>
+						<button
+							type="button"
+							className={solenoidalFont.className}
+							onClick={openInvitation}
+						>
 							<FaEnvelope />
 							<span>Buka Undangan</span>
 						</button>
 					</div>
 				</div>
 			</Section>
+
+			<Section id="page1">
+				<h1>Page 1</h1>
+			</Section>
+
+			<Music
+				musicURL="/assets/musics/birthday-2.wav"
+				play={play}
+				setPlay={setPlay}
+				hide={hideMusic}
+			/>
 		</>
 	);
 }

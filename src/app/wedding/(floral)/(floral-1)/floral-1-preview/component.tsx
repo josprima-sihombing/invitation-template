@@ -42,7 +42,6 @@ export default function Component() {
 
 	useEffect(() => {
 		document.body.style.overflow = "hidden";
-		window.scrollTo(0, 0);
 	}, []);
 
 	useEffect(() => {
