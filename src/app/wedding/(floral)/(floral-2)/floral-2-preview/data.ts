@@ -11,12 +11,14 @@ const DATA = {
 		{
 			name: "Akad Nikah",
 			date: "2028-01-24T00:00:00+07:00",
-			detail: "Start at 10.00am <br /> at Hotel Mulia Indonesia",
+			time: "Mulai pukul 10.00 pagi",
+			place: "di Hotel Mulia Indonesia",
 		},
 		{
 			name: "Resepsi",
 			date: "2028-01-24T00:00:00+07:00",
-			detail: "Start at 18.00pm <br /> at Hotel Mulia Indonesia",
+			time: "Mulai pukul 19.00 malam",
+			place: "di Hotel Mulia Indonesia",
 		},
 	],
 };

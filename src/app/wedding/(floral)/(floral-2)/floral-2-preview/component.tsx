@@ -6,7 +6,13 @@ import dynamic from "next/dynamic";
 
 import css from "./style.module.css";
 import { hirarkiSignatureFont, solenoidalFont } from "@/fonts";
-import { FaEnvelope } from "react-icons/fa6";
+import {
+	FaArrowUpRightFromSquare,
+	FaBuilding,
+	FaCalendarDay,
+	FaClock,
+	FaEnvelope,
+} from "react-icons/fa6";
 import { useCallback, useEffect, useState } from "react";
 import Music from "@/components/music";
 import getName from "@/utils/get-name";
@@ -15,6 +21,7 @@ import preloadImage from "@/utils/preload-image";
 import classNames from "classnames";
 import DATA from "./data";
 import Countdown2 from "@/components/countdown/countdown-2";
+import formatDate from "@/utils/format-date";
 
 const Particles = dynamic(() => import("@/components/particles"), {
 	ssr: false,
@@ -186,9 +193,51 @@ export default function Component() {
 					</div>
 
 					<div className={css.content}>
-						<h1>Wedding Day</h1>
+						<h1 className={hirarkiSignatureFont.className}>Wedding Day</h1>
 
 						<Countdown2 date={DATA.isoDate} />
+
+						<div className={css.events}>
+							{DATA.events.map((event) => (
+								<div key={event.name} className={css.event}>
+									<h1 className={hirarkiSignatureFont.className}>
+										{event.name}
+									</h1>
+
+									<div className={css.event_detail}>
+										<div>
+											<FaCalendarDay />
+											<span className={solenoidalFont.className}>
+												{formatDate(event.date, "D MMMM YYYY", "id")}
+											</span>
+										</div>
+
+										<div>
+											<FaClock />
+
+											<span className={solenoidalFont.className}>
+												{event.time}
+											</span>
+										</div>
+
+										<div>
+											<FaBuilding />
+
+											<span className={solenoidalFont.className}>
+												{event.place}
+											</span>
+										</div>
+									</div>
+
+									<div className={css.action}>
+										<a href="#" className={solenoidalFont.className}>
+											Detail Lokasi Map
+											<FaArrowUpRightFromSquare />
+										</a>
+									</div>
+								</div>
+							))}
+						</div>
 					</div>
 				</div>
 			</Section>
