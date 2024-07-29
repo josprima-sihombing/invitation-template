@@ -256,6 +256,27 @@ export default function Component() {
 				</div>
 			</Section>
 
+			<Section>
+				<div
+					className={classNames(css.page, css.page4)}
+					style={{
+						backgroundImage: `url(${image.d})`,
+					}}
+				>
+					<div className={css.page_border} />
+					<div className={css.page_flower_bottom}>
+						<img src={image.b} />
+					</div>
+
+					<div className={css.content}>
+						<h1 className={solenoidalFont.className}>
+							Atas kehadiran dan Doa Restunya kami ucapkan terimakasih.
+						</h1>
+						<h2 className={hirarkiSignatureFont.className}>Hendra dan Fitri</h2>
+					</div>
+				</div>
+			</Section>
+
 			<Music
 				musicURL="/assets/musics/birthday-2.wav"
 				play={play}
