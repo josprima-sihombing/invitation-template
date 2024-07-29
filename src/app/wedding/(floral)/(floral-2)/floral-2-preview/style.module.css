@@ -185,3 +185,101 @@
   gap: 10px;
   margin: auto;
 }
+
+.page {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #EECC94;
+  opacity: 0.3;
+}
+
+.page_border {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
+}
+
+.page_border::after, .page_border::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #B35002;
+}
+
+.page_border::after {
+  transform: rotate(1deg);
+}
+
+.page_border::before {
+  transform: rotate(-1deg);
+}
+
+.page_flower_left, .page_flower_right {
+  position: absolute;
+  overflow: hidden;
+}
+
+.page_flower_left {
+  width: 250px;
+  height: 250px;
+  left: 0;
+  bottom: 0;
+}
+
+.page_flower_right {
+  width: 200px;
+  height: 200px;
+  right: 0;
+  top: 0;
+}
+
+.page_flower_left img, .page_flower_right img {
+  position: absolute;
+  max-width: unset;
+}
+
+.page_flower_left img {
+  right: 0;
+  top: 0;
+  width: 300px;
+}
+
+.page_flower_right img {
+  left: 0;
+  bottom: 0;
+  width: 250px;
+}
+
+.page1 {
+  display: flex;
+  align-items: center;
+}
+
+.page1 p {
+  color: #B35002;
+  text-align: center;
+  font-size: 18px;
+  width: 100%;
+  padding: 30px;
+  line-height: 140%;
+}

@@ -27,7 +27,7 @@ export default function Music({
 	const audio = useMemo(() => {
 		const music = new Audio(musicURL);
 
-		music.volume = 0.3;
+		music.volume = 0.1;
 		music.loop = true;
 		return music;
 	}, []);

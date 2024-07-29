@@ -12,6 +12,7 @@ import Music from "@/components/music";
 import getName from "@/utils/get-name";
 import FullScreenLoading from "@/components/fullscreen-loading";
 import preloadImage from "@/utils/preload-image";
+import classNames from "classnames";
 
 const Particles = dynamic(() => import("@/components/particles"), {
 	ssr: false,
@@ -82,7 +83,7 @@ export default function Component() {
 					<div className={css.content}>
 						<h1 className={solenoidalFont.className}>THE WEDDING OF</h1>
 						<h2 className={hirarkiSignatureFont.className}>Hendra</h2>
-						<h3 className={hirarkiSignatureFont.className}>and</h3>
+						<h3 className={hirarkiSignatureFont.className}>dan</h3>
 						<h2 className={hirarkiSignatureFont.className}>Fitri</h2>
 						<h4 className={solenoidalFont.className}>Kepada Yth.</h4>
 						<h5 className={solenoidalFont.className}>
@@ -101,7 +102,21 @@ export default function Component() {
 			</Section>
 
 			<Section id="page1">
-				<h1>Page 1</h1>
+				<div
+					className={classNames(css.page, css.page1)}
+					style={{
+						backgroundImage: `url(${image.d})`,
+					}}
+				>
+					<div className={css.page_border} />
+					<div className={css.page_flower_left}>
+						<img src={image.e} />
+					</div>
+					<p className={solenoidalFont.className}>
+						Tanpa mengurangi rasa hormat, kami bermaksud mengundang
+						bapak/ibu/saudara/i untuk hadir pada acara pernikahan kami
+					</p>
+				</div>
 			</Section>
 
 			<Music
