@@ -112,10 +112,62 @@ export default function Component() {
 					<div className={css.page_flower_left}>
 						<img src={image.e} />
 					</div>
-					<p className={solenoidalFont.className}>
-						Tanpa mengurangi rasa hormat, kami bermaksud mengundang
-						bapak/ibu/saudara/i untuk hadir pada acara pernikahan kami
-					</p>
+					<div className={css.content}>
+						<p className={solenoidalFont.className}>
+							Tanpa mengurangi rasa hormat, kami bermaksud mengundang
+							bapak/ibu/saudara/i untuk hadir pada acara pernikahan kami
+						</p>
+					</div>
+				</div>
+			</Section>
+
+			<Section>
+				<div
+					className={classNames(css.page, css.page2)}
+					style={{
+						backgroundImage: `url(${image.d})`,
+					}}
+				>
+					<div className={css.page_border} />
+					<div className={css.content}>
+						<p className={solenoidalFont.className}>Kami yang berbahagia:</p>
+
+						<div className={css.person_left}>
+							<div className={css.person_img}>
+								<div className={css.person_frame_left}>
+									<img src={image.g} />
+								</div>
+								<div className={css.person_frame_right}>
+									<img src={image.g} />
+								</div>
+
+								<img src={image.personA} />
+							</div>
+
+							<div className={css.person_data}>
+								<h1 className={hirarkiSignatureFont.className}>Hendra</h1>
+							</div>
+						</div>
+
+						<h2 className={hirarkiSignatureFont.className}>dan</h2>
+
+						<div className={css.person_right}>
+							<div className={css.person_img}>
+								<div className={css.person_frame_left}>
+									<img src={image.g} />
+								</div>
+								<div className={css.person_frame_right}>
+									<img src={image.g} />
+								</div>
+
+								<img src={image.personB} />
+							</div>
+
+							<div className={css.person_data}>
+								<h1 className={hirarkiSignatureFont.className}>Fitri</h1>
+							</div>
+						</div>
+					</div>
 				</div>
 			</Section>
 
