@@ -17,6 +17,7 @@ import RsvpForm from "@/components/rsvp-form";
 import Music from "@/components/music";
 import formatDate from "@/utils/format-date";
 import getName from "@/utils/get-name";
+import Countdown1 from "@/components/countdown/countdown-1";
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);
@@ -110,29 +111,7 @@ export default function Component() {
 						</h2>
 					</div>
 
-					<Countdown
-						date={DATA.isoDate}
-						renderer={({ days, hours, minutes, seconds }) => (
-							<div className={css.countdown}>
-								<div>
-									<span className={solenoidalFont.className}>{days}</span>
-									<span className={solenoidalFont.className}>Days</span>
-								</div>
-								<div>
-									<span className={solenoidalFont.className}>{hours}</span>
-									<span className={solenoidalFont.className}>Hours</span>
-								</div>
-								<div>
-									<span className={solenoidalFont.className}>{minutes}</span>
-									<span className={solenoidalFont.className}>Minutes</span>
-								</div>
-								<div>
-									<span className={solenoidalFont.className}>{seconds}</span>
-									<span className={solenoidalFont.className}>Seconds</span>
-								</div>
-							</div>
-						)}
-					/>
+					<Countdown1 date={DATA.isoDate} />
 				</div>
 			</Section>
 

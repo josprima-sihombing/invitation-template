@@ -13,6 +13,8 @@ import getName from "@/utils/get-name";
 import FullScreenLoading from "@/components/fullscreen-loading";
 import preloadImage from "@/utils/preload-image";
 import classNames from "classnames";
+import DATA from "./data";
+import Countdown2 from "@/components/countdown/countdown-2";
 
 const Particles = dynamic(() => import("@/components/particles"), {
 	ssr: false,
@@ -167,6 +169,26 @@ export default function Component() {
 								<h1 className={hirarkiSignatureFont.className}>Fitri</h1>
 							</div>
 						</div>
+					</div>
+				</div>
+			</Section>
+
+			<Section>
+				<div
+					className={classNames(css.page, css.page3)}
+					style={{
+						backgroundImage: `url(${image.d})`,
+					}}
+				>
+					<div className={css.page_border} />
+					<div className={css.page_flower_right}>
+						<img src={image.f} />
+					</div>
+
+					<div className={css.content}>
+						<h1>Wedding Day</h1>
+
+						<Countdown2 date={DATA.isoDate} />
 					</div>
 				</div>
 			</Section>

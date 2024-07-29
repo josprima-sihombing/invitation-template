@@ -1,0 +1,26 @@
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.countdown > div {
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid #461E02;
+  border-bottom: 2px solid #461E02;
+  padding: 18px 8px;
+  background-color: #D6923D80;
+}
+
+.countdown > div span:first-child {
+  font-size: 24px;
+  text-align: center;
+  color: #fff;
+}
+
+.countdown > div span:nth-child(2) {
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+}
