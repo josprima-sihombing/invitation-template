@@ -23,6 +23,7 @@ import DATA from "./data";
 import Countdown2 from "@/components/countdown/countdown-2";
 import formatDate from "@/utils/format-date";
 import RsvpForm from "@/components/rsvp-form";
+import Ads from "@/components/ads";
 
 const Particles = dynamic(() => import("@/components/particles"), {
 	ssr: false,
@@ -276,6 +277,8 @@ export default function Component() {
 					</div>
 				</div>
 			</Section>
+
+			<Ads />
 
 			<Music
 				musicURL="/assets/musics/birthday-2.wav"
