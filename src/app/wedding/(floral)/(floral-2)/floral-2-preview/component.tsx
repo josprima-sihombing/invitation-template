@@ -2,6 +2,7 @@
 
 import Section from "@/components/section";
 import { image, images } from "./assets";
+import dynamic from "next/dynamic";
 
 import css from "./style.module.css";
 import { hirarkiSignatureFont, solenoidalFont } from "@/fonts";
@@ -11,6 +12,10 @@ import Music from "@/components/music";
 import getName from "@/utils/get-name";
 import FullScreenLoading from "@/components/fullscreen-loading";
 import preloadImage from "@/utils/preload-image";
+
+const Particles = dynamic(() => import("@/components/particles"), {
+	ssr: false,
+});
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);
@@ -105,6 +110,8 @@ export default function Component() {
 				setPlay={setPlay}
 				hide={hideMusic}
 			/>
+
+			<Particles />
 		</>
 	);
 }
