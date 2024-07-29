@@ -195,6 +195,10 @@
   font-weight: normal;
 }
 
+.page3 {
+  padding: 32px;
+}
+
 .page4 {
   display: flex;
   align-items: center;

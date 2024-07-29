@@ -22,6 +22,7 @@ import classNames from "classnames";
 import DATA from "./data";
 import Countdown2 from "@/components/countdown/countdown-2";
 import formatDate from "@/utils/format-date";
+import RsvpForm from "@/components/rsvp-form";
 
 const Particles = dynamic(() => import("@/components/particles"), {
 	ssr: false,
@@ -238,6 +239,19 @@ export default function Component() {
 								</div>
 							))}
 						</div>
+					</div>
+				</div>
+			</Section>
+
+			<Section>
+				<div
+					className={classNames(css.page)}
+					style={{
+						backgroundImage: `url(${image.d})`,
+					}}
+				>
+					<div className={css.content}>
+						<RsvpForm />
 					</div>
 				</div>
 			</Section>
