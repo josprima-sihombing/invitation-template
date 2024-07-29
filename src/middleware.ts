@@ -11,6 +11,12 @@ export function middleware(request: NextRequest) {
 			`https://invitation-template-eight.vercel.app/birthday${pathname}?${searchParams}`,
 		);
 	}
+
+	if (host === "itsweddings.com" || host === "www.itsweddings.com") {
+		return NextResponse.rewrite(
+			`https://invitation-template-eight.vercel.app/wedding${pathname}?${searchParams}`,
+		);
+	}
 }
 
 export const config = {
