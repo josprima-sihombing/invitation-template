@@ -3,7 +3,7 @@ import Component from "./component";
 import DATA from "./data";
 
 export const viewport: Viewport = {
-	themeColor: "#C38260",
+	themeColor: "#669A80",
 };
 
 export const metadata: Metadata = {
