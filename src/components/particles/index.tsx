@@ -10,7 +10,18 @@ declare global {
 	}
 }
 
-export default function Particles() {
+type ParticlesProps = {
+	color?: string;
+	opacity?: number;
+};
+
+export default function Particles({
+	color = "#A67C52",
+	opacity = 1,
+}: ParticlesProps) {
+	config.particles.color.value = color;
+	config.particles.opacity.value = opacity;
+
 	useEffect(() => {
 		window.particlesJS("particles-js", config);
 	}, []);

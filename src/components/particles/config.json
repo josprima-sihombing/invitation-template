@@ -8,10 +8,10 @@
 			}
 		},
 		"color": {
-			"value": "#FFD700"
+			"value": "#A67C52"
 		},
 		"opacity": {
-			"value": 0.8
+			"value": 1
 		},
 		"shape": {
 			"type": "circle"

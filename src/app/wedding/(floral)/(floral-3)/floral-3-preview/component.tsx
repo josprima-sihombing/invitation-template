@@ -357,7 +357,7 @@ export default function Component() {
 				hide={hideMusic}
 			/>
 
-			<Particles />
+			<Particles color="#F0E68C" opacity={0.8} />
 		</div>
 	);
 }
