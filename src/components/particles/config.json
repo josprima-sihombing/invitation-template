@@ -8,18 +8,21 @@
 			}
 		},
 		"color": {
-			"value": "#A67C52"
+			"value": "#FFD700"
+		},
+		"opacity": {
+			"value": 0.8
 		},
 		"shape": {
 			"type": "circle"
 		},
 		"size": {
-			"value": 3,
+			"value": 4,
 			"random": true,
 			"anim": {
 				"enable": false,
 				"speed": 80,
-				"size_min": 1,
+				"size_min": 2,
 				"sync": false
 			}
 		},

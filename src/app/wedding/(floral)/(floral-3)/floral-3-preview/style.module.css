@@ -1,0 +1,132 @@
+.cover {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.cover > img {
+  position: absolute;
+  display: block;
+  max-width: unset;
+  object-fit: cover;
+}
+
+.cover .groom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 240px;
+  height: 360px;
+}
+
+.cover .groom::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+}
+
+.cover .groom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+}
+
+.cover .overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background-image: linear-gradient(180deg, #ffffff00, #fff);
+}
+
+.button_container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #C3826060;
+  padding: 30px;
+  border-top-left-radius: 60px;
+}
+
+.button_container button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 22px;
+  border: 2px solid #669A80;
+  border-radius: 8px;
+  background-image: linear-gradient(#669A80, #A2C0B1, #669A80);
+  color: #fff;
+  font-size: 18px;
+  box-shadow: 2px 4px 4px 2px #2c3d3590;
+}
+
+.button_container button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.name_container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  background-image: linear-gradient(#C38260, #669A80);
+  width: 140px;
+  height: 100px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.name_container::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-left-radius: 65px;
+  border-bottom-right-radius: 65px;
+  border-style: solid;
+  border-color: #fff;
+  border-width: 0;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+}
+
+.name_container h1, .name_container h2 {
+  text-align: center;
+  color: #fff;
+  font-weight: normal;
+}
+
+.name_container h1 {
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.name_container h2 {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
