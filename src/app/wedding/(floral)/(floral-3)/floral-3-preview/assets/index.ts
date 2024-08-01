@@ -13,6 +13,7 @@ import i from "./i.png";
 import j from "./j.png";
 import k from "./k.png";
 import l from "./l.svg";
+import m from "./m.svg";
 
 export const image = {
 	groom: groom.src,
@@ -30,6 +31,7 @@ export const image = {
 	j: j.src,
 	k: k.src,
 	l: l.src,
+	m: m.src,
 };
 
 export const images = Object.keys(image).map(

@@ -545,6 +545,32 @@ export default function Component() {
 				</div>
 			</Section>
 
+			<Section bgColor="#FFEFDD">
+				<div className={css.page6}>
+					<img src={image.a} className={css.page6_bg} />
+
+					<div className={css.page6_content}>
+						<h1 className={hirarkiSignatureFont.className}>
+							Thank you for being <br /> a part of <br /> our special day.
+						</h1>
+						<h2 className={hirarkiSignatureFont.className}>with love</h2>
+						<h3 className={solenoidalFont.className}>Hendra & Fitri</h3>
+
+						<div
+							style={{
+								WebkitMaskImage: `url(${image.m})`,
+								maskImage: `url(${image.m})`,
+							}}
+							className={css.image_mask}
+						>
+							<img src={image.groom} />
+						</div>
+					</div>
+
+					<div className={css.overlay} />
+				</div>
+			</Section>
+
 			<Music
 				musicURL="/assets/musics/sweet-moments.wav"
 				play={play}
