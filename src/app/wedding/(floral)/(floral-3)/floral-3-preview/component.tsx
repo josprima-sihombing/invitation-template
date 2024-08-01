@@ -26,11 +26,14 @@ import RsvpForm from "@/components/rsvp-form";
 import Ads from "@/components/ads";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import EnvelopeIcon from "@/components/icons/envelope";
 
 const Particles = dynamic(() => import("@/components/particles"), {
 	ssr: false,
 });
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Component() {
 	const [loading, setLoading] = useState(true);
@@ -72,8 +75,7 @@ export default function Component() {
 			const timeline = gsap.timeline();
 
 			timeline.from("#img_a", {
-				width: "150%",
-				height: "150%",
+				scale: 1.5,
 				duration: 5,
 				repeat: -1,
 				yoyo: true,
@@ -216,6 +218,54 @@ export default function Component() {
 				},
 				4,
 			);
+
+			const page1Timeline = gsap.timeline({
+				scrollTrigger: "#page1",
+				defaults: {
+					duration: 0.6,
+				},
+			});
+
+			page1Timeline.from("#page1_img_a", {
+				y: "100%",
+			});
+
+			page1Timeline.from(
+				"#page1_overlay",
+				{
+					scaleX: 0,
+				},
+				0.5,
+			);
+
+			page1Timeline.from(
+				"#page1_preface",
+				{
+					y: "100%",
+					opacity: 0,
+				},
+				0.5,
+			);
+
+			page1Timeline.from(
+				"#page1_img_i",
+				{
+					x: 100,
+					scale: 0,
+					rotate: 10,
+				},
+				1,
+			);
+
+			page1Timeline.from(
+				"#page1_img_j",
+				{
+					x: -100,
+					scale: 0,
+					rotate: -10,
+				},
+				1.2,
+			);
 		},
 		{
 			dependencies: [containerRef],
@@ -346,8 +396,38 @@ export default function Component() {
 				</div>
 			</Section>
 
-			<Section id="page1">
-				<h1>Page 1</h1>
+			<Section id="page1" bgColor="#FFEFDD">
+				<div className={css.page1}>
+					<img
+						id="page1_img_a"
+						src={image.a}
+						style={{
+							width: "100%",
+							height: "100%",
+						}}
+					/>
+
+					<div id="page1_overlay" className={css.overlay}></div>
+
+					<div id="page1_preface" className={css.gradient_border}>
+						<img
+							id="page1_img_i"
+							src={image.i}
+							className={css.border_decoration_left}
+						/>
+						<img
+							id="page1_img_j"
+							src={image.j}
+							className={css.border_decoration_right}
+						/>
+						<div className={css.preface}>
+							<p className={solenoidalFont.className}>
+								Tanpa mengurangi rasa hormat, kami bermaksud mengundang
+								bapak/ibu/saudara/i untuk hadir pada acara pernikahan kami
+							</p>
+						</div>
+					</div>
+				</div>
 			</Section>
 
 			<Music

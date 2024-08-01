@@ -7,6 +7,8 @@ import e from "./e.png";
 import f from "./f.png";
 import g from "./g.png";
 import h from "./h.png";
+import i from "./i.png";
+import j from "./j.png";
 
 export const image = {
 	groom: groom.src,
@@ -18,6 +20,8 @@ export const image = {
 	f: f.src,
 	g: g.src,
 	h: h.src,
+	i: i.src,
+	j: j.src,
 };
 
 export const images = Object.keys(image).map(
