@@ -220,7 +220,10 @@ export default function Component() {
 			);
 
 			const page1Timeline = gsap.timeline({
-				scrollTrigger: "#page1",
+				scrollTrigger: {
+					trigger: "#page1",
+					start: "top bottom-=100px",
+				},
 				defaults: {
 					duration: 0.6,
 				},
