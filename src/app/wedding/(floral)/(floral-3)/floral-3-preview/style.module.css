@@ -286,7 +286,7 @@
 .page3 {
   width: 100%;
   overflow: hidden;
-  background: linear-gradient(#fff 0%, #FFEFDD 20%, #FFEFDD 80%, #fff 100%);
+  background: linear-gradient(#FFEFDD 0%, #669A80 20%, #669A80 80%, #FFEFDD 100%);
   position: relative;
 }
 
