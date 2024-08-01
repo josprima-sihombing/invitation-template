@@ -29,6 +29,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import EnvelopeIcon from "@/components/icons/envelope";
+import Gallery from "@/components/gallery";
+import { galleryImages } from "./galleries";
 
 const Particles = dynamic(() => import("@/components/particles"), {
 	ssr: false,
@@ -551,6 +553,8 @@ export default function Component() {
 					<img src={image.f} className={css.bottom_decoration} />
 
 					<h1 className={hirarkiSignatureFont.className}>Our Moments</h1>
+
+					<Gallery imageUrls={galleryImages} />
 				</div>
 			</Section>
 
