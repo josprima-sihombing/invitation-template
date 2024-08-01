@@ -397,3 +397,10 @@
   padding: 2px;
   border-bottom: 1px solid #fff;
 }
+
+.page4 {
+  padding: 120px 32px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}

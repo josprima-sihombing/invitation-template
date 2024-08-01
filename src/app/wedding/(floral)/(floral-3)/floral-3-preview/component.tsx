@@ -536,6 +536,15 @@ export default function Component() {
 				</div>
 			</Section>
 
+			<Section fullHeight={false} bgColor="#FFEFDD">
+				<div className={css.page4}>
+					<img src={image.f} className={css.top_decoration} />
+					<img src={image.f} className={css.bottom_decoration} />
+
+					<RsvpForm />
+				</div>
+			</Section>
+
 			<Music
 				musicURL="/assets/musics/sweet-moments.wav"
 				play={play}
