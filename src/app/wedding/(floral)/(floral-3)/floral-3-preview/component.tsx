@@ -12,6 +12,7 @@ import {
 	FaCalendarDay,
 	FaClock,
 	FaEnvelope,
+	FaUpRightFromSquare,
 } from "react-icons/fa6";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Music from "@/components/music";
@@ -462,6 +463,74 @@ export default function Component() {
 							</div>
 
 							<h2 className={hirarkiSignatureFont.className}>Fitri</h2>
+						</div>
+					</div>
+				</div>
+			</Section>
+
+			<Section fullHeight={false}>
+				<div className={css.page3}>
+					<h1 className={hirarkiSignatureFont.className}>Acara</h1>
+
+					<div className={css.countdown}>
+						<Countdown2 date={DATA.isoDate} />
+					</div>
+
+					<div className={css.events}>
+						<div className={css.event_decoration}>
+							<img src={image.i} className={css.event_decoration_left} />
+							<img src={image.j} className={css.event_decoration_right} />
+
+							<div className={css.event}>
+								<h2 className={hirarkiSignatureFont.className}>Akad Nikah</h2>
+								<h3 className={solenoidalFont.className}>24 Januari 2024</h3>
+								<h4 className={solenoidalFont.className}>
+									mulai pukul 10.00 pagi
+								</h4>
+								<h5 className={solenoidalFont.className}>
+									di Hotel Mulia Indonesia
+								</h5>
+
+								<div className={css.event_action}>
+									<a href="#" target="_blank" rel="noreferrer">
+										<span>
+											<span className={solenoidalFont.className}>
+												Detail Map
+											</span>
+
+											<FaUpRightFromSquare />
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div className={css.event_decoration}>
+							<img src={image.i} className={css.event_decoration_left} />
+							<img src={image.j} className={css.event_decoration_right} />
+
+							<div className={css.event}>
+								<h2 className={hirarkiSignatureFont.className}>Resepsi</h2>
+								<h3 className={solenoidalFont.className}>24 Januari 2024</h3>
+								<h4 className={solenoidalFont.className}>
+									mulai pukul 10.00 pagi
+								</h4>
+								<h5 className={solenoidalFont.className}>
+									di Hotel Mulia Indonesia
+								</h5>
+
+								<div className={css.event_action}>
+									<a href="#" target="_blank" rel="noreferrer">
+										<span>
+											<span className={solenoidalFont.className}>
+												Detail Map
+											</span>
+
+											<FaUpRightFromSquare />
+										</span>
+									</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
