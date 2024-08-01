@@ -33,6 +33,10 @@ const Particles = dynamic(() => import("@/components/particles"), {
 	ssr: false,
 });
 
+ScrollTrigger.normalizeScroll(true);
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Component() {
 	const [loading, setLoading] = useState(true);
 	const [play, setPlay] = useState(false);
@@ -58,9 +62,6 @@ export default function Component() {
 
 	useEffect(() => {
 		document.body.style.overflow = "hidden";
-
-		gsap.registerPlugin(ScrollTrigger);
-		ScrollTrigger.normalizeScroll(true);
 	}, []);
 
 	useEffect(() => {
