@@ -433,6 +433,40 @@ export default function Component() {
 				</div>
 			</Section>
 
+			<Section fullHeight={false}>
+				<div className={css.page2}>
+					<img src={image.f} className={css.top_decoration} />
+					<img src={image.f} className={css.bottom_decoration} />
+					<div className={css.page2_content}>
+						<h1 className={solenoidalFont.className}>Kami yang berbahagia:</h1>
+
+						<div className={css.person}>
+							<div className={css.person_image}>
+								<img src={image.k} className={css.person_image_border} />
+								<img src={image.personA} className={css.person_image_groom} />
+							</div>
+
+							<h2 className={hirarkiSignatureFont.className}>Hendra Kusuma</h2>
+						</div>
+
+						<div className={css.person_divider}>
+							<img src={image.l} className={css.divider_left} />
+							<img src={image.l} className={css.divider_right} />
+							<h3 className={hirarkiSignatureFont.className}>dengan</h3>
+						</div>
+
+						<div className={css.person}>
+							<div className={css.person_image}>
+								<img src={image.k} className={css.person_image_border} />
+								<img src={image.personB} className={css.person_image_groom} />
+							</div>
+
+							<h2 className={hirarkiSignatureFont.className}>Fitri</h2>
+						</div>
+					</div>
+				</div>
+			</Section>
+
 			<Music
 				musicURL="/assets/musics/sweet-moments.wav"
 				play={play}

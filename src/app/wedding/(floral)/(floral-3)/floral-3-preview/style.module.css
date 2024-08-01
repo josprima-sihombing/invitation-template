@@ -181,3 +181,103 @@
   line-height: 32px;
   text-align: center;
 }
+
+.page2 {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(#fff 0%, #FFEFDD 20%, #FFEFDD 80%, #fff 100%);
+  position: relative;
+}
+
+.top_decoration {
+  position: absolute;
+  width: 120%;
+  max-width: unset;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -40px;
+}
+
+
+.bottom_decoration {
+  position: absolute;
+  width: 120%;
+  max-width: unset;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -40px;
+}
+
+.page2_content {
+  padding: 130px 20px;
+}
+
+.page2 h1 {
+  color: #994A20;
+  text-align: center;
+  font-weight: normal;
+  font-size: 24px;
+  margin-bottom: 48px;
+}
+
+.person_image {
+  position: relative;
+  width: 200px;
+  height: 230px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.person_image_border {
+  position: absolute;
+  width: 120%;
+  max-width: unset;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.person_image_groom {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.person h2{
+  text-align: center;
+  color: #994A20;
+  font-weight: normal;
+  font-size: 32px;
+}
+
+.person_divider {
+  margin: 68px auto;
+  position: relative;
+  display: flex;
+  width: fit-content;
+}
+
+.person_divider h3 {
+  text-align: center;
+  color: #669A80;
+  font-weight: normal;
+  font-size: 32px;
+}
+
+.divider_left, .divider_right {
+  position: absolute;
+  width: 160px;
+  max-width: unset;
+  bottom: 10px;
+}
+
+.divider_left {
+  right: calc(100% + 10px);
+}
+.divider_right {
+  transform: rotateY(180deg);
+  left: calc(100% + 5px);
+}
