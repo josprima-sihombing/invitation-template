@@ -545,6 +545,15 @@ export default function Component() {
 				</div>
 			</Section>
 
+			<Section fullHeight={false} bgColor="#FFEFDD">
+				<div className={css.page5}>
+					<img src={image.f} className={css.top_decoration} />
+					<img src={image.f} className={css.bottom_decoration} />
+
+					<h1 className={hirarkiSignatureFont.className}>Our Moments</h1>
+				</div>
+			</Section>
+
 			<Section bgColor="#FFEFDD">
 				<div className={css.page6}>
 					<img src={image.a} className={css.page6_bg} />
@@ -570,6 +579,8 @@ export default function Component() {
 					<div className={css.overlay} />
 				</div>
 			</Section>
+
+			<Ads />
 
 			<Music
 				musicURL="/assets/musics/sweet-moments.wav"

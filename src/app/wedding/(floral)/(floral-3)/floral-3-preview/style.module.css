@@ -405,6 +405,21 @@
   position: relative;
 }
 
+.page5 {
+  padding: 120px 12px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(#FFEFDD 0%, #669A80 20%, #669A80 80%, #FFEFDD 100%);
+}
+
+.page5 h1 {
+  text-align: center;
+  color: #994A20;
+  font-weight: normal;
+  font-size: 32px;
+}
+
 .page6 {
   width: 100%;
   padding: 32px;
