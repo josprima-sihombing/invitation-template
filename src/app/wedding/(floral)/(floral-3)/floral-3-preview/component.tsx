@@ -33,8 +33,6 @@ const Particles = dynamic(() => import("@/components/particles"), {
 	ssr: false,
 });
 
-ScrollTrigger.normalizeScroll(true);
-
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Component() {
