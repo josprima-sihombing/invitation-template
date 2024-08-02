@@ -31,6 +31,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import EnvelopeIcon from "@/components/icons/envelope";
 import Gallery from "@/components/gallery";
 import { galleryImages } from "./galleries";
+import GsapAnimation from "@/components/gsap-animation";
 
 const Particles = dynamic(() => import("@/components/particles"), {
 	ssr: false,
@@ -282,13 +283,15 @@ export default function Component() {
 		setContainerRef(node);
 	}, []);
 
-	if (loading) {
-		return <FullScreenLoading />;
-	}
+	const imgRef = useRef();
+
+	// if (loading) {
+	// 	return <FullScreenLoading />;
+	// }
 
 	return (
 		<div ref={onRefChange} style={{ height: "100%" }}>
-			<Section bgColor="#FFEFDD">
+			{/* <Section bgColor="#FFEFDD">
 				<div className={css.cover}>
 					<img
 						id="img_a"
@@ -434,11 +437,13 @@ export default function Component() {
 						</div>
 					</div>
 				</div>
-			</Section>
+			</Section> */}
 
 			<Section fullHeight={false}>
 				<div className={css.page2}>
-					<img src={image.f} className={css.top_decoration} />
+					<GsapAnimation effect="slide-in">
+						<img src={image.f} className={css.top_decoration} />
+					</GsapAnimation>
 					<img src={image.f} className={css.bottom_decoration} />
 					<div className={css.page2_content}>
 						<h1 className={solenoidalFont.className}>Kami yang berbahagia:</h1>
