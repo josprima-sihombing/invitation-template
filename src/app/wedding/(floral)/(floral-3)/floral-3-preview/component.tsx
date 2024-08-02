@@ -283,15 +283,13 @@ export default function Component() {
 		setContainerRef(node);
 	}, []);
 
-	const imgRef = useRef();
-
-	// if (loading) {
-	// 	return <FullScreenLoading />;
-	// }
+	if (loading) {
+		return <FullScreenLoading />;
+	}
 
 	return (
 		<div ref={onRefChange} style={{ height: "100%" }}>
-			{/* <Section bgColor="#FFEFDD">
+			<Section bgColor="#FFEFDD">
 				<div className={css.cover}>
 					<img
 						id="img_a"
@@ -437,7 +435,7 @@ export default function Component() {
 						</div>
 					</div>
 				</div>
-			</Section> */}
+			</Section>
 
 			<Section fullHeight={false}>
 				<div className={css.page2}>

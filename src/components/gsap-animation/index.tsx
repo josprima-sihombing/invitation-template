@@ -1,52 +1,38 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { forwardRef, useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
-gsap.registerEffect({
-	name: "slide-in",
-	effect(targets: gsap.TweenTarget) {
-		return gsap.fromTo(
-			targets,
-			{
-				scale: 1,
-			},
-			{
-				scale: 1.5,
-				repeat: 1,
-				ease: "bounce",
-				yoyoEase: "power3",
-			},
-		);
-	},
-});
+gsap.registerPlugin(ScrollTrigger);
 
 type GsapAnimationProps = {
 	children: React.ReactNode;
-	effect: "slide-in";
+	animationName: animationName;
 };
 
-const GsapAnimation = forwardRef<HTMLElement, GsapAnimationProps>(
-	({ children, effect }, ref) => {
-		const animation = useRef();
+type animationName = "slide-in";
 
-		useGSAP(() => {
-			if (gsap.effects[effect]) {
-				const t = gsap.effects[effect](children.ref?.current);
-				animation.current = t;
-			}
-		}, [effect, children]);
-
-		useGSAP(() => {
-			// forward the animation instance if a ref is passed
-			if (typeof ref === "function") {
-				ref(animation.current);
-			} else if (ref) {
-				ref.current = animation.current;
-			}
-		}, [ref]);
-
-		return <>{children}</>;
+const animations: Record<animationName, gsap.TweenVars> = {
+	"slide-in": {
+		y: 200,
+		opacity: 0,
 	},
-);
+};
+
+const GsapAnimation = ({ children, animationName }: GsapAnimationProps) => {
+	const elementRef = useRef<HTMLSpanElement>(null);
+
+	useGSAP(() => {
+		gsap.from(elementRef.current?.children as gsap.TweenTarget, {
+			scrollTrigger: {
+				trigger: elementRef.current?.children,
+				start: "top bottom-=100px",
+			},
+			...animations[animationName],
+		});
+	}, [elementRef]);
+
+	return <span ref={elementRef}>{children}</span>;
+};
 
 export default GsapAnimation;
