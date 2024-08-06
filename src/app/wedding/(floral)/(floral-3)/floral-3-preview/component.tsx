@@ -165,30 +165,23 @@ export default function Component() {
 				5,
 			);
 
-			timeline.from(
-				"#img_h",
-				{
-					x: "-=100%",
-					opacity: 0,
-					duration: 2,
-				},
-				6,
-			);
-
-			timeline.fromTo(
-				"#img_h",
-				{
-					rotate: "5deg",
-				},
-				{
-					rotate: "-10deg",
+			timeline
+				.from(
+					"#img_h",
+					{
+						x: "-=100%",
+						opacity: 0,
+						duration: 2,
+					},
+					6,
+				)
+				.to("#img_h", {
+					rotate: "+=10deg",
 					duration: 5,
 					repeat: -1,
 					yoyo: true,
 					ease: "none",
-				},
-				5,
-			);
+				});
 
 			timeline.from(
 				"#name",
@@ -272,6 +265,139 @@ export default function Component() {
 				},
 				1.2,
 			);
+
+			gsap.from("#page2_img_f_top", {
+				y: "-=100",
+				opacity: 0,
+				duration: 0.6,
+				scrollTrigger: {
+					trigger: "#page2_img_f_top",
+					start: "top bottom-=200px",
+				},
+			});
+
+			gsap.from("#page2_img_f_bottom", {
+				y: "+=100",
+				opacity: 0,
+				duration: 0.6,
+				scrollTrigger: {
+					trigger: "#page2_img_f_bottom",
+					start: "top bottom+=100px",
+				},
+			});
+
+			gsap.from("#page2_title", {
+				y: "-=100",
+				opacity: 0,
+				duration: 0.6,
+				scrollTrigger: {
+					trigger: "#page2_title",
+					start: "top bottom-=200px",
+				},
+			});
+
+			gsap.from("#person_1_img", {
+				y: "-=100",
+				opacity: 0,
+				duration: 0.6,
+				scrollTrigger: {
+					trigger: "#person_1_img",
+					start: "top bottom-=100px",
+				},
+			});
+
+			gsap.from("#person_1_name", {
+				x: "-=100",
+				opacity: 0,
+				duration: 0.6,
+				scrollTrigger: {
+					trigger: "#person_1_name",
+					start: "top bottom-=50px",
+				},
+			});
+
+			gsap.from("#person_divider", {
+				y: "-=100",
+				opacity: 0,
+				duration: 0.6,
+				scrollTrigger: {
+					trigger: "#person_divider",
+					start: "top bottom-=200px",
+				},
+			});
+
+			gsap.from("#person_2_img", {
+				y: "-=100",
+				opacity: 0,
+				duration: 0.6,
+				scrollTrigger: {
+					trigger: "#person_2_img",
+					start: "top bottom-=200px",
+				},
+			});
+
+			gsap.from("#person_2_name", {
+				x: "-=100",
+				opacity: 0,
+				duration: 0.6,
+				scrollTrigger: {
+					trigger: "#person_2_name",
+					start: "top bottom-=50px",
+				},
+			});
+
+			gsap.from("#page3_title", {
+				y: "-=100",
+				opacity: 0,
+				duration: 0.6,
+				scrollTrigger: {
+					trigger: "#page3_title",
+					start: "top bottom-=200px",
+				},
+			});
+
+			gsap.from("#countdown", {
+				y: "-=100",
+				opacity: 0,
+				duration: 0.6,
+				scrollTrigger: {
+					trigger: "#countdown",
+					start: "top bottom-=200px",
+				},
+			});
+
+			gsap.from("#events>div", {
+				y: "-=100",
+				opacity: 0,
+				duration: 0.6,
+				stagger: 1,
+				scrollTrigger: {
+					trigger: "#events>div",
+					start: "top bottom-=200px",
+				},
+			});
+
+			gsap.from("#page5_title", {
+				y: "-=100",
+				opacity: 0,
+				duration: 0.6,
+				stagger: 1,
+				scrollTrigger: {
+					trigger: "#page5_title",
+					start: "top bottom-=200px",
+				},
+			});
+
+			gsap.from("#gallery>div", {
+				x: "-=100",
+				opacity: 0,
+				duration: 0.6,
+				stagger: 0.5,
+				scrollTrigger: {
+					trigger: "#gallery>div",
+					start: "top bottom-=10px",
+				},
+			});
 		},
 		{
 			dependencies: [containerRef],
@@ -377,7 +503,6 @@ export default function Component() {
 						style={{
 							width: "250px",
 							bottom: "-30px",
-							transform: "rotate(-10deg)",
 							transformOrigin: "bottom center",
 							left: "-80px",
 							zIndex: 1,
@@ -436,35 +561,50 @@ export default function Component() {
 				</div>
 			</Section>
 
-			<Section fullHeight={false}>
+			<Section fullHeight={false} id="page2">
 				<div className={css.page2}>
-					<img src={image.f} className={css.top_decoration} />
-					<img src={image.f} className={css.bottom_decoration} />
+					<img
+						id="page2_img_f_top"
+						src={image.f}
+						className={css.top_decoration}
+					/>
+					<img
+						id="page2_img_f_bottom"
+						src={image.f}
+						className={css.bottom_decoration}
+					/>
+
 					<div className={css.page2_content}>
-						<h1 className={solenoidalFont.className}>Kami yang berbahagia:</h1>
+						<h1 className={solenoidalFont.className} id="page2_title">
+							Kami yang berbahagia:
+						</h1>
 
 						<div className={css.person}>
-							<div className={css.person_image}>
+							<div className={css.person_image} id="person_1_img">
 								<img src={image.k} className={css.person_image_border} />
 								<img src={image.personA} className={css.person_image_groom} />
 							</div>
 
-							<h2 className={hirarkiSignatureFont.className}>Hendra Kusuma</h2>
+							<h2 className={hirarkiSignatureFont.className} id="person_1_name">
+								Hendra Kusuma
+							</h2>
 						</div>
 
-						<div className={css.person_divider}>
+						<div className={css.person_divider} id="person_divider">
 							<img src={image.l} className={css.divider_left} />
 							<img src={image.l} className={css.divider_right} />
 							<h3 className={hirarkiSignatureFont.className}>dengan</h3>
 						</div>
 
 						<div className={css.person}>
-							<div className={css.person_image}>
+							<div className={css.person_image} id="person_2_img">
 								<img src={image.k} className={css.person_image_border} />
 								<img src={image.personB} className={css.person_image_groom} />
 							</div>
 
-							<h2 className={hirarkiSignatureFont.className}>Fitri</h2>
+							<h2 className={hirarkiSignatureFont.className} id="person_2_name">
+								Fitri
+							</h2>
 						</div>
 					</div>
 				</div>
@@ -472,13 +612,15 @@ export default function Component() {
 
 			<Section fullHeight={false}>
 				<div className={css.page3}>
-					<h1 className={hirarkiSignatureFont.className}>Acara</h1>
+					<h1 className={hirarkiSignatureFont.className} id="page3_title">
+						Acara
+					</h1>
 
-					<div className={css.countdown}>
+					<div className={css.countdown} id="countdown">
 						<Countdown2 date={DATA.isoDate} />
 					</div>
 
-					<div className={css.events}>
+					<div className={css.events} id="events">
 						<div className={css.event_decoration}>
 							<img src={image.i} className={css.event_decoration_left} />
 							<img src={image.j} className={css.event_decoration_right} />
@@ -549,12 +691,13 @@ export default function Component() {
 
 			<Section fullHeight={false} bgColor="#FFEFDD">
 				<div className={css.page5}>
-					<img src={image.f} className={css.top_decoration} />
 					<img src={image.f} className={css.bottom_decoration} />
 
-					<h1 className={hirarkiSignatureFont.className}>Our Moments</h1>
+					<h1 className={hirarkiSignatureFont.className} id="page5_title">
+						Our Moments
+					</h1>
 
-					<Gallery imageUrls={galleryImages} />
+					<Gallery imageUrls={galleryImages} id="gallery" />
 				</div>
 			</Section>
 
