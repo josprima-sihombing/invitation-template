@@ -6,23 +6,14 @@ import dynamic from "next/dynamic";
 
 import css from "./style.module.css";
 import { hirarkiSignatureFont, solenoidalFont } from "@/fonts";
-import {
-	FaArrowUpRightFromSquare,
-	FaBuilding,
-	FaCalendarDay,
-	FaClock,
-	FaEnvelope,
-	FaUpRightFromSquare,
-} from "react-icons/fa6";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { FaUpRightFromSquare } from "react-icons/fa6";
+import { useCallback, useEffect, useState } from "react";
 import Music from "@/components/music";
 import getName from "@/utils/get-name";
 import FullScreenLoading from "@/components/fullscreen-loading";
 import preloadImage from "@/utils/preload-image";
-import classNames from "classnames";
 import DATA from "./data";
 import Countdown2 from "@/components/countdown/countdown-2";
-import formatDate from "@/utils/format-date";
 import RsvpForm from "@/components/rsvp-form";
 import Ads from "@/components/ads";
 import { useGSAP } from "@gsap/react";
