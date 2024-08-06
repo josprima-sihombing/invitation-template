@@ -3,5 +3,14 @@ export default function PageLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	return <main>{children}</main>;
+	return (
+		<main
+			style={{
+				maxWidth: "768px",
+				margin: "0 auto",
+			}}
+		>
+			{children}
+		</main>
+	);
 }
