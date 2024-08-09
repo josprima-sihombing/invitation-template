@@ -33,7 +33,14 @@
 			},
 			"security": {
 				"noDangerouslySetInnerHtml": "warn"
+			},
+			"complexity": {
+				"noForEach": "off"
 			}
 		}
+	},
+	"formatter": {
+		"indentStyle": "space",
+		"indentWidth": 2
 	}
 }
