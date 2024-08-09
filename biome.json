@@ -18,7 +18,8 @@
 			"recommended": true,
 			"a11y": {
 				"useAltText": "off",
-				"useValidAnchor": "off"
+				"useValidAnchor": "off",
+				"useButtonType": "off"
 			},
 			"style": {
 				"useSelfClosingElements": "off",
