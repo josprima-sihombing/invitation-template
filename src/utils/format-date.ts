@@ -8,9 +8,9 @@ dayjs.locale();
 type Locale = "en" | "id";
 
 export default function formatDate(
-	date: Date | string,
-	format = "DD MMMM YYYY",
-	locale: Locale = "en",
+  date: Date | string,
+  format = "DD MMMM YYYY",
+  locale: Locale = "en",
 ) {
-	return dayjs(date).locale(locale).format(format);
+  return dayjs(date).locale(locale).format(format);
 }

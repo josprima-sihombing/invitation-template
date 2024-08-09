@@ -3,8 +3,8 @@
 import { useScrollRestorer } from "next-scroll-restorer";
 
 const ClientSideScrollRestorer = () => {
-	useScrollRestorer();
-	return <></>;
+  useScrollRestorer();
+  return <></>;
 };
 
 export default ClientSideScrollRestorer;

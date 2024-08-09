@@ -10,21 +10,21 @@ const files = fs.readdirSync(assetsDirectory);
 let fileContent = "";
 
 files.forEach((file) => {
-	if (/\.(png|jpg|jpeg|gif|svg)$/.test(file)) {
-		const variableName = `image${file.replace(/\.(png|jpg|jpeg|gif|svg)$/, "")}`;
+  if (/\.(png|jpg|jpeg|gif|svg)$/.test(file)) {
+    const variableName = `image${file.replace(/\.(png|jpg|jpeg|gif|svg)$/, "")}`;
 
-		fileContent += `import ${variableName} from "./${file}";\n`;
-	}
+    fileContent += `import ${variableName} from "./${file}";\n`;
+  }
 });
 
 fileContent += "\nexport const images = {\n";
 
 files.forEach((file) => {
-	if (/\.(png|jpg|jpeg|gif|svg)$/.test(file)) {
-		const variableName = `image${file.replace(/\.(png|jpg|jpeg|gif|svg)$/, "")}`;
+  if (/\.(png|jpg|jpeg|gif|svg)$/.test(file)) {
+    const variableName = `image${file.replace(/\.(png|jpg|jpeg|gif|svg)$/, "")}`;
 
-		fileContent += `  ${variableName}: ${variableName}.src,\n`;
-	}
+    fileContent += `  ${variableName}: ${variableName}.src,\n`;
+  }
 });
 
 fileContent += "};\n";

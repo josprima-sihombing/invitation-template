@@ -1,16 +1,16 @@
 export default function PageLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return (
-		<main
-			style={{
-				maxWidth: "768px",
-				margin: "0 auto",
-			}}
-		>
-			{children}
-		</main>
-	);
+  return (
+    <main
+      style={{
+        maxWidth: "768px",
+        margin: "0 auto",
+      }}
+    >
+      {children}
+    </main>
+  );
 }

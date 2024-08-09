@@ -3,16 +3,16 @@ import "./globals.css";
 import ClientSideScrollRestorer from "@/components/scroll-restorer";
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return (
-		<html lang="en">
-			<body>{children}</body>
-			<Suspense>
-				<ClientSideScrollRestorer />
-			</Suspense>
-		</html>
-	);
+  return (
+    <html lang="en">
+      <body>{children}</body>
+      <Suspense>
+        <ClientSideScrollRestorer />
+      </Suspense>
+    </html>
+  );
 }

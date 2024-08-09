@@ -10,18 +10,18 @@ import f from "./f.png";
 import g from "./g.png";
 
 export const image = {
-	bg: bg.src,
-	personA: personA.src,
-	personB: personB.src,
-	a: a.src,
-	b: b.src,
-	c: c.src,
-	d: d.src,
-	e: e.src,
-	f: f.src,
-	g: g.src,
+  bg: bg.src,
+  personA: personA.src,
+  personB: personB.src,
+  a: a.src,
+  b: b.src,
+  c: c.src,
+  d: d.src,
+  e: e.src,
+  f: f.src,
+  g: g.src,
 };
 
 export const images = Object.keys(image).map(
-	(key) => image[key as keyof typeof image],
+  (key) => image[key as keyof typeof image],
 );

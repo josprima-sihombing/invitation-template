@@ -1,47 +1,47 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
-	"organizeImports": {
-		"enabled": false
-	},
-	"files": {
-		"ignore": [
-			".next",
-			".vercel",
-			".husky",
-			"node_modules",
-			"src/libs/particles.js"
-		]
-	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"recommended": true,
-			"a11y": {
-				"useAltText": "off",
-				"useValidAnchor": "off",
-				"useButtonType": "off"
-			},
-			"style": {
-				"useSelfClosingElements": "off",
-				"noNonNullAssertion": "off"
-			},
-			"suspicious": {
-				"noExplicitAny": "warn",
-				"noAsyncPromiseExecutor": "off"
-			},
-			"correctness": {
-				"useExhaustiveDependencies": "warn"
-			},
-			"security": {
-				"noDangerouslySetInnerHtml": "warn"
-			},
-			"complexity": {
-				"noForEach": "off"
-			}
-		}
-	},
-	"formatter": {
-		"indentStyle": "space",
-		"indentWidth": 2
-	}
+  "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+  "organizeImports": {
+    "enabled": false
+  },
+  "files": {
+    "ignore": [
+      ".next",
+      ".vercel",
+      ".husky",
+      "node_modules",
+      "src/libs/particles.js"
+    ]
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "useAltText": "off",
+        "useValidAnchor": "off",
+        "useButtonType": "off"
+      },
+      "style": {
+        "useSelfClosingElements": "off",
+        "noNonNullAssertion": "off"
+      },
+      "suspicious": {
+        "noExplicitAny": "warn",
+        "noAsyncPromiseExecutor": "off"
+      },
+      "correctness": {
+        "useExhaustiveDependencies": "warn"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "warn"
+      },
+      "complexity": {
+        "noForEach": "off"
+      }
+    }
+  },
+  "formatter": {
+    "indentStyle": "space",
+    "indentWidth": 2
+  }
 }
