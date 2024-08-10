@@ -4,6 +4,8 @@ const defaultColors = {
   three: "#0A3B54",
   four: "#0B2033",
   five: "#509ADC",
+  six: "#FF83CD",
+  seven: "#991B67",
 };
 
 const greenColors = {
@@ -12,6 +14,8 @@ const greenColors = {
   three: "green",
   four: "blue",
   five: "purple",
+  six: "#FF83CD",
+  seven: "#991B67",
 };
 
 export type Config = {
