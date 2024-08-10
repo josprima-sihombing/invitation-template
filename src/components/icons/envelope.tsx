@@ -16,7 +16,7 @@ export default function EnvelopeIcon({
       xmlns="http://www.w3.org/2000/svg"
     >
       <title>envelope icon</title>
-      <g clip-path="url(#clip0_133_73)">
+      <g clipPath="url(#clip0_133_73)">
         <path
           d="M0.29187 4.72353L1.26413 5.44808V3.74507L0.29187 4.72353Z"
           fill={color}

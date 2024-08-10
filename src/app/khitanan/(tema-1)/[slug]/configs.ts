@@ -14,11 +14,15 @@ const greenColors = {
   five: "purple",
 };
 
-const blueConfig = {
+export type Config = {
+  colors: typeof defaultColors;
+};
+
+const blueConfig: Config = {
   colors: defaultColors,
 };
 
-const greenConfig = {
+const greenConfig: Config = {
   colors: greenColors,
 };
 
