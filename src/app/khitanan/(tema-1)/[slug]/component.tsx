@@ -11,6 +11,7 @@ import { FaCopy, FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
 import Ads from "@/components/ads";
 import dynamic from "next/dynamic";
 import toast, { Toaster } from "react-hot-toast";
+import getName from "@/utils/get-name";
 
 const Music = dynamic(() => import("@/components/music"), {
   ssr: false,
@@ -30,6 +31,7 @@ export default function Component({ config }: ComponentProps) {
   const [play, setPlay] = useState(false);
   const [hideMusic, setHideMusic] = useState(true);
   const invitationContentRef = useRef<HTMLDivElement>(null);
+  const guestName = getName();
 
   const openInvitation = () => {
     setOpened(true);
@@ -179,7 +181,7 @@ export default function Component({ config }: ComponentProps) {
                 color: colors.two,
               }}
             >
-              Tamu Undangan
+              {guestName || "Tamu Undangan"}
             </p>
 
             <button
