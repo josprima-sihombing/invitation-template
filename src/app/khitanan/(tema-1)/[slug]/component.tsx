@@ -241,7 +241,7 @@ export default function Component({ config }: ComponentProps) {
             </div>
           </div>
 
-          <div className="relative h-full overflow-hidden">
+          <div className="relative overflow-hidden">
             <div
               className="absolute w-full h-full top-0 left-0"
               style={{
@@ -278,9 +278,19 @@ export default function Component({ config }: ComponentProps) {
               className="absolute left-0 bottom-0 w-full max-h-[100px]"
             />
 
-            <div className="relative">
-              <p>Aqiqah</p>
-              <p>Arsy Rahajeng Bintang Rayeswari</p>
+            <div className="relative pt-[160px] pb-[380px] px-8 text-center">
+              <p
+                className="font-heading text-2xl"
+                style={{ color: colors.one }}
+              >
+                Aqiqah
+              </p>
+              <p
+                className="font-decorative text-3xl shadow-sm"
+                style={{ color: colors.two }}
+              >
+                Arsy Rahajeng Bintang Rayeswari
+              </p>
             </div>
           </div>
 
@@ -301,32 +311,90 @@ export default function Component({ config }: ComponentProps) {
               />
             </div>
 
-            <div className="relative p-4">
-              <p>Yang InsyaAllah akan dilaksanakan :</p>
+            <div className="relative px-4 py-12">
+              <p
+                className="text-center mb-8 font-heading text-lg"
+                style={{ color: colors.two }}
+              >
+                Yang InsyaAllah akan dilaksanakan :
+              </p>
 
-              <div className="p-4 rounded-3xl bg-red-500">
-                <div className="p-4 rounded-3xl bg-green-500">
-                  <p>Acara Masak-Masak</p>
-                  <p>Rabu, 11 September 2024</p>
-                  <p>Mulai pukul 08.30 WIB s/d selesai</p>
-                  <p>Hiburan Orgen Tunggal "Rudi Music"</p>
+              <div
+                className="p-4 rounded-3xl"
+                style={{
+                  backgroundColor: colors.two,
+                }}
+              >
+                <div
+                  className="px-4 py-10 rounded-[1rem] text-center mb-4"
+                  style={{
+                    backgroundColor: colors.three,
+                  }}
+                >
+                  <p
+                    className="font-decorative text-2xl mb-4"
+                    style={{ color: colors.two }}
+                  >
+                    Acara Masak-Masak
+                  </p>
+                  <p className="text-xl mb-2" style={{ color: colors.one }}>
+                    Rabu, 11 September 2024
+                  </p>
+                  <p
+                    className="mb-3 max-w-[220px] mx-auto"
+                    style={{ color: colors.one }}
+                  >
+                    Mulai pukul 08.30 WIB s/d selesai
+                  </p>
+                  <p
+                    className="font-heading text-xl"
+                    style={{ color: colors.two }}
+                  >
+                    Hiburan Orgen Tunggal "Rudi Music"
+                  </p>
+                </div>
+                <div
+                  className="px-4 py-10 rounded-[1rem] text-center mb-8"
+                  style={{
+                    backgroundColor: colors.three,
+                  }}
+                >
+                  <p
+                    className="font-decorative text-2xl mb-4"
+                    style={{ color: colors.two }}
+                  >
+                    Acara Persedekahan/Resepsi
+                  </p>
+                  <p className="text-xl mb-2" style={{ color: colors.one }}>
+                    Kamis, 12 September 2024
+                  </p>
+                  <p
+                    className="mb-3 max-w-[220px] mx-auto"
+                    style={{ color: colors.one }}
+                  >
+                    Mulai pukul 09.00 WIB s/d selesai
+                  </p>
+                  <p
+                    className="font-heading text-xl"
+                    style={{ color: colors.two }}
+                  >
+                    Hiburan OM. Sumber Harta Music
+                  </p>
                 </div>
 
-                <div className="p-4 rounded-3xl bg-green-500">
-                  <p>Acara Persedekahan/Resepsi</p>
-                  <p>Kamis, 12 September 2024</p>
-                  <p>Mulai pukul 09.00 WIB s/d selesai</p>
-                  <p>Hiburan OM. Sumber Harta Music</p>
-                </div>
-
-                <p>
+                <p className="font-heading text-center text-xl">
                   Alamat:
                   <br />
-                  Dusun II Km.9 Bamasco Kec. Tuah Negeri
+                  Dusun II Km.9 Bamasco
+                  <br />
+                  Kec. Tuah Negeri
                 </p>
               </div>
 
-              <p>
+              <p
+                className="font-heading my-12 px-4 text-center text-xl italic"
+                style={{ color: colors.two }}
+              >
                 Menjadi sebuah Kesan yang mendalam akan terukir di hati kami,
                 serta diiringi ucapan doa dan terima kasih yang tulus, apabila
                 Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a restu
