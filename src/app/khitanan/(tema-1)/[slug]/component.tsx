@@ -432,7 +432,7 @@ export default function Component({ config }: ComponentProps) {
             </div>
           </div>
 
-          {/* <div className="relative p-4">
+          <div className="relative p-4">
             <div
               className="absolute w-full h-full top-0 left-0"
               style={{
@@ -449,10 +449,10 @@ export default function Component({ config }: ComponentProps) {
               />
             </div>
 
-            <div className="relative p-4 bg-white/45 rounded-lg">
-              <RsvpForm />
+            <div className="relative p-4 bg-white/80 rounded-lg">
+              <RsvpForm language="id" />
             </div>
-          </div> */}
+          </div>
 
           <div className="relative pb-32 pt-10 px-4">
             <div

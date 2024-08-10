@@ -5,8 +5,40 @@ import { useForm } from "react-hook-form";
 import css from "./rsvp-form.module.css";
 import { solenoidalFont } from "@/fonts";
 
-export default function RsvpForm() {
+type RsvpFormProps = {
+  language?: "id" | "en";
+};
+
+const dictionary = {
+  en: {
+    formTitle: "Please submit your rsvp below",
+    name: "Name",
+    namePlaceholder: "Your name...",
+    phoneNumber: "Phone Number",
+    phoneNumberPlaceholder: "08xxx",
+    wish: "Your wish for us",
+    attend: "Attend?",
+    yes: "Yes",
+    no: "No",
+    submit: "Submit",
+  },
+  id: {
+    formTitle: "Ucapan & Doa Terbaik Anda!",
+    name: "Nama Anda",
+    namePlaceholder: "Isikan nama anda...",
+    phoneNumber: "No. HP",
+    phoneNumberPlaceholder: "08xxx",
+    wish: "Kirim Ucapan",
+    attend: "Bersedia Hadir?",
+    yes: "Ya",
+    no: "Tidak",
+    submit: "Kirim",
+  },
+};
+
+export default function RsvpForm({ language = "en" }: RsvpFormProps) {
   const onSubmit = () => {};
+  const t = dictionary[language];
 
   const {
     register,
@@ -18,19 +50,17 @@ export default function RsvpForm() {
 
   return (
     <div className={css.form}>
-      <h1 className={solenoidalFont.className}>
-        Please submit your rsvp below
-      </h1>
+      <h1 className={solenoidalFont.className}>{t.formTitle}</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={css.form_field}>
           <label htmlFor="name" className={solenoidalFont.className}>
-            Name
+            {t.name}
           </label>
           <input
             id="name"
             type="text"
-            placeholder="Your name..."
+            placeholder={t.namePlaceholder}
             className={solenoidalFont.className}
             {...register("name")}
           />
@@ -38,12 +68,12 @@ export default function RsvpForm() {
         </div>
         <div className={css.form_field}>
           <label htmlFor="phone_number" className={solenoidalFont.className}>
-            Phone Number
+            {t.phoneNumber}
           </label>
           <input
             id="phone_number"
             type="text"
-            placeholder="08xx"
+            placeholder={t.phoneNumberPlaceholder}
             className={solenoidalFont.className}
             {...register("phoneNumber")}
           />
@@ -51,7 +81,7 @@ export default function RsvpForm() {
         </div>
         <div className={css.form_field}>
           <label htmlFor="wish" className={solenoidalFont.className}>
-            Your wish for us
+            {t.wish}
           </label>
           <textarea
             id="wish"
@@ -64,17 +94,17 @@ export default function RsvpForm() {
 
         <div className={css.form_field}>
           <label htmlFor="attend" className={solenoidalFont.className}>
-            Attend?
+            {t.attend}
           </label>
 
           <div className={css.radio_container}>
             <div className={css.radio}>
               <input type="radio" value="true" {...register("attend")} />
-              <span className={solenoidalFont.className}>Yes</span>
+              <span className={solenoidalFont.className}>{t.yes}</span>
             </div>
             <div className={css.radio}>
               <input type="radio" value="false" {...register("attend")} />
-              <span className={solenoidalFont.className}>No</span>
+              <span className={solenoidalFont.className}>{t.no}</span>
             </div>
           </div>
 
@@ -82,7 +112,7 @@ export default function RsvpForm() {
         </div>
 
         <button type="submit" className={solenoidalFont.className}>
-          Submit
+          {t.submit}
         </button>
       </form>
     </div>
