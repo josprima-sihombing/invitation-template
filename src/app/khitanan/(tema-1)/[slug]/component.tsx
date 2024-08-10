@@ -7,7 +7,7 @@ import EnvelopeIcon from "@/components/icons/envelope";
 import { useEffect, useRef, useState } from "react";
 import type { Config } from "./configs";
 import RsvpForm from "@/components/rsvp-form";
-import { FaCopy } from "react-icons/fa6";
+import { FaCopy, FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
 
 type ComponentProps = {
   config: Config;
@@ -391,19 +391,33 @@ export default function Component({ config }: ComponentProps) {
                 </p>
               </div>
 
+              <div className="mt-12 mb-4 text-center opacity-60">
+                <FaQuoteLeft
+                  className="mx-auto text-3xl"
+                  style={{ color: colors.two }}
+                />
+              </div>
+
               <p
-                className="font-heading my-12 px-4 text-center text-xl italic"
+                className="font-heading px-4 text-center text-xl italic"
                 style={{ color: colors.two }}
               >
                 Menjadi sebuah Kesan yang mendalam akan terukir di hati kami,
                 serta diiringi ucapan doa dan terima kasih yang tulus, apabila
                 Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a restu
-                kepada putra kami.
+                kepada putra dan putri kami.
               </p>
+
+              <div className="mb-12 mt-4 text-center opacity-60">
+                <FaQuoteRight
+                  className="mx-auto text-3xl"
+                  style={{ color: colors.two }}
+                />
+              </div>
             </div>
           </div>
 
-          <div className="relative">
+          {/* <div className="relative p-4">
             <div
               className="absolute w-full h-full top-0 left-0"
               style={{
@@ -420,12 +434,12 @@ export default function Component({ config }: ComponentProps) {
               />
             </div>
 
-            <div className="relative">
+            <div className="relative p-4 bg-white/45 rounded-lg">
               <RsvpForm />
             </div>
-          </div>
+          </div> */}
 
-          <div className="relative">
+          <div className="relative pb-32 pt-10 px-4">
             <div
               className="absolute w-full h-full top-0 left-0"
               style={{
@@ -442,26 +456,38 @@ export default function Component({ config }: ComponentProps) {
               />
             </div>
 
-            <div className="relative py-10 px-4">
+            <div className="relative py-10 px-4 bg-white/80 rounded-xl">
               <div className="py-10 px-4">
-                <p>Amplop Digital</p>
-                <p>
+                <p
+                  className="text-center font-special text-3xl mb-2"
+                  style={{ color: colors.four }}
+                >
+                  Amplop Digital
+                </p>
+                <p
+                  className="text-center font-heading text-lg mb-8"
+                  style={{ color: colors.four }}
+                >
                   Doa Restu Anda merupakan karunia yang sangat berarti bagi
                   kami. Namun jika memberi adalah ungkapan tanda kasih Anda,
                   Anda dapat memberi kado secara cashless.
                 </p>
 
-                <div className="p-4 bg-red-500">
+                <div className="p-4 bg-[#00529C] rounded-xl aspect-[3/1.8] max-w-[280px] mx-auto flex flex-col justify-between border border-white drop-shadow-2xl">
                   <img
                     src={images.image15}
-                    className="p-2 bg-red-200 w-[65px] rounded-md"
+                    className="px-2 py-1 bg-white w-[45px] rounded-sm"
                   />
 
-                  <p>567801008101535</p>
-                  <p>a/n: Yeti Elita Sari</p>
+                  <div>
+                    <p className="text-lg" style={{ color: colors.two }}>
+                      567801008101535
+                    </p>
+                    <p className="text-white">a/n: Yeti Elita Sari</p>
+                  </div>
                 </div>
 
-                <button className="flex gap-2 items-center">
+                <button className="flex gap-2 items-center bg-white rounded-lg px-2 py-1 mx-auto mt-3 text-[#00529C]">
                   <FaCopy />
                   <span>Salin No.Rekening</span>
                 </button>
@@ -469,7 +495,7 @@ export default function Component({ config }: ComponentProps) {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative pt-[80px] pb-[280px] px-4 overflow-hidden">
             <div
               className="absolute w-full h-full top-0 left-0"
               style={{
@@ -486,17 +512,41 @@ export default function Component({ config }: ComponentProps) {
               />
             </div>
 
-            <img src={images.image13} className="absolute" />
-            <img src={images.image13} className="absolute" />
+            <img
+              src={images.image13}
+              className="absolute -bottom-[32px] left-0 h-[190px]"
+            />
+            <img
+              src={images.image13}
+              className="absolute -bottom-[32px] right-0 h-[190px]"
+              style={{
+                transform: "scaleX(-1)",
+                WebkitTransform: "scaleX(-1)",
+              }}
+            />
 
-            <div className="relative py-10 px-4">
-              <div className="relative py-10 px-4">
-                <img src={images.image12} className="absolute" />
-                <p>
-                  Atas kehadiran serta do'a restunya kami haturkan terima kasih.
-                </p>
-                <p>Wassalamualaikum Wr. Wb.</p>
-              </div>
+            <div
+              className="relative py-10 px-8 rounded-xl"
+              style={{
+                backgroundColor: colors.two,
+              }}
+            >
+              <img
+                src={images.image12}
+                className="absolute top-full left-1/2 -translate-x-1/2 w-[180px]"
+              />
+              <p
+                className="text-center font-heading text-xl"
+                style={{ color: colors.four }}
+              >
+                Atas kehadiran serta do'a restunya kami haturkan terima kasih.
+              </p>
+              <p
+                className="text-center font-heading text-xl mt-4"
+                style={{ color: colors.four }}
+              >
+                Wassalamualaikum Wr. Wb.
+              </p>
             </div>
           </div>
         </div>
