@@ -31,7 +31,12 @@ export default function Component({ config }: ComponentProps) {
   }, [opened]);
 
   return (
-    <div className={classNames("max-w-xl h-full mx-auto", fontsVariable)}>
+    <div
+      className={classNames(
+        "max-w-xl h-full mx-auto font-primary",
+        fontsVariable,
+      )}
+    >
       <div className="relative h-full overflow-hidden">
         <div
           className="absolute w-full h-full top-0 left-0"
@@ -182,7 +187,7 @@ export default function Component({ config }: ComponentProps) {
 
       {opened && (
         <div ref={invitationContentRef} className="h-full">
-          <div className="relative h-full overflow-hidden">
+          <div className="relative overflow-hidden">
             <div
               className="absolute w-full h-full top-0 left-0"
               style={{
@@ -212,15 +217,27 @@ export default function Component({ config }: ComponentProps) {
               className="absolute left-0 bottom-0 w-full max-h-[100px]"
             />
 
-            <div className="h-full relative">
-              <p>Assalamualaikum Wr. Wb.</p>
-              <p>
+            <div className="relative pt-[60px] pb-[420px] px-8 text-center">
+              <p style={{ color: colors.two }} className="pb-8">
+                Assalamualaikum Wr. Wb.
+              </p>
+              <p style={{ color: colors.two }} className="pb-8">
                 Dengan memohon rahmat & ridha Allah SWT. Kami bermaksud
-                menyelenggarakan acara Khitan dan acara Aqiqah putra dan putri
+                menyelenggarakan acara Khitan dan acara Aqiqah, putra dan putri
                 kami :
               </p>
-              <p>Khitanan</p>
-              <p>Arsakha Virendra Pradipta</p>
+              <p
+                className="font-heading text-2xl"
+                style={{ color: colors.one }}
+              >
+                Khitanan
+              </p>
+              <p
+                className="font-decorative text-3xl"
+                style={{ color: colors.two }}
+              >
+                Arsakha Virendra Pradipta
+              </p>
             </div>
           </div>
 
