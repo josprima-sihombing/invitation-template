@@ -44,6 +44,18 @@ export default function Page({
           alt=""
           className="w-full absolute left-0 top-0 max-h-[120px] object-cover"
         />
+
+        <img
+          src={images.image4}
+          alt=""
+          className="absolute right-4 top-0 w-[80px]"
+        />
+
+        <img
+          src={images.image5}
+          alt=""
+          className="absolute left-4 top-0 w-[80px]"
+        />
         <div className="text-center pt-[80px] relative h-full flex flex-col gap-14">
           <p
             className="text-3xl font-special"
