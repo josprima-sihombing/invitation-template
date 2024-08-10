@@ -8,3 +8,5 @@ export const schema = yup
     attend: yup.boolean().required("Please confirm your attendant"),
   })
   .required();
+
+export type Schema = yup.InferType<typeof schema>;

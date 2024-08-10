@@ -449,12 +449,19 @@ export default function Component({ config }: ComponentProps) {
               />
             </div>
 
-            <div className="relative p-4 bg-white/80 rounded-lg">
-              <RsvpForm language="id" />
+            <div className="relative p-4 bg-white rounded-lg">
+              <RsvpForm
+                language="id"
+                afterSubmit={() => {
+                  document
+                    .querySelector("#amplop-digital")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              />
             </div>
           </div>
 
-          <div className="relative pb-32 pt-10 px-4">
+          <div className="relative pb-32 pt-10 px-4" id="amplop-digital">
             <div
               className="absolute w-full h-full top-0 left-0"
               style={{

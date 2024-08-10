@@ -1,12 +1,17 @@
-import { schema } from "@/schemas";
+import { type Schema, schema } from "@/schemas";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
+import { type SubmitHandler, useForm } from "react-hook-form";
 
 import css from "./rsvp-form.module.css";
 import { solenoidalFont } from "@/fonts";
+import { useState } from "react";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { usePathname } from "next/navigation";
 
 type RsvpFormProps = {
   language?: "id" | "en";
+  afterSubmit?: () => void;
 };
 
 const dictionary = {
@@ -36,17 +41,43 @@ const dictionary = {
   },
 };
 
-export default function RsvpForm({ language = "en" }: RsvpFormProps) {
-  const onSubmit = () => {};
+export default function RsvpForm({
+  language = "en",
+  afterSubmit,
+}: RsvpFormProps) {
   const t = dictionary[language];
+  const [loadingForm, setLoadingForm] = useState(false);
+  const pathName = usePathname();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     resolver: yupResolver(schema),
   });
+
+  const onSubmit: SubmitHandler<Schema> = async (data) => {
+    setLoadingForm(true);
+    const paths = pathName.split("/");
+    const id = paths[paths.length - 1];
+
+    try {
+      await axios.post(`/api/rsvp/${id}`, data);
+      toast.success("Form submitted successfully!", {
+        position: "bottom-center",
+      });
+      reset();
+      afterSubmit?.();
+    } catch (error) {
+      toast.error("Opppsss, Error occured. Please try again", {
+        position: "bottom-center",
+      });
+    } finally {
+      setLoadingForm(false);
+    }
+  };
 
   return (
     <div className={css.form}>
@@ -111,8 +142,12 @@ export default function RsvpForm({ language = "en" }: RsvpFormProps) {
           <p className={css.input_error}>{errors.attend?.message}</p>
         </div>
 
-        <button type="submit" className={solenoidalFont.className}>
-          {t.submit}
+        <button
+          type="submit"
+          className={solenoidalFont.className}
+          disabled={loadingForm}
+        >
+          {loadingForm ? "Loading..." : t.submit}
         </button>
       </form>
     </div>

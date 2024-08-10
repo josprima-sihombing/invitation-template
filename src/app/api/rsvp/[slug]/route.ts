@@ -3,17 +3,8 @@ import { google } from "googleapis";
 import type { NextRequest } from "next/server";
 import { Ratelimit } from "@upstash/ratelimit";
 import { kv } from "@vercel/kv";
-
-const auth = new google.auth.GoogleAuth({
-  credentials: {
-    project_id: process.env.google_project_id,
-    private_key_id: process.env.google_private_key_id,
-    private_key: process.env.google_private_key,
-    client_email: process.env.google_client_email,
-    client_id: process.env.google_client_id,
-  },
-  scopes: "https://www.googleapis.com/auth/spreadsheets",
-});
+import { type Schema, schema } from "@/schemas";
+import { auth } from "../../google-auth";
 
 const ratelimit = new Ratelimit({
   redis: kv,
@@ -39,9 +30,13 @@ export async function POST(
     return Response.json({ data: "Error!" }, { status: 500 });
   }
 
-  const payload = await request.json();
+  const payload = (await request.json()) as Schema;
 
-  // TODO: Validate payload
+  try {
+    schema.validateSync(payload);
+  } catch (error) {
+    return Response.json({ data: "Error!" }, { status: 500 });
+  }
 
   try {
     const client = await auth.getClient();
@@ -56,23 +51,19 @@ export async function POST(
     await googleSheets.spreadsheets.values.append({
       auth,
       spreadsheetId: spreadSheetsId[id],
-      range: "Sheet1!A:E",
+      range: "Sheet1!A:D",
       valueInputOption: "RAW",
       resource: {
         values: [
           [
             payload.name,
             payload.phoneNumber,
+            payload.wish,
             payload.attend ? "Yes" : "No",
-            payload.food,
-            payload.drink,
           ],
         ],
       },
     });
-
-    //TODO: send notification
-    // await sendEmail(payload);
 
     return Response.json({ data: "Hello World" });
   } catch (error) {
