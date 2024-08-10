@@ -1,12 +1,16 @@
 type EnvelopIconProps = {
   color?: string;
+  size?: number;
 };
 
-export default function EnvelopeIcon({ color = "#ffffff" }: EnvelopIconProps) {
+export default function EnvelopeIcon({
+  color = "#ffffff",
+  size = 12,
+}: EnvelopIconProps) {
   return (
     <svg
-      width="12"
-      height="12"
+      width={size}
+      height={size}
       viewBox="0 0 12 12"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +44,7 @@ export default function EnvelopeIcon({ color = "#ffffff" }: EnvelopIconProps) {
       </g>
       <defs>
         <clipPath id="clip0_133_73">
-          <rect width="12" height="12" fill={color} />
+          <rect width={size} height={size} fill={color} />
         </clipPath>
       </defs>
     </svg>
