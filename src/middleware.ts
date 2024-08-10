@@ -17,6 +17,16 @@ export function middleware(request: NextRequest) {
       `https://invitation-template-eight.vercel.app/wedding${pathname}?${searchParams}`,
     );
   }
+
+  if (
+    host === "kreasi-invitation.com" ||
+    host === "www.kreasi-invitation.com"
+  ) {
+    // TODO: handle url for general invitation type
+    return NextResponse.rewrite(
+      `https://invitation-template-eight.vercel.app/khitanan${pathname}?${searchParams}`,
+    );
+  }
 }
 
 export const config = {
