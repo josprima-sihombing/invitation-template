@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Config } from "./configs";
 import RsvpForm from "@/components/rsvp-form";
 import { FaCopy, FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
+import Ads from "@/components/ads";
 
 type ComponentProps = {
   config: Config;
@@ -495,7 +496,7 @@ export default function Component({ config }: ComponentProps) {
             </div>
           </div>
 
-          <div className="relative pt-[80px] pb-[280px] px-4 overflow-hidden">
+          <div className="relative pt-[80px] pb-[380px] px-4 overflow-hidden">
             <div
               className="absolute w-full h-full top-0 left-0"
               style={{
@@ -513,6 +514,11 @@ export default function Component({ config }: ComponentProps) {
             </div>
 
             <img
+              src={images.image16}
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[180px] rounded-xl"
+            />
+
+            <img
               src={images.image13}
               className="absolute -bottom-[32px] left-0 h-[190px]"
             />
@@ -525,8 +531,11 @@ export default function Component({ config }: ComponentProps) {
               }}
             />
 
+            <div className="absolute top-full -translate-y-[60px] left-0 w-[600px] h-[400px] rounded-[50%] bg-[#CF9C47]" />
+            <div className="absolute top-full -translate-y-[60px] right-0 w-[600px] h-[400px] rounded-[50%] bg-[#F0C47D]" />
+
             <div
-              className="relative py-10 px-8 rounded-xl"
+              className="relative py-10 px-8 rounded-xl z-[2]"
               style={{
                 backgroundColor: colors.two,
               }}
@@ -549,6 +558,8 @@ export default function Component({ config }: ComponentProps) {
               </p>
             </div>
           </div>
+
+          <Ads />
         </div>
       )}
     </div>

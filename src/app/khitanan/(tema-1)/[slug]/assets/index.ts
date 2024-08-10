@@ -5,6 +5,7 @@ import image12 from "./12.png";
 import image13 from "./13.png";
 import image14 from "./14.png";
 import image15 from "./15.png";
+import image16 from "./16.jpeg";
 import image2 from "./2.png";
 import image3 from "./3.svg";
 import image4 from "./4.png";
@@ -22,6 +23,7 @@ export const images = {
   image13: image13.src,
   image14: image14.src,
   image15: image15.src,
+  image16: image16.src,
   image2: image2.src,
   image3: image3.src,
   image4: image4.src,
