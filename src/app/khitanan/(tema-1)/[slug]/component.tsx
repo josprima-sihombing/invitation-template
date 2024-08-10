@@ -586,7 +586,7 @@ export default function Component({ config }: ComponentProps) {
       )}
 
       <Music
-        musicURL="/assets/musics/sweet-moments.wav"
+        musicURL="/assets/musics/islamic.wav"
         play={play}
         setPlay={setPlay}
         hide={hideMusic}
