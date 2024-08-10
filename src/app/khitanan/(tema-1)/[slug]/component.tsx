@@ -9,6 +9,16 @@ import type { Config } from "./configs";
 import RsvpForm from "@/components/rsvp-form";
 import { FaCopy, FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
 import Ads from "@/components/ads";
+import dynamic from "next/dynamic";
+import toast, { Toaster } from "react-hot-toast";
+
+const Music = dynamic(() => import("@/components/music"), {
+  ssr: false,
+});
+
+const Particles = dynamic(() => import("@/components/particles"), {
+  ssr: false,
+});
 
 type ComponentProps = {
   config: Config;
@@ -17,10 +27,14 @@ type ComponentProps = {
 export default function Component({ config }: ComponentProps) {
   const { colors } = config;
   const [opened, setOpened] = useState(false);
+  const [play, setPlay] = useState(false);
+  const [hideMusic, setHideMusic] = useState(true);
   const invitationContentRef = useRef<HTMLDivElement>(null);
 
   const openInvitation = () => {
     setOpened(true);
+    setPlay(true);
+    setHideMusic(false);
   };
 
   useEffect(() => {
@@ -477,7 +491,7 @@ export default function Component({ config }: ComponentProps) {
                 <div className="p-4 bg-[#00529C] rounded-xl aspect-[3/1.8] max-w-[280px] mx-auto flex flex-col justify-between border border-white drop-shadow-2xl">
                   <img
                     src={images.image15}
-                    className="px-2 py-1 bg-white w-[45px] rounded-sm"
+                    className="px-2 py-1 bg-white w-[60px] rounded-sm"
                   />
 
                   <div>
@@ -488,7 +502,15 @@ export default function Component({ config }: ComponentProps) {
                   </div>
                 </div>
 
-                <button className="flex gap-2 items-center bg-white rounded-lg px-2 py-1 mx-auto mt-3 text-[#00529C]">
+                <button
+                  className="flex gap-2 items-center bg-white rounded-lg px-2 py-1 mx-auto mt-3 text-[#00529C]"
+                  onClick={() => {
+                    navigator.clipboard.writeText("567801008101535");
+                    toast.success("No.Rekening dicopy!", {
+                      position: "bottom-center",
+                    });
+                  }}
+                >
                   <FaCopy />
                   <span>Salin No.Rekening</span>
                 </button>
@@ -562,6 +584,15 @@ export default function Component({ config }: ComponentProps) {
           <Ads />
         </div>
       )}
+
+      <Music
+        musicURL="/assets/musics/sweet-moments.wav"
+        play={play}
+        setPlay={setPlay}
+        hide={hideMusic}
+      />
+      <Particles color="#F0E68C" opacity={0.8} />
+      <Toaster />
     </div>
   );
 }
