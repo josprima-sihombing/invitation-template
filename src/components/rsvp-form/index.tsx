@@ -8,6 +8,7 @@ import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { usePathname } from "next/navigation";
+import classNames from "classnames";
 
 type RsvpFormProps = {
   language?: "id" | "en";
@@ -144,7 +145,10 @@ export default function RsvpForm({
 
         <button
           type="submit"
-          className={solenoidalFont.className}
+          className={classNames(
+            solenoidalFont.className,
+            "disabled:opacity-40",
+          )}
           disabled={loadingForm}
         >
           {loadingForm ? "Loading..." : t.submit}
