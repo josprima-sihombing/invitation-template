@@ -44,30 +44,42 @@ export default function Page({
           alt=""
           className="w-full absolute left-0 top-0 max-h-[120px] object-cover"
         />
-        <div className="text-center pt-[80px] relative">
+        <div className="text-center pt-[80px] relative h-full flex flex-col gap-14">
           <p
-            className="text-2xl font-special"
+            className="text-3xl font-special"
             style={{
               color: colors.two,
             }}
           >
             Undangan
           </p>
-          <p className="font-heading" style={{ color: colors.one }}>
-            Khitanan
-          </p>
-          <p className="font-decorative" style={{ color: colors.two }}>
-            Arsakha Virendra Pradipta
-          </p>
-          <p className="font-decorative" style={{ color: colors.one }}>
-            dan
-          </p>
-          <p className="font-heading" style={{ color: colors.one }}>
-            Aqiqah
-          </p>
-          <p className="font-decorative" style={{ color: colors.two }}>
-            Arsy Rahajeng Bintang Rayeswari
-          </p>
+
+          <div className="py-2 px-8">
+            <p className="font-heading text-lg" style={{ color: colors.one }}>
+              Khitanan
+            </p>
+            <p
+              className="font-decorative text-3xl"
+              style={{ color: colors.two }}
+            >
+              Arsakha Virendra Pradipta
+            </p>
+            <p
+              className="font-decorative text-lg my-6"
+              style={{ color: colors.one }}
+            >
+              dan
+            </p>
+            <p className="font-heading text-lg" style={{ color: colors.one }}>
+              Aqiqah
+            </p>
+            <p
+              className="font-decorative text-3xl"
+              style={{ color: colors.two }}
+            >
+              Arsy Rahajeng Bintang Rayeswari
+            </p>
+          </div>
         </div>
 
         <div
@@ -84,10 +96,14 @@ export default function Page({
           />
 
           <div className="p-4 text-right">
-            <p style={{ color: colors.one }}>Kepada yth</p>
-            <p style={{ color: colors.one }}>Bapak/Ibu/Saudara/i:</p>
+            <p className="text-sm" style={{ color: colors.one }}>
+              Kepada yth
+            </p>
+            <p className="text-sm" style={{ color: colors.one }}>
+              Bapak/Ibu/Saudara/i:
+            </p>
             <p
-              className="font-heading"
+              className="font-heading text-lg my-2"
               style={{
                 color: colors.two,
               }}
@@ -97,10 +113,16 @@ export default function Page({
 
             <button
               className="px-4 py-2 rounded-md border border-solid flex ml-auto items-center gap-2"
-              style={{ color: colors.two, backgroundColor: colors.four }}
+              style={{
+                color: colors.two,
+                backgroundColor: colors.four,
+                borderColor: colors.two,
+              }}
             >
-              <EnvelopeIcon color={colors.two} />
-              <span style={{ color: colors.two }}>Buka Undangan</span>
+              <EnvelopeIcon color={colors.two} size={16} />
+              <span className="text-sm" style={{ color: colors.two }}>
+                Buka Undangan
+              </span>
             </button>
           </div>
         </div>
