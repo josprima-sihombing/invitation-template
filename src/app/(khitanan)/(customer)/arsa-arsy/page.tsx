@@ -581,16 +581,14 @@ export default function Page() {
                   src={images.image12}
                   className="absolute top-full left-1/2 -translate-x-1/2 w-[180px]"
                 />
-                <p
-                  className="text-center font-heading text-xl"
-                  style={{ color: colors.four }}
-                >
+                <p className="text-center" style={{ color: colors.four }}>
                   Atas kehadiran serta do'a restunya kami haturkan terima kasih.
                 </p>
-                <p
-                  className="text-center font-heading text-xl mt-4"
-                  style={{ color: colors.four }}
-                >
+                <p className="text-center font-heading text-lg border-t border-b border-yellow-700 my-6 py-4">
+                  Bapak Candra Apriansyah, S.pd dan Ibu apt.Yeti Elita
+                  Sari,S.Farm
+                </p>
+                <p className="text-center mt-4" style={{ color: colors.four }}>
                   Wassalamualaikum Wr. Wb.
                 </p>
               </div>
@@ -601,7 +599,7 @@ export default function Page() {
         )}
 
         <Music
-          musicURL="/assets/musics/islamic.wav"
+          musicURL="/assets/musics/buah-hatiku.mp3"
           play={play}
           setPlay={setPlay}
           hide={hideMusic}
