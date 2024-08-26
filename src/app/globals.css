@@ -4,17 +4,29 @@
   box-sizing: border-box;
 }
 
-html, body, main {
-  min-height: 100%;
+html, body {
+  height: 100%;
 }
 
 body {
   overflow-x: hidden;
 }
 
+main {
+  min-height: 100%;
+}
+
 img {
   display: block;
   max-width: 100%;
+}
+
+details summary::-webkit-details-marker {
+  display:none;
+}
+
+details summary {
+  list-style: none;
 }
 
 @tailwind base;

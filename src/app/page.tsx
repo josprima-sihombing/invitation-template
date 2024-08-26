@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className="bg-gray-100 box-content max-md:pb-32">
+    <main className="bg-gray-100 box-content max-md:pb-3">
       <div className="bg-white">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
@@ -43,41 +43,44 @@ export default function HomePage() {
 
       <div className="bg-teal-600">
         <div className="container mx-auto px-4 py-12">
-          <h1 className="text-white text-3xl font-bold mb-4">
-            Undangan Digital by Kreasi Invitation
-          </h1>
-          <p className="text-white mb-4">
-            Kreasi invitation siap membantu membuat undangan digitalmu. Undangan
-            pernikahan, birthday, aqiqah dan undangan digital lainnya.
-          </p>
-          <a
-            href="#template"
-            className="px-4 py-2 inline-block bg-lime-400 rounded-sm text-lime-950 text-sm"
-          >
-            Lihat Template
-          </a>
+          <div className="max-w-lg">
+            <h1 className="text-white text-3xl font-bold mb-4">
+              Undangan Digital by Kreasi Invitation
+            </h1>
+            <p className="text-white mb-4">
+              Kreasi invitation siap membantu membuat undangan digitalmu.
+              Undangan pernikahan, birthday, aqiqah dan undangan digital
+              lainnya.
+            </p>
+            <a
+              href="#template"
+              className="px-4 py-2 inline-block bg-lime-400 rounded-sm text-lime-950 text-sm"
+            >
+              Lihat Template
+            </a>
+          </div>
         </div>
       </div>
 
-      <div className="container mx-auto mt-4">
+      <div className="container mx-auto mt-4" id="template">
         <h2 className="font-bold text-gray-900 px-4 mb-4">Daftar Template</h2>
 
         <div className="flex gap-2 overflow-x-auto pb-2">
-          <button className="ml-4 px-3 py-2 rounded border border-solid border-gray-400 text-sm">
+          <button className="ml-4 px-3 py-1 rounded border border-solid border-gray-400 text-sm">
             Pernikahan
           </button>
-          <button className="px-3 py-2 rounded border border-solid border-gray-400 text-sm">
+          <button className="px-3 py-1 rounded border border-solid border-gray-400 text-sm">
             Birthday
           </button>
-          <button className="px-3 py-2 rounded border border-solid border-gray-400 text-sm">
+          <button className="px-3 py-1 rounded border border-solid border-gray-400 text-sm">
             Aqiqah
           </button>
-          <button className="mr-4 px-3 py-2 rounded border border-solid border-gray-400 text-sm">
+          <button className="mr-4 px-3 py-1 rounded border border-solid border-gray-400 text-sm">
             Tasyukuran
           </button>
         </div>
 
-        <div className="grid grid-cols-1 px-4 mt-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-4 mt-2 gap-4">
           <div>
             <div className="w-full h-[180px] bg-white border border-solid border-gray-200 shadow-sm rounded-md">
               <img src="" alt="" />
@@ -99,6 +102,80 @@ export default function HomePage() {
               <p className="text-sm text-gray-600">Rp 150.000</p>
             </div>
           </div>
+
+          <div>
+            <div className="w-full h-[180px] bg-white border border-solid border-gray-200 shadow-sm rounded-md">
+              <img src="" alt="" />
+            </div>
+
+            <div className="px-4 py-2">
+              <h3 className="text-sm font-bold text-gray-900">Floral 1</h3>
+              <p className="text-sm text-gray-600">Rp 150.000</p>
+            </div>
+          </div>
+
+          <div>
+            <div className="w-full h-[180px] bg-white border border-solid border-gray-200 shadow-sm rounded-md">
+              <img src="" alt="" />
+            </div>
+
+            <div className="px-4 py-2">
+              <h3 className="text-sm font-bold text-gray-900">Floral 1</h3>
+              <p className="text-sm text-gray-600">Rp 150.000</p>
+            </div>
+          </div>
+
+          <div>
+            <div className="w-full h-[180px] bg-white border border-solid border-gray-200 shadow-sm rounded-md">
+              <img src="" alt="" />
+            </div>
+
+            <div className="px-4 py-2">
+              <h3 className="text-sm font-bold text-gray-900">Floral 1</h3>
+              <p className="text-sm text-gray-600">Rp 150.000</p>
+            </div>
+          </div>
+
+          <div>
+            <div className="w-full h-[180px] bg-white border border-solid border-gray-200 shadow-sm rounded-md">
+              <img src="" alt="" />
+            </div>
+
+            <div className="px-4 py-2">
+              <h3 className="text-sm font-bold text-gray-900">Floral 1</h3>
+              <p className="text-sm text-gray-600">Rp 150.000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="container mx-auto px-4 py-12 mt-12 border-t border-solid border-gray-200"
+        id="faq"
+      >
+        <h1 className="text-center font-bold text-2xl text-gray-800 mb-8">
+          Pertanyaan yang sering diajukan
+        </h1>
+
+        <div className="max-w-3xl mx-auto px-8 py-12 bg-white rounded-md border border-solid border-gray-200">
+          <details className="cursor-pointer border-t border-solid border-gray-200 py-4 select-none">
+            <summary className="flex justify-between">
+              <h3 className="font-bold text-gray-900">
+                Apa itu undangan digital?
+              </h3>
+              <span>Open</span>
+            </summary>
+            <p>Undangan digital adalah</p>
+          </details>
+          <details className="cursor-pointer border-t border-solid border-gray-200 py-4 select-none">
+            <summary className="flex justify-between">
+              <h3 className="font-bold text-gray-900">
+                Apa itu undangan digital?
+              </h3>
+              <span>Open</span>
+            </summary>
+            <p>Undangan digital adalah</p>
+          </details>
         </div>
       </div>
     </main>
