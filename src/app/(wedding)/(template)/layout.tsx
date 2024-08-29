@@ -8,6 +8,7 @@ export default function PageLayout({
       style={{
         maxWidth: "768px",
         margin: "0 auto",
+        height: "100%",
       }}
     >
       {children}

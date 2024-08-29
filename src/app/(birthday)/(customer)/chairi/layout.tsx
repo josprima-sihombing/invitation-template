@@ -6,5 +6,9 @@ export const viewport: Viewport = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <main className={prodasansFont.className}>{children}</main>;
+  return (
+    <main className={prodasansFont.className} style={{ height: "100%" }}>
+      {children}
+    </main>
+  );
 }
