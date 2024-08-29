@@ -1,10 +1,72 @@
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Kreasi Invitation",
+import floral1Img from "./floral-1-preview.png";
+import floral2Img from "./floral-2-preview.png";
+import floral3Img from "./floral-3-preview.png";
+import classNames from "classnames";
+import { useState } from "react";
+
+type Category = "wedding" | "birthday" | "aqiqah" | "tasyukuran";
+
+const categories: {
+  value: Category;
+  label: string;
+}[] = [
+  {
+    value: "wedding",
+    label: "Wedding",
+  },
+  {
+    value: "aqiqah",
+    label: "Aqiqah",
+  },
+  {
+    value: "birthday",
+    label: "Birthday",
+  },
+  {
+    value: "tasyukuran",
+    label: "Tasyukuran",
+  },
+];
+
+type InvitationTemplate = {
+  id: string;
+  href: string;
+  imgSrc: string;
+  name: string;
+  price: number;
+};
+
+const templates: Record<string, InvitationTemplate[]> = {
+  wedding: [
+    {
+      id: "wedding-1",
+      href: "/floral-1-preview",
+      imgSrc: floral1Img.src,
+      name: "Floral 1",
+      price: 150000,
+    },
+    {
+      id: "wedding-2",
+      href: "/floral-2-preview",
+      imgSrc: floral2Img.src,
+      name: "Floral 2",
+      price: 150000,
+    },
+    {
+      id: "wedding-3",
+      href: "/floral-3-preview",
+      imgSrc: floral3Img.src,
+      name: "Floral 3",
+      price: 150000,
+    },
+  ],
 };
 
 export default function HomePage() {
+  const [activeCategory, setActiveCategory] = useState<Category>("wedding");
+
   return (
     <main className="bg-gray-100 box-content max-md:pb-3">
       <div className="bg-white">
@@ -65,88 +127,65 @@ export default function HomePage() {
       <div className="container mx-auto mt-4" id="template">
         <h2 className="font-bold text-gray-900 px-4 mb-4">Daftar Template</h2>
 
-        <div className="flex gap-2 overflow-x-auto pb-2">
-          <button className="ml-4 px-3 py-1 rounded border border-solid border-gray-400 text-sm">
-            Pernikahan
-          </button>
-          <button className="px-3 py-1 rounded border border-solid border-gray-400 text-sm">
-            Birthday
-          </button>
-          <button className="px-3 py-1 rounded border border-solid border-gray-400 text-sm">
-            Aqiqah
-          </button>
-          <button className="mr-4 px-3 py-1 rounded border border-solid border-gray-400 text-sm">
-            Tasyukuran
-          </button>
+        <div className="flex gap-1 overflow-x-auto pb-2">
+          {categories.map((category, index) => (
+            <button
+              key={category.value}
+              className={classNames(
+                "px-3 py-1 rounded border border-solid border-gray-200 text-sm",
+                {
+                  "ml-4": index === 0,
+                  "mr-4": index === categories.length - 1,
+                  "bg-blue-500 text-white": category.value === activeCategory,
+                },
+              )}
+              onClick={(e) => setActiveCategory(category.value)}
+            >
+              {category.label}
+            </button>
+          ))}
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-4 mt-2 gap-4">
-          <div>
-            <div className="w-full h-[180px] bg-white border border-solid border-gray-200 shadow-sm rounded-md">
-              <img src="" alt="" />
-            </div>
+          {templates[activeCategory]?.map((template) => (
+            <a
+              key={template.id}
+              href={template.href}
+              target="_blank"
+              rel="noreferrer"
+              className="group hover:bg-gray-200 rounded-md"
+            >
+              <div className="w-full h-[240px] bg-white border border-solid border-gray-200 shadow-sm rounded-md overflow-hidden">
+                <img
+                  src={template.imgSrc}
+                  alt={template.name}
+                  className="w-full"
+                />
+              </div>
 
-            <div className="px-4 py-2">
-              <h3 className="text-sm font-bold text-gray-900">Floral 1</h3>
-              <p className="text-sm text-gray-600">Rp 150.000</p>
-            </div>
-          </div>
-
-          <div>
-            <div className="w-full h-[180px] bg-white border border-solid border-gray-200 shadow-sm rounded-md">
-              <img src="" alt="" />
-            </div>
-
-            <div className="px-4 py-2">
-              <h3 className="text-sm font-bold text-gray-900">Floral 1</h3>
-              <p className="text-sm text-gray-600">Rp 150.000</p>
-            </div>
-          </div>
-
-          <div>
-            <div className="w-full h-[180px] bg-white border border-solid border-gray-200 shadow-sm rounded-md">
-              <img src="" alt="" />
-            </div>
-
-            <div className="px-4 py-2">
-              <h3 className="text-sm font-bold text-gray-900">Floral 1</h3>
-              <p className="text-sm text-gray-600">Rp 150.000</p>
-            </div>
-          </div>
-
-          <div>
-            <div className="w-full h-[180px] bg-white border border-solid border-gray-200 shadow-sm rounded-md">
-              <img src="" alt="" />
-            </div>
-
-            <div className="px-4 py-2">
-              <h3 className="text-sm font-bold text-gray-900">Floral 1</h3>
-              <p className="text-sm text-gray-600">Rp 150.000</p>
-            </div>
-          </div>
-
-          <div>
-            <div className="w-full h-[180px] bg-white border border-solid border-gray-200 shadow-sm rounded-md">
-              <img src="" alt="" />
-            </div>
-
-            <div className="px-4 py-2">
-              <h3 className="text-sm font-bold text-gray-900">Floral 1</h3>
-              <p className="text-sm text-gray-600">Rp 150.000</p>
-            </div>
-          </div>
-
-          <div>
-            <div className="w-full h-[180px] bg-white border border-solid border-gray-200 shadow-sm rounded-md">
-              <img src="" alt="" />
-            </div>
-
-            <div className="px-4 py-2">
-              <h3 className="text-sm font-bold text-gray-900">Floral 1</h3>
-              <p className="text-sm text-gray-600">Rp 150.000</p>
-            </div>
-          </div>
+              <div className="px-4 py-2">
+                <h3 className="text-sm font-bold text-gray-900">
+                  {template.name}
+                </h3>
+                <p className="text-sm text-gray-600">
+                  {new Intl.NumberFormat("id-ID", {
+                    style: "currency",
+                    currency: "IDR",
+                    maximumFractionDigits: 0,
+                  }).format(template.price)}
+                </p>
+              </div>
+            </a>
+          ))}
         </div>
+
+        {!templates[activeCategory]?.length && (
+          <div className="px-4">
+            <div className="text-center px-16 py-24 bg-white rounded-md">
+              <p className="text-gray-400 text-lg">Template belum tersedia!</p>
+            </div>
+          </div>
+        )}
       </div>
 
       <div
