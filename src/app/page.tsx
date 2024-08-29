@@ -1,11 +1,12 @@
 "use client";
 
-import { FaMinus, FaPlus } from "react-icons/fa6";
+import { FaMinus, FaPlus, FaWhatsapp } from "react-icons/fa6";
 import floral1Img from "./floral-1-preview.png";
 import floral2Img from "./floral-2-preview.png";
 import floral3Img from "./floral-3-preview.png";
 import classNames from "classnames";
 import { useState } from "react";
+import { Button } from "@mantine/core";
 
 type Category = "wedding" | "birthday" | "aqiqah" | "tasyukuran";
 
@@ -116,8 +117,15 @@ export default function HomePage() {
                 FAQ
               </a>
             </nav>
-            <div className="max-md:hidden">
-              <button>Whatsapp</button>
+            <div>
+              <Button
+                leftSection={<FaWhatsapp />}
+                component="a"
+                href="https://wa.me/6285179828746"
+                color="green"
+              >
+                Whatsapp
+              </Button>
             </div>
           </div>
         </div>
