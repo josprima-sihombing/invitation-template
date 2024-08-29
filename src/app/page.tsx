@@ -1,5 +1,6 @@
 "use client";
 
+import { FaMinus, FaPlus } from "react-icons/fa6";
 import floral1Img from "./floral-1-preview.png";
 import floral2Img from "./floral-2-preview.png";
 import floral3Img from "./floral-3-preview.png";
@@ -63,6 +64,36 @@ const templates: Record<string, InvitationTemplate[]> = {
     },
   ],
 };
+
+const faqs = [
+  {
+    title: "Apa itu undangan digital?",
+    description:
+      "Undangan digital adalah undangan yang bisa kamu bagikan dengan gampang, praktis dan lebih murah dibandingkan undangan cetak, tanpa mengurangi fungsi utama undangan tersebut.",
+  },
+  {
+    title: "Berapa lama pengerjaan undangan digital?",
+    description: "Maksimal 1 minggu (5 hari kerja)",
+  },
+  {
+    title: "Berapa harga nya?",
+    description:
+      "Harga sudah tertera di masing masing template. Namun jika kamu punya request khusus seperti penambahan fitur, mungkin akan ada penambahan harga. Untuk lebih pastinya bisa menanyakan langsung melalu whatsapp",
+  },
+  {
+    title: "Berapa lama masa aktif undangan nya?",
+    description:
+      "Untuk saat ini, undangan yang kami buat akan bisa diakses selamanya. Jika kamu mau undangan mu dinonaktifkan/dihapus, silahkan hubungi melalui whatsapp untuk request penghapusan undangan.",
+  },
+  {
+    title: "Punya desain/tema sendiri, apakah bisa?",
+    description: "Bisa dong",
+  },
+  {
+    title: "Punya pertanyaan lain?",
+    description: "Silahkan tanyakan langsung melalui whatsapp ya.",
+  },
+];
 
 export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState<Category>("wedding");
@@ -192,29 +223,28 @@ export default function HomePage() {
         className="container mx-auto px-4 py-12 mt-12 border-t border-solid border-gray-200"
         id="faq"
       >
-        <h1 className="text-center font-bold text-2xl text-gray-800 mb-8">
+        <h1 className="text-center font-bold text-2xl text-gray-700 mb-8">
           Pertanyaan yang sering diajukan
         </h1>
 
         <div className="max-w-3xl mx-auto px-8 py-12 bg-white rounded-md border border-solid border-gray-200">
-          <details className="cursor-pointer border-t border-solid border-gray-200 py-4 select-none">
-            <summary className="flex justify-between">
-              <h3 className="font-bold text-gray-900">
-                Apa itu undangan digital?
-              </h3>
-              <span>Open</span>
-            </summary>
-            <p>Undangan digital adalah</p>
-          </details>
-          <details className="cursor-pointer border-t border-solid border-gray-200 py-4 select-none">
-            <summary className="flex justify-between">
-              <h3 className="font-bold text-gray-900">
-                Apa itu undangan digital?
-              </h3>
-              <span>Open</span>
-            </summary>
-            <p>Undangan digital adalah</p>
-          </details>
+          {faqs.map((faq, index) => (
+            <details
+              key={index}
+              className="cursor-pointer border-t border-solid border-gray-200 py-6 select-none group"
+            >
+              <summary className="flex justify-between">
+                <h3 className="font-bold text-lg text-gray-500">{faq.title}</h3>
+                <span className="block group-open:hidden">
+                  <FaPlus className="text-gray-400" />
+                </span>
+                <span className="hidden group-open:block">
+                  <FaMinus className="text-gray-400" />
+                </span>
+              </summary>
+              <p className="mt-4 text-gray-600 mr-4">{faq.description}</p>
+            </details>
+          ))}
         </div>
       </div>
     </main>

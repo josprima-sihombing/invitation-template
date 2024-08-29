@@ -27,7 +27,8 @@
       },
       "suspicious": {
         "noExplicitAny": "warn",
-        "noAsyncPromiseExecutor": "off"
+        "noAsyncPromiseExecutor": "off",
+        "noArrayIndexKey": "off"
       },
       "correctness": {
         "useExhaustiveDependencies": "warn"
