@@ -1,0 +1,10 @@
+.cover {
+  background-image: linear-gradient(#3678B5, #45DAFF, #FFDEB1);
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
