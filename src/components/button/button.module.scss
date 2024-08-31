@@ -1,0 +1,18 @@
+.button {
+  background-image: linear-gradient(#76AC85, #9EC0A7,#76AC85);
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid #fff;
+  box-shadow: 0px 2px 4px #00000050;
+  padding: 12px 22px;
+  border-radius: 4px;
+  color: #fff;
+  transition: box-shadow 0.4s ease;
+  position: relative;
+  z-index: 100;
+
+  &:active {
+    box-shadow: 0px 0px 0px #00000050;
+    transform: translateY(2px);
+  }
+}

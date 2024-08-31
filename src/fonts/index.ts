@@ -1,3 +1,4 @@
+import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 
 export const jaguarFont = localFont({ src: "./Jaguar.woff" });
@@ -32,4 +33,10 @@ export const hirarkiSignatureFont = localFont({
 });
 export const solenoidalFont = localFont({
   src: "./Solenoidal.otf",
+});
+
+export const inter = Inter({
+  weight: ["400", "700"],
+  style: ["normal"],
+  subsets: ["latin"],
 });
