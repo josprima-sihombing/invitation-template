@@ -1,5 +1,6 @@
 "use client";
 
+// @ts-ignore
 import CircleType from "circletype";
 import { Lemon } from "next/font/google";
 import classNames from "classnames";
