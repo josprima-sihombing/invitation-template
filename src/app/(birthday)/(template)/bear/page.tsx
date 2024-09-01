@@ -1,11 +1,12 @@
 "use client";
 
+import CircleType from "circletype";
 import { Lemon } from "next/font/google";
 import classNames from "classnames";
 import css from "./style.module.scss";
 import { images } from "./assets";
 import Button from "@/components/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const lemon = Lemon({
   weight: "400",
@@ -18,6 +19,12 @@ export default function Page() {
   const openInvitation = () => {
     setIsOpen(true);
   };
+
+  useEffect(() => {
+    const circleType = new CircleType(document.getElementById("text"));
+
+    circleType.dir(-1).radius(140);
+  }, []);
 
   return (
     <div className={classNames("h-full relative", css.cover, lemon.className)}>
@@ -52,6 +59,12 @@ export default function Page() {
             src={images.image2}
             className={classNames(css.center, "w-[320px] max-w-[unset]")}
           />
+
+          <div className="absolute bottom-[3px] left-1/2 -translate-x-1/2">
+            <h1 className="whitespace-nowrap text-white text-lg" id="text">
+              YANTO 1ST BIRTHDAY
+            </h1>
+          </div>
 
           <div className="absolute w-[100px] h-[380px] bg-[#FBDC77] left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-tr-[80px] -z-10" />
           <div className="absolute w-[100px] h-[380px] bg-[#E3CFF7] right-0 top-1/2 translate-x-1/2 -translate-y-1/2 rounded-bl-[80px] -z-10" />
