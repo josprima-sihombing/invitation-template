@@ -15,6 +15,7 @@ import Countdown3 from "@/components/countdown/countdown-3";
 import { FaBuilding, FaCalendarDay, FaClock } from "react-icons/fa6";
 import { PiShirtFoldedFill } from "react-icons/pi";
 import dynamic from "next/dynamic";
+import { Toaster } from "react-hot-toast";
 
 const Particles = dynamic(() => import("@/components/particles"), {
   ssr: false,
@@ -198,7 +199,13 @@ export default function Page() {
 
           <div className="relative z-20 bg-[#76AC85] pt-16 pb-14 px-8">
             <div className="bg-white p-4 rounded-xl">
-              <RsvpForm />
+              <RsvpForm
+                afterSubmit={() => {
+                  document
+                    .querySelector("#thankyou")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              />
             </div>
 
             <img
@@ -211,7 +218,10 @@ export default function Page() {
             />
           </div>
 
-          <div className="relative z-10 bg-[#76AC85] pt-32 pb-[380px] px-8 overflow-hidden">
+          <div
+            id="thankyou"
+            className="relative z-10 bg-[#76AC85] pt-32 pb-[380px] px-8 overflow-hidden"
+          >
             <div className="text-center">
               <h1 className="text-white text-3xl mb-14">See you there...</h1>
               <h2 className="text-white mb-2">Blessed parents</h2>
@@ -251,6 +261,7 @@ export default function Page() {
       )}
 
       <Particles color="#FBDC77" opacity={0.8} />
+      <Toaster />
       <Music
         musicURL="/assets/musics/birthday-2.wav"
         play={play}

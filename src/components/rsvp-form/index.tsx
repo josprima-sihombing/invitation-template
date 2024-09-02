@@ -9,6 +9,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { usePathname } from "next/navigation";
 import classNames from "classnames";
+import { spreadSheetsId } from "@/spreadsheets-id";
 
 type RsvpFormProps = {
   language?: "id" | "en";
@@ -62,7 +63,17 @@ export default function RsvpForm({
   const onSubmit: SubmitHandler<Schema> = async (data) => {
     setLoadingForm(true);
     const paths = pathName.split("/");
-    const id = paths[paths.length - 1];
+    const id = paths[paths.length - 1] as keyof typeof spreadSheetsId;
+
+    if (!spreadSheetsId[id]) {
+      toast.success("Form submitted successfully!", {
+        position: "bottom-center",
+      });
+      reset();
+      setLoadingForm(false);
+      afterSubmit?.();
+      return;
+    }
 
     try {
       await axios.post(`/api/rsvp/${id}`, data);
@@ -70,12 +81,12 @@ export default function RsvpForm({
         position: "bottom-center",
       });
       reset();
+      setLoadingForm(false);
       afterSubmit?.();
     } catch (error) {
       toast.error("Opppsss, Error occured. Please try again", {
         position: "bottom-center",
       });
-    } finally {
       setLoadingForm(false);
     }
   };
