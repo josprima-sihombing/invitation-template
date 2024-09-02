@@ -4,6 +4,7 @@ import { FaMinus, FaPlus, FaWhatsapp } from "react-icons/fa6";
 import floral1Img from "./floral-1-preview.png";
 import floral2Img from "./floral-2-preview.png";
 import floral3Img from "./floral-3-preview.png";
+import bearImg from "./bear.png";
 import classNames from "classnames";
 import { useState } from "react";
 import { Button } from "@mantine/core";
@@ -61,6 +62,15 @@ const templates: Record<string, InvitationTemplate[]> = {
       href: "/floral-3-preview",
       imgSrc: floral3Img.src,
       name: "Floral 3",
+      price: 150000,
+    },
+  ],
+  birthday: [
+    {
+      id: "birthday-1",
+      href: "/bear",
+      imgSrc: bearImg.src,
+      name: "Bear",
       price: 150000,
     },
   ],
