@@ -8,3 +8,17 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+.page2 {
+  background-image: linear-gradient(#76AC85, #588B66);
+}
+
+.title {
+  color: #FBDC77;
+  text-shadow:
+    -3px 3px 0 #588B66,
+    3px 3px 0 #588B66,
+    3px -3px 0 #588B66,
+    -3px -3px 0 #588B66,
+    0 4px 12px #00000080;
+}
