@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const textBorderPlugin = require("./src/utils/tw-plugins/text-border");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -14,5 +15,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [textBorderPlugin],
 };
