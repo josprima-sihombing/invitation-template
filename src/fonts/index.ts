@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Inter, Mitr, Amarante, Lemon } from "next/font/google";
 import localFont from "next/font/local";
 
 export const jaguarFont = localFont({ src: "./Jaguar.woff" });
@@ -38,5 +38,22 @@ export const solenoidalFont = localFont({
 export const inter = Inter({
   weight: ["400", "700"],
   style: ["normal"],
+  subsets: ["latin"],
+});
+
+export const mitr = Mitr({
+  weight: ["400", "600"],
+  style: ["normal"],
+  subsets: ["latin"],
+});
+
+export const amarante = Amarante({
+  weight: ["400"],
+  style: ["normal"],
+  subsets: ["latin"],
+});
+
+export const lemon = Lemon({
+  weight: "400",
   subsets: ["latin"],
 });

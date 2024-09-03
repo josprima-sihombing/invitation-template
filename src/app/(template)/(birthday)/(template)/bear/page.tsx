@@ -2,7 +2,6 @@
 
 // @ts-ignore
 import CircleType from "circletype";
-import { Lemon } from "next/font/google";
 import classNames from "classnames";
 import css from "./style.module.scss";
 import { images } from "./assets";
@@ -16,6 +15,7 @@ import { FaBuilding, FaCalendarDay, FaClock } from "react-icons/fa6";
 import { PiShirtFoldedFill } from "react-icons/pi";
 import dynamic from "next/dynamic";
 import { Toaster } from "react-hot-toast";
+import { lemon } from "@/fonts";
 
 const Particles = dynamic(() => import("@/components/particles"), {
   ssr: false,
@@ -23,11 +23,6 @@ const Particles = dynamic(() => import("@/components/particles"), {
 
 const Music = dynamic(() => import("@/components/music"), {
   ssr: false,
-});
-
-const lemon = Lemon({
-  weight: "400",
-  subsets: ["latin"],
 });
 
 export default function Page() {
