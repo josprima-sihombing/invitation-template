@@ -13,7 +13,7 @@ export default function RootLayout({
             src="https://www.googletagmanager.com/gtag/js?id=G-6H41XH8NB2"
             strategy="afterInteractive"
           />
-          <Script>
+          <Script id="gtag">
             {`
               window.dataLayer = window.dataLayer || [];
 
