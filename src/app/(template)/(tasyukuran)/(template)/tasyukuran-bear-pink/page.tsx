@@ -140,9 +140,13 @@ export default function Page() {
                 Assalamualaikum Warahmatullahi Wabarakatuh
               </h1>
               {guestName && (
-                <div>
-                  <h2>Yang terhormat,</h2>
-                  <h2>{guestName}</h2>
+                <div className="mb-8">
+                  <h2 className="text-center text-[#4A3C5E]">
+                    Yang terhormat,
+                  </h2>
+                  <h2 className="text-center font-semibold text-lg text-[#4A3C5E]">
+                    {guestName}
+                  </h2>
                 </div>
               )}
               <h1 className="font-semibold text-center text-lg text-[#FF3888]">
