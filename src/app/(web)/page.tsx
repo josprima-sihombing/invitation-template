@@ -4,6 +4,7 @@ import { FaMinus, FaPlus, FaWhatsapp } from "react-icons/fa6";
 import floral1Img from "./floral-1-preview.png";
 import floral2Img from "./floral-2-preview.png";
 import floral3Img from "./floral-3-preview.png";
+import tasyukuranBearPink from "./tasyukuran-bear-pink.png";
 import bearImg from "./bear.png";
 import classNames from "classnames";
 import { useState } from "react";
@@ -20,16 +21,12 @@ const categories: {
     label: "Wedding",
   },
   {
-    value: "aqiqah",
-    label: "Aqiqah",
-  },
-  {
     value: "birthday",
     label: "Birthday",
   },
   {
     value: "tasyukuran",
-    label: "Tasyukuran",
+    label: "Tasyukuran Aqiqah",
   },
 ];
 
@@ -71,6 +68,15 @@ const templates: Record<string, InvitationTemplate[]> = {
       href: "/bear",
       imgSrc: bearImg.src,
       name: "Bear",
+      price: 150000,
+    },
+  ],
+  tasyukuran: [
+    {
+      id: "tasyukuran-1",
+      href: "/tasyukuran-bear-pink",
+      imgSrc: tasyukuranBearPink.src,
+      name: "Tasyukuran Bear Pink",
       price: 150000,
     },
   ],
