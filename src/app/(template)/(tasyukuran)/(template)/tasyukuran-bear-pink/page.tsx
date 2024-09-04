@@ -51,13 +51,29 @@ export default function Page() {
       className={classNames(mitr.className, "h-full max-w-screen-md mx-auto")}
     >
       <div
-        className={classNames("h-full relative pt-28 overflow-hidden")}
+        className={classNames(
+          "h-full relative pt-28 overflow-hidden flex flex-col",
+        )}
         style={{
           backgroundImage: `url(${images.image5})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
+        <img
+          src={images.image2}
+          className="w-[110px] absolute top-[10px] left-[10px] z-10"
+        />
+        <img
+          src={images.image12}
+          className="w-[80px] absolute top-[30px] right-[10px] -rotate-12 z-10"
+        />
+
+        <img
+          src={images.image4}
+          className="w-[120px] absolute bottom-[80px] left-1/2 -translate-x-1/2 z-10"
+        />
+
         <div className="relative w-[220px] h-[240px] mx-auto mb-10">
           <img
             src={images.imagebaby}
@@ -69,48 +85,43 @@ export default function Page() {
           />
         </div>
 
-        <img
-          src={images.image2}
-          className="w-[110px] absolute top-[10px] left-[10px]"
-        />
-        <img
-          src={images.image12}
-          className="w-[80px] absolute top-[30px] right-[10px] -rotate-12"
-        />
+        <div className="my-auto">
+          <h1
+            className={classNames(
+              hirarkiSignatureFont.className,
+              "text-center text-2xl text-[#FF3888] mb-4",
+            )}
+          >
+            Tasyukuran Aqiqah
+          </h1>
+          <h1
+            className={classNames(
+              amarante.className,
+              css.name,
+              "text-center text-white text-3xl bg-[#FF7AAF] w-fit mx-auto px-2 py-1 rounded-lg",
+            )}
+          >
+            Sumiarti Katmijo
+          </h1>
+        </div>
 
-        <h1
-          className={classNames(
-            hirarkiSignatureFont.className,
-            "text-center text-2xl text-[#FF3888] mb-4",
-          )}
-        >
-          Tasyukuran Aqiqah
-        </h1>
-        <h1
-          className={classNames(
-            amarante.className,
-            css.name,
-            "text-center text-white text-3xl bg-[#FF7AAF] w-fit mx-auto px-2 py-1 rounded-lg",
-          )}
-        >
-          Sumiarti Katmijo
-        </h1>
+        <div className="relative h-[100px] overflow-hidden">
+          <div className="w-[140%] h-[220px] bg-[#8D8695] absolute left-1/2 top-0 -translate-x-1/2 rounded-[100%]"></div>
+          <div className="w-[140%] h-[220px] bg-[#FF7AAF] absolute left-1/2 top-0 -translate-x-1/2 translate-y-[20px] rounded-[100%]"></div>
 
-        <div className="absolute bottom-0 w-full h-[80px]">
-          <div className="w-[140%] h-[220px] bg-[#8D8695] absolute left-1/2 -translate-x-1/2 translate-y-[-50px] rounded-[100%]"></div>
-          <div className="w-[140%] h-[220px] bg-[#FF7AAF] absolute left-1/2 -translate-x-1/2 translate-y-[-30px] rounded-[100%]"></div>
-          <img
-            src={images.image4}
-            className="w-[120px] absolute top-[-100px] left-1/2 -translate-x-1/2"
-          />
           <button
-            className={classNames(css.button, "relative")}
+            className={classNames(
+              css.button,
+              "absolute bottom-[20px] left-1/2 -translate-x-1/2",
+            )}
             onClick={openInvitation}
           >
             <span>
               <EnvelopeIcon size={24} color="#FF3888" />
             </span>
-            <span className="text-[#FF3888]">BUKA UNDANGAN</span>
+            <span className="text-[#FF3888] whitespace-nowrap">
+              BUKA UNDANGAN
+            </span>
           </button>
         </div>
       </div>
