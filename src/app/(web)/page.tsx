@@ -5,6 +5,7 @@ import floral1Img from "./floral-1-preview.png";
 import floral2Img from "./floral-2-preview.png";
 import floral3Img from "./floral-3-preview.png";
 import tasyukuranBearPink from "./tasyukuran-bear-pink.png";
+import tasyukuranBearBlue from "./tasyukuran-bear-blue.png";
 import bearImg from "./bear.png";
 import classNames from "classnames";
 import { useState } from "react";
@@ -77,6 +78,13 @@ const templates: Record<string, InvitationTemplate[]> = {
       href: "/tasyukuran-bear-pink",
       imgSrc: tasyukuranBearPink.src,
       name: "Tasyukuran Bear Pink",
+      price: 150000,
+    },
+    {
+      id: "tasyukuran-2",
+      href: "/tasyukuran-bear-blue",
+      imgSrc: tasyukuranBearBlue.src,
+      name: "Tasyukuran Bear Blue",
       price: 150000,
     },
   ],
@@ -210,7 +218,7 @@ export default function HomePage() {
               rel="noreferrer"
               className="group hover:bg-gray-200 rounded-md"
             >
-              <div className="w-full h-[240px] bg-white border border-solid border-gray-200 shadow-sm rounded-md overflow-hidden">
+              <div className="w-full h-[420px] bg-white border border-solid border-gray-200 shadow-sm rounded-md overflow-hidden">
                 <img
                   src={template.imgSrc}
                   alt={template.name}
