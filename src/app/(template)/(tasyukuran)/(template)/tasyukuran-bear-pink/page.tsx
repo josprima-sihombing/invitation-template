@@ -294,6 +294,8 @@ export default function Page() {
                 />
               </div>
             </div>
+
+            <Ads />
           </div>
         )}
 
@@ -305,7 +307,6 @@ export default function Page() {
           setPlay={setPlay}
           hide={hideMusic}
         />
-        <Ads />
       </div>
     </AssetsLoader>
   );

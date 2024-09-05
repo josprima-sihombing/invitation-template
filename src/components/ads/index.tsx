@@ -4,8 +4,12 @@ export default function Ads() {
   return (
     <div className={css.ads}>
       <span>Created by </span>
-      <a href="https://www.kreasikanvas.com" target="_blank" rel="noreferrer">
-        kreasikanvas.com
+      <a
+        href="https://www.kreasi-invitation.com"
+        target="_blank"
+        rel="noreferrer"
+      >
+        kreasi-invitation.com
       </a>
     </div>
   );
