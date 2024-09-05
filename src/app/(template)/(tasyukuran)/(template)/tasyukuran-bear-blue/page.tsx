@@ -112,7 +112,7 @@ export default function Page() {
                 "text-center text-white text-3xl bg-[#71C3F3] w-fit mx-auto px-2 py-1 rounded-lg",
               )}
             >
-              Sumiarti Katmijo
+              Asep Sutrisno
             </h1>
           </div>
 
