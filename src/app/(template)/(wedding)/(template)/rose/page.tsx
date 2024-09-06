@@ -208,7 +208,7 @@ export default function Page() {
                 className="absolute left-1/2 top-0 -translate-x-1/2 translate-y-[-100px] w-[240px]"
               />
 
-              <div className="px-8 py-12 text-center">
+              <div className="px-8 py-24 text-center">
                 <p
                   className={classNames(
                     solenoidalFont.className,
@@ -222,12 +222,250 @@ export default function Page() {
                 <p
                   className={classNames(
                     solenoidalFont.className,
-                    "leading-loose text-lg text-[#3E1E1E]",
+                    "leading-loose text-lg text-[#3E1E1E] mb-8",
                   )}
                 >
                   Kami yang berbahagia:
                 </p>
+
+                <div className="flex flex-col gap-12">
+                  <div>
+                    <div className="relative w-[200px] h-[240px] mx-auto mb-4">
+                      <img
+                        src={images.image11}
+                        className="absolute max-w-[unset] w-[240px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                      />
+                      <img
+                        src={images.imagePersonA}
+                        className="w-full h-full object-cover rounded-[100%]"
+                      />
+                    </div>
+
+                    <h1
+                      className={classNames(
+                        hirarkiSignatureFont.className,
+                        "text-[#7F0826] text-4xl",
+                      )}
+                    >
+                      Asep
+                    </h1>
+                  </div>
+
+                  <h2
+                    className={classNames(
+                      hirarkiSignatureFont.className,
+                      "text-2xl text-[#7F0826]",
+                    )}
+                  >
+                    dengan
+                  </h2>
+
+                  <div>
+                    <div className="relative w-[200px] h-[240px] mx-auto mb-4">
+                      <img
+                        src={images.image11}
+                        className="absolute max-w-[unset] w-[240px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                      />
+                      <img
+                        src={images.imagePersonB}
+                        className="w-full h-full object-cover rounded-[100%]"
+                      />
+                    </div>
+
+                    <h1
+                      className={classNames(
+                        hirarkiSignatureFont.className,
+                        "text-[#7F0826] text-4xl",
+                      )}
+                    >
+                      Suharmi
+                    </h1>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            <div
+              className="relative"
+              style={{
+                backgroundImage: `url(${images.imagebgRed})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <div className="absolute w-full h-[80px] -translate-y-1/2 overflow-hidden">
+                <img
+                  src={images.image5}
+                  className="max-w-[unset] absolute h-full left-1/2 -translate-x-1/2"
+                />
+              </div>
+
+              <div className="px-8 py-24">
+                <div className="mb-12">
+                  <Countdown3
+                    date={dayjs().add(30, "day").toDate()}
+                    bgColor="#EBC772"
+                    textColor="#7F0826"
+                    borderColor="#7F0826"
+                  />
+                </div>
+
+                <div className="border border-solid border-[#EBC772] relative px-4 pt-12 pb-20 mb-20">
+                  <img
+                    src={images.image8}
+                    className="absolute w-[150px] left-1/2 top-full -translate-x-1/2 -translate-y-1/2"
+                  />
+
+                  <h1
+                    className={classNames(
+                      hirarkiSignatureFont.className,
+                      "text-[#EBC772] text-center text-2xl mb-8",
+                    )}
+                  >
+                    Akad Nikah
+                  </h1>
+
+                  <div className="text-[#EBC772] flex flex-col gap-4">
+                    <div className="flex gap-4">
+                      <span className="text-[#EBC772] mt-1 text-xl">
+                        <FaCalendarDay />
+                      </span>
+                      <span>Senin, 22 Maret 2024</span>
+                    </div>
+                    <div className="flex gap-4">
+                      <span className="text-[#EBC772] mt-1 text-xl">
+                        <FaClock />
+                      </span>
+                      <span>Mulai jam 08:00 pagi</span>
+                    </div>
+                    <div className="flex gap-4">
+                      <span className="text-[#EBC772] mt-1 text-xl">
+                        <FaBuilding />
+                      </span>
+                      <span>
+                        Bertempat di <br />
+                        Hopa Place
+                        <br />
+                        Jl. Merdeka no 69
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="border border-solid border-[#EBC772] relative px-4 pt-12 pb-20">
+                  <img
+                    src={images.image8}
+                    className="absolute w-[150px] left-1/2 top-full -translate-x-1/2 -translate-y-1/2"
+                  />
+
+                  <h1
+                    className={classNames(
+                      hirarkiSignatureFont.className,
+                      "text-[#EBC772] text-center text-2xl mb-8",
+                    )}
+                  >
+                    Resepsi
+                  </h1>
+
+                  <div className="text-[#EBC772] flex flex-col gap-4">
+                    <div className="flex gap-4">
+                      <span className="text-[#EBC772] mt-1 text-xl">
+                        <FaCalendarDay />
+                      </span>
+                      <span>Senin, 22 Maret 2024</span>
+                    </div>
+                    <div className="flex gap-4">
+                      <span className="text-[#EBC772] mt-1 text-xl">
+                        <FaClock />
+                      </span>
+                      <span>Mulai jam 18:00 malam</span>
+                    </div>
+                    <div className="flex gap-4">
+                      <span className="text-[#EBC772] mt-1 text-xl">
+                        <FaBuilding />
+                      </span>
+                      <span>
+                        Bertempat di <br />
+                        Hopa Place
+                        <br />
+                        Jl. Merdeka no 69
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="px-8 py-12"
+              style={{
+                backgroundImage: `url(${images.imagebgGold})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <div className="bg-[#fff] px-4 py-8 rounded-lg">
+                <RsvpForm language="id" />
+              </div>
+            </div>
+
+            <div
+              className="relative pt-12 pb-36 px-8 overflow-hidden"
+              style={{
+                backgroundImage: `url(${images.imagebgRed})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src={images.image5}
+                className="max-w-[unset] absolute w-[calc(100%+200px)] bottom-0 left-1/2 translate-y-1/2 -translate-x-1/2"
+              />
+
+              <img
+                src={images.image2}
+                className="absolute bottom-0 translate-y-[40px] w-[240px] left-1/2 -translate-x-1/2"
+              />
+
+              <div className="bg-[#EBC772] px-4 pt-20 pb-12 rounded-3xl mb-12">
+                <h1
+                  className={classNames(
+                    amarante.className,
+                    "text-center text-2xl mb-8 text-[#3E1E1E]",
+                  )}
+                >
+                  Amplop Digital
+                </h1>
+                <p className="font-medium text-center text-lg mb-8 text-[#3E1E1E]">
+                  Doa Restu Anda merupakan karunia yang sangat berarti bagi
+                  kami. Namun jika memberi adalah ungkapan tanda kasih Anda,
+                  Anda dapat memberi kado secara cashless.
+                </p>
+
+                <BankCard name="Baluhap" number="696969696969" />
+              </div>
+
+              <p className="font-medium text-lg text-center text-[#EBC772] mb-12">
+                Atas kehadiran serta do'anya, kami Ucapkan terima kasih.
+              </p>
+
+              <img src={images.image8} className="w-[180px] mx-auto mb-12" />
+              <p
+                className={classNames(
+                  hirarkiSignatureFont.className,
+                  "text-center text-2xl text-[#EBC772] mb-4",
+                )}
+              >
+                Kami yang Berbahagia
+              </p>
+              <p
+                className={classNames(
+                  supravitally.className,
+                  "font-semibold text-center text-3xl text-[#EBC772]",
+                )}
+              >
+                Asep dan Suharmi
+              </p>
             </div>
 
             <Ads />

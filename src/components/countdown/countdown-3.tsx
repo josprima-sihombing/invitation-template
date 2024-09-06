@@ -6,12 +6,14 @@ type Countdown1Props = {
   date: string | number | Date | undefined;
   bgColor?: string;
   textColor?: string;
+  borderColor?: string;
 };
 
 export default function Countdown3({
   date,
   bgColor,
-  textColor,
+  textColor = "#fff",
+  borderColor = "#fff",
 }: Countdown1Props) {
   return (
     <Countdown
@@ -22,6 +24,7 @@ export default function Countdown3({
             style={{
               color: textColor,
               backgroundColor: bgColor,
+              border: `1px solid ${borderColor}`,
             }}
           >
             <span>{days}</span>
