@@ -1,12 +1,13 @@
 "use client";
 
 import { FaMinus, FaPlus, FaWhatsapp } from "react-icons/fa6";
-import floral1Img from "./floral-1-preview.png";
-import floral2Img from "./floral-2-preview.png";
-import floral3Img from "./floral-3-preview.png";
-import tasyukuranBearPink from "./tasyukuran-bear-pink.png";
-import tasyukuranBearBlue from "./tasyukuran-bear-blue.png";
-import bearImg from "./bear.png";
+import floral1Img from "./floral-1-preview.jpg";
+import floral2Img from "./floral-2-preview.jpg";
+import floral3Img from "./floral-3-preview.jpg";
+import tasyukuranBearPink from "./tasyukuran-bear-pink.jpg";
+import tasyukuranBearBlue from "./tasyukuran-bear-blue.jpg";
+import bearImg from "./bear.jpg";
+import weddingRose from "./wedding-rose.jpg";
 import classNames from "classnames";
 import { useState } from "react";
 import { Button } from "@mantine/core";
@@ -60,6 +61,13 @@ const templates: Record<string, InvitationTemplate[]> = {
       href: "/floral-3-preview",
       imgSrc: floral3Img.src,
       name: "Floral 3",
+      price: 150000,
+    },
+    {
+      id: "wedding-4",
+      href: "/wedding-rose",
+      imgSrc: weddingRose.src,
+      name: "Wedding Rose",
       price: 150000,
     },
   ],
