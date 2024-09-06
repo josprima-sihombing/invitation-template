@@ -10,7 +10,13 @@ import Countdown3 from "@/components/countdown/countdown-3";
 import { FaBuilding, FaCalendarDay, FaClock } from "react-icons/fa6";
 import dynamic from "next/dynamic";
 import { Toaster } from "react-hot-toast";
-import { mitr, hirarkiSignatureFont, amarante, supravitally } from "@/fonts";
+import {
+  mitr,
+  hirarkiSignatureFont,
+  amarante,
+  supravitally,
+  solenoidalFont,
+} from "@/fonts";
 import EnvelopeIcon from "@/components/icons/envelope";
 import BankCard from "@/components/bank-card";
 import AssetsLoader from "@/components/assets-loader";
@@ -183,7 +189,47 @@ export default function Page() {
         </div>
 
         {isOpen && (
-          <div ref={invitationContentRef}>
+          <div className="relative" ref={invitationContentRef}>
+            <div
+              className="relative overflow-hidden"
+              style={{
+                backgroundImage: `url(${images.imagebgGold})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <img
+                src={images.image5}
+                className="max-w-[unset] absolute w-[calc(100%+200px)] top-0 left-1/2 -translate-y-1/2 -translate-x-1/2"
+              />
+
+              <img
+                src={images.image2}
+                className="absolute left-1/2 top-0 -translate-x-1/2 translate-y-[-100px] w-[240px]"
+              />
+
+              <div className="px-8 py-12 text-center">
+                <p
+                  className={classNames(
+                    solenoidalFont.className,
+                    "leading-loose text-lg text-[#3E1E1E] mb-8",
+                  )}
+                >
+                  Tanpa mengurangi rasa hormat, kami bermaksud mengundang
+                  bapak/ibu/saudara/i untuk hadir pada acara pernikahan kami.
+                </p>
+
+                <p
+                  className={classNames(
+                    solenoidalFont.className,
+                    "leading-loose text-lg text-[#3E1E1E]",
+                  )}
+                >
+                  Kami yang berbahagia:
+                </p>
+              </div>
+            </div>
+
             <Ads />
           </div>
         )}
