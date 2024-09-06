@@ -1,0 +1,96 @@
+.left {
+  animation: slideLeft 8s ease-out 1s forwards;
+}
+
+.right {
+  animation: slideRight 8s ease-out 1s forwards;
+}
+
+.top {
+  animation: slideTop 3s ease-out 1s forwards;
+}
+
+@keyframes slideLeft {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideRight {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideTop {
+  to {
+    top: 10px;
+    transform: translate(-50%, -100%);
+  }
+}
+
+.leftPole {
+  width: 35px;
+  height: calc(100% - 150px);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(90deg,#7F0826, #C94163, #7F0826);
+  box-shadow: 4px 0px 4px #00000050;
+}
+
+.rightPole {
+  width: 35px;
+  height: calc(100% - 150px);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(90deg,#7F0826, #C94163, #7F0826);
+  box-shadow: -4px 0px 4px #00000050;
+}
+
+.textShadow {
+  text-shadow: 0px 2px 4px #00000080;
+}
+
+.coverTextBg {
+  background-image: linear-gradient(#DFB85C00 0%, #DFB85C60 20%, #DFB85C60 80%, #DFB85C00 100%);
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-image: linear-gradient(#C9416300 0%, #C94163 20%, #B51F44 50%, #C94163 80%, #C9416300 100%);
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background-image: linear-gradient(#C9416300 0%, #C94163 20%, #B51F44 50%, #C94163 80%, #C9416300 100%);
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: 1px solid #EBC772;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 0 auto;
+  box-shadow: 2px 4px 0 #7F0826;
+  background-image: linear-gradient(#7F0826, #B51F44, #7F0826);
+  transition: box-shadow 0.3s ease-in, transform 0.3s ease-in;
+
+  &:active {
+    box-shadow: 0px 0px 0 #7F0826;
+    transform: translateY(4px);
+  }
+}

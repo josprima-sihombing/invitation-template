@@ -42,7 +42,7 @@ export const inter = Inter({
 });
 
 export const mitr = Mitr({
-  weight: ["400", "600"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal"],
   subsets: ["latin"],
 });
@@ -57,3 +57,5 @@ export const lemon = Lemon({
   weight: "400",
   subsets: ["latin"],
 });
+
+export const supravitally = localFont({ src: "./Supravitally.otf" });
