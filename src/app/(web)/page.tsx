@@ -9,6 +9,8 @@ import tasyukuranBearBlue from "./tasyukuran-bear-blue.jpg";
 import bearImg from "./bear.jpg";
 import weddingRose from "./wedding-rose.jpg";
 import weddingRosePhoto from "./wedding-rose-photo.jpg";
+import weddingLily from "./wedding-lily.jpg";
+import weddingLilyPhoto from "./wedding-lily-photo.jpg";
 import classNames from "classnames";
 import { useState } from "react";
 import { Button } from "@mantine/core";
@@ -76,6 +78,20 @@ const templates: Record<string, InvitationTemplate[]> = {
       href: "/wedding-rose-photo",
       imgSrc: weddingRosePhoto.src,
       name: "Wedding Rose Photo",
+      price: 180000,
+    },
+    {
+      id: "wedding-6",
+      href: "/wedding-lily",
+      imgSrc: weddingLily.src,
+      name: "Wedding Lily",
+      price: 150000,
+    },
+    {
+      id: "wedding-7",
+      href: "/wedding-lily-photo",
+      imgSrc: weddingLilyPhoto.src,
+      name: "Wedding Lily Photo",
       price: 180000,
     },
   ],

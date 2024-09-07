@@ -6,8 +6,9 @@ import image4 from "./4.png";
 import image5 from "./5.png";
 import image8 from "./8.png";
 import image9 from "./9.png";
-import imagebgGold from "./bgGold.jpg";
-import imagebgRed from "./bgRed.jpg";
+import imagebgSecondary from "./bgSecondary.jpg";
+import imagebgPrimary from "./bgPrimary.jpg";
+import imagebgGroom from "./bgGroom.jpg";
 import personA from "./person_a.jpg";
 import personB from "./person_b.jpg";
 
@@ -20,8 +21,9 @@ export const images = {
   image5: image5.src,
   image8: image8.src,
   image9: image9.src,
-  imagebgGold: imagebgGold.src,
-  imagebgRed: imagebgRed.src,
+  imagebgSecondary: imagebgSecondary.src,
+  imagebgPrimary: imagebgPrimary.src,
+  imagebgGroom: imagebgGroom.src,
   imagePersonA: personA.src,
   imagePersonB: personB.src,
 };
