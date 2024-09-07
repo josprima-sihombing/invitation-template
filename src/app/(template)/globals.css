@@ -25,6 +25,10 @@ details summary {
   list-style: none;
 }
 
+.thumb {
+  vertical-align: middle;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
