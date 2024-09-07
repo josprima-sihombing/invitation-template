@@ -43,6 +43,7 @@ export default function Countdown3({
             style={{
               color: textColor,
               backgroundColor: bgColor,
+              border: `1px solid ${borderColor}`,
             }}
           >
             <span>{minutes}</span>
@@ -52,6 +53,7 @@ export default function Countdown3({
             style={{
               color: textColor,
               backgroundColor: bgColor,
+              border: `1px solid ${borderColor}`,
             }}
           >
             <span>{seconds}</span>
