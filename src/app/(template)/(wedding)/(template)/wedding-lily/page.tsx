@@ -164,13 +164,13 @@ export default function Page() {
           <div
             className={classNames(
               css.top,
-              "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
+              "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px]",
             )}
           >
             <div
               className={classNames(
                 supravitally.className,
-                "bg-[#EAF4ED] text-[#53996E] pt-[10px] px-[35px] pb-[40px] relative top-[-10px]",
+                "bg-[#EAF4ED] text-[#53996E] relative h-full w-full flex flex-col items-center justify-center rounded-[50%]",
               )}
             >
               <div className="flex justify-center items-center gap-1 mb-[-10px]">
@@ -183,7 +183,7 @@ export default function Page() {
 
             <img
               src={images.image10}
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[unset]"
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[unset] w-[240px]"
             />
           </div>
         </div>
