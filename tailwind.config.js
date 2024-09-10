@@ -13,6 +13,9 @@ module.exports = {
         special: ["var(--special-font)"],
         sans: ["var(--inter-var)", ...defaultTheme.fontFamily.sans],
       },
+      screens: {
+        xs: "375px",
+      },
     },
   },
   plugins: [textBorderPlugin],
