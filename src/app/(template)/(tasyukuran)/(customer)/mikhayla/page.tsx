@@ -187,7 +187,7 @@ export default function Page() {
                 <h1
                   className={classNames(
                     hirarkiSignatureFont.className,
-                    "font-semibold text-center text-3xl text-[#dcbe72] mt-8 mb-12",
+                    "text-center text-3xl text-[#dcbe72] mt-8 mb-12",
                   )}
                 >
                   Mikhayla Mafaza Amarsagia
