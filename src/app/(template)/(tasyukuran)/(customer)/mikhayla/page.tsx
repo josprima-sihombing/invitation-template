@@ -181,7 +181,22 @@ export default function Page() {
                   Dengan memohon Rahmat dan Ridho Allah SWT, <br />
                   Kami sekeluarga bermaksud untuk mengundang Bapak/Ibu/Saudara/i{" "}
                   <br />
-                  pada acara Tasyakuran Aqigah Putri kami
+                  pada acara Tasyakuran Aqigah Putri kami:
+                </h1>
+
+                <h1
+                  className={classNames(
+                    hirarkiSignatureFont.className,
+                    "font-semibold text-center text-3xl text-[#dcbe72] mt-8 mb-12",
+                  )}
+                >
+                  Mikhayla Mafaza Amarsagia
+                </h1>
+                <h1 className="text-center text-sm text-[#4A3C5E]">
+                  Putri Dari
+                </h1>
+                <h1 className="font-semibold text-center text-lg text-[#4A3C5E]">
+                  Tisa Dera & M. Damar
                 </h1>
               </div>
 
@@ -325,7 +340,7 @@ export default function Page() {
         <Particles color="#F0C47D" />
         <Toaster />
         <Music
-          musicURL="/assets/musics/birthday-2.wav"
+          musicURL="/assets/musics/lullaby-baby-cradle-song-music-box-233532.mp3"
           play={play}
           setPlay={setPlay}
           hide={hideMusic}
