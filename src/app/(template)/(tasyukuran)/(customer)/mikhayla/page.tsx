@@ -243,7 +243,7 @@ export default function Page() {
               </div>
             </div>
 
-            <div
+            {/* <div
               className="relative bg-[#EFA9C5] px-8 pt-20 pb-28 z-20"
               id="amplop-digital"
             >
@@ -273,7 +273,7 @@ export default function Page() {
                 src={images.image9}
                 className="w-[140px] absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-[80px]"
               />
-            </div>
+            </div> */}
 
             <div
               className="relative bg-white px-8 pt-32 pb-64 overflow-hidden"
