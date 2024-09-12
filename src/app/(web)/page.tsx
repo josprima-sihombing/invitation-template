@@ -1,16 +1,6 @@
 "use client";
 
 import { FaMinus, FaPlus, FaWhatsapp } from "react-icons/fa6";
-import floral1Img from "./floral-1-preview.jpg";
-import floral2Img from "./floral-2-preview.jpg";
-import floral3Img from "./floral-3-preview.jpg";
-import tasyukuranBearPink from "./tasyukuran-bear-pink.jpg";
-import tasyukuranBearBlue from "./tasyukuran-bear-blue.jpg";
-import bearImg from "./bear.jpg";
-import weddingRose from "./wedding-rose.jpg";
-import weddingRosePhoto from "./wedding-rose-photo.jpg";
-import weddingLily from "./wedding-lily.jpg";
-import weddingLilyPhoto from "./wedding-lily-photo.jpg";
 import classNames from "classnames";
 import { useState } from "react";
 import { Button } from "@mantine/core";
@@ -48,49 +38,49 @@ const templates: Record<string, InvitationTemplate[]> = {
     {
       id: "wedding-1",
       href: "/floral-1-preview",
-      imgSrc: floral1Img.src,
+      imgSrc: "/assets/previews/templates/floral-1-preview.jpg",
       name: "Floral 1",
       price: 150000,
     },
     {
       id: "wedding-2",
       href: "/floral-2-preview",
-      imgSrc: floral2Img.src,
+      imgSrc: "/assets/previews/templates/floral-2-preview.jpg",
       name: "Floral 2",
       price: 150000,
     },
     {
       id: "wedding-3",
       href: "/floral-3-preview",
-      imgSrc: floral3Img.src,
+      imgSrc: "/assets/previews/templates/floral-3-preview.jpg",
       name: "Floral 3",
       price: 150000,
     },
     {
       id: "wedding-4",
       href: "/wedding-rose",
-      imgSrc: weddingRose.src,
+      imgSrc: "/assets/previews/templates/wedding-rose.jpg",
       name: "Wedding Rose",
       price: 150000,
     },
     {
       id: "wedding-5",
       href: "/wedding-rose-photo",
-      imgSrc: weddingRosePhoto.src,
+      imgSrc: "/assets/previews/templates/wedding-rose-photo.jpg",
       name: "Wedding Rose Photo",
       price: 180000,
     },
     {
       id: "wedding-6",
       href: "/wedding-lily",
-      imgSrc: weddingLily.src,
+      imgSrc: "/assets/previews/templates/wedding-lily.jpg",
       name: "Wedding Lily",
       price: 150000,
     },
     {
       id: "wedding-7",
       href: "/wedding-lily-photo",
-      imgSrc: weddingLilyPhoto.src,
+      imgSrc: "/assets/previews/templates/wedding-lily-photo.jpg",
       name: "Wedding Lily Photo",
       price: 180000,
     },
@@ -99,7 +89,7 @@ const templates: Record<string, InvitationTemplate[]> = {
     {
       id: "birthday-1",
       href: "/bear",
-      imgSrc: bearImg.src,
+      imgSrc: "/assets/previews/templates/bear.jpg",
       name: "Bear",
       price: 150000,
     },
@@ -108,14 +98,14 @@ const templates: Record<string, InvitationTemplate[]> = {
     {
       id: "tasyukuran-1",
       href: "/tasyukuran-bear-pink",
-      imgSrc: tasyukuranBearPink.src,
+      imgSrc: "/assets/previews/templates/tasyukuran-bear-pink.jpg",
       name: "Tasyukuran Bear Pink",
       price: 150000,
     },
     {
       id: "tasyukuran-2",
       href: "/tasyukuran-bear-blue",
-      imgSrc: tasyukuranBearBlue.src,
+      imgSrc: "/assets/previews/templates/tasyukuran-bear-blue.jpg",
       name: "Tasyukuran Bear Blue",
       price: 150000,
     },

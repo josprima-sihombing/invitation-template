@@ -1,0 +1,15 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Undangan Birthday",
+  description: "Senin, 31 Februari 2024",
+  openGraph: {
+    url: "https://www.kreasi-invitation.com/bear",
+    images:
+      "https://www.kreasi-invitation.com/assets/previews/templates/bear.jpg",
+  },
+};
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return children;
+}
