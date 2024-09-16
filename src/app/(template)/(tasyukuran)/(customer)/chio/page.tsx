@@ -81,7 +81,8 @@ export default function Page() {
           <div
             className={classNames(
               css.blueGradient,
-              "h-full rounded-t-[140px] p-[20px]",
+              css.coverContent,
+              "h-full rounded-t-[140px] p-[20px] scale-[3] opacity-0",
             )}
           >
             <div
