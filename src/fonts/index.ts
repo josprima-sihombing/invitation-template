@@ -1,4 +1,4 @@
-import { Inter, Mitr, Amarante, Lemon } from "next/font/google";
+import { Inter, Mitr, Amarante, Lemon, Sofia_Sans } from "next/font/google";
 import localFont from "next/font/local";
 
 export const jaguarFont = localFont({ src: "./Jaguar.woff" });
@@ -58,4 +58,14 @@ export const lemon = Lemon({
   subsets: ["latin"],
 });
 
+export const sofiaSans = Sofia_Sans({
+  weight: ["400", "500", "600", "700", "900"],
+  style: ["italic", "normal"],
+  subsets: ["latin"],
+});
+
 export const supravitally = localFont({ src: "./Supravitally.otf" });
+
+export const ramadhanish = localFont({ src: "./Ramadanish.woff" });
+
+export const baloo = localFont({ src: "./Baloo.ttf" });
