@@ -127,7 +127,7 @@ export default function RsvpForm({ afterSubmit }: RsvpFormProps) {
                   value="Jam 16:00-17:30"
                   {...register("session")}
                 />
-                <span>Jam 16:00-17:30</span>
+                <span className="text-xs">16:00-17:30</span>
               </div>
               <div className={css.radio}>
                 <input
@@ -135,7 +135,7 @@ export default function RsvpForm({ afterSubmit }: RsvpFormProps) {
                   value="Jam 18:00-19:00"
                   {...register("session")}
                 />
-                <span>Jam 18:00-19:00</span>
+                <span className="text-xs">18:00-19:00</span>
               </div>
             </div>
 
