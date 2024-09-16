@@ -6,21 +6,18 @@ import { images } from "./assets";
 import { useEffect, useRef, useState } from "react";
 import getName from "@/utils/get-name";
 import dayjs from "dayjs";
-import RsvpForm from "@/components/rsvp-form";
+import RsvpForm from "@/components/rsvp-form-2";
 import Countdown3 from "@/components/countdown/countdown-3";
-import { FaBuilding, FaCalendarDay, FaClock } from "react-icons/fa6";
+import {
+  FaBuilding,
+  FaCalendarDay,
+  FaClock,
+  FaMapLocation,
+} from "react-icons/fa6";
 import dynamic from "next/dynamic";
 import { Toaster } from "react-hot-toast";
-import {
-  mitr,
-  hirarkiSignatureFont,
-  amarante,
-  sofiaSans,
-  ramadhanish,
-  baloo,
-} from "@/fonts";
+import { sofiaSans, ramadhanish, baloo } from "@/fonts";
 import EnvelopeIcon from "@/components/icons/envelope";
-import BankCard from "@/components/bank-card";
 import AssetsLoader from "@/components/assets-loader";
 import Ads from "@/components/ads";
 
@@ -203,6 +200,177 @@ export default function Page() {
 
         {isOpen && (
           <div ref={invitationContentRef}>
+            <div
+              className="px-8 pt-[60px] pb-[220px] relative"
+              style={{
+                backgroundImage: `url(${images.imagebg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "bottom center",
+              }}
+            >
+              <div className="absolute left-[10px] top-0">
+                <img src={images.image4} className="w-[30px]" />
+                <img
+                  src={images.image4}
+                  className="w-[20px] absolute left-[30px] top-0"
+                />
+              </div>
+
+              <div className="absolute right-[10px] top-0">
+                <img src={images.image4} className="w-[20px]" />
+              </div>
+
+              <div className="text-center bg-white/50 shadow-lg rounded-xl px-4 py-12">
+                <p className="mb-4">
+                  Assalamualaikum Warahmatullahi Wabarakatuh,
+                </p>
+                <p className="mb-8">
+                  Kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara
+                  Tasyakuran Aqiqoh Putra kami
+                </p>
+                <img
+                  src={images.imagebaby2}
+                  className="rounded-2xl shadow-lg border-solid border-[10px] border-[#FFD68C] mb-8"
+                />
+                <p
+                  className={classNames(
+                    baloo.className,
+                    "text-2xl text-[#D3A043]",
+                  )}
+                >
+                  Muhammad Erza lechio alfahmi
+                </p>
+                <p className="font-bold">
+                  Putra Dari Uin Rofiqoh & Muhammad Khoyum Alfalah
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-[#FFD68C] relative px-4 pb-8">
+              <img
+                src={images.image5}
+                className="absolute w-[160px] left-1/2 -translate-x-1/2 top-0 translate-y-[-200px]"
+              />
+
+              <div className="relative bg-white max-w-[320px] mx-auto px-4 py-12 rounded-3xl shadow-lg translate-y-[-50px] border-[5px] border-[#FFD68C]">
+                <p className="text-center mb-4">Yang dilaksanakan pada:</p>
+
+                <div className="flex flex-col gap-4 mb-8">
+                  <div className="flex gap-2 items-center">
+                    <span className="mb-[4px]">
+                      <FaCalendarDay />
+                    </span>
+                    <span className="font-bold text-lg">
+                      Kamis, 19 September 2024
+                    </span>
+                  </div>
+
+                  <div className="flex gap-2 items-center">
+                    <span className="mb-[4px]">
+                      <FaClock />
+                    </span>
+                    <span className="font-bold">
+                      Jam 16:00-17:30 dan <br /> 18:00-19:00
+                    </span>
+                  </div>
+
+                  <div className="flex gap-2 items-center">
+                    <span className="mb-[4px]">
+                      <FaBuilding />
+                    </span>
+                    <span>
+                      Bertempat di Ponpes Wali barokah Gedung Wistram <br />
+                      (Wisma Tentram)
+                    </span>
+                  </div>
+                </div>
+
+                <a
+                  href="https://maps.app.goo.gl/4Mmwe9zbdbv1UdaN7"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex gap-2 items-center border border-blue-500 w-fit mx-auto px-4 py-2 rounded-lg text-blue-500"
+                >
+                  <span>
+                    <FaMapLocation />
+                  </span>
+                  <span>Map Lokasi</span>
+                </a>
+              </div>
+
+              <Countdown3
+                date={dayjs("2024-09-19").toDate()}
+                bgColor="#7EC1F5"
+              />
+            </div>
+
+            <div className="px-8 pt-12 pb-[120px] bg-[#7EC1F5]">
+              <div className="bg-white px-4 py-8 rounded-2xl border-[2px] border-[#FFD68C]">
+                <RsvpForm
+                  afterSubmit={() => {
+                    document.getElementById("pray")?.scrollIntoView({
+                      behavior: "smooth",
+                    });
+                  }}
+                />
+              </div>
+            </div>
+
+            <div
+              id="pray"
+              className="relative pt-[100px] pb-[160px]"
+              style={{
+                backgroundImage: `url(${images.imagebg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "bottom center",
+              }}
+            >
+              <img
+                src={images.image6}
+                className="absolute w-full left-0 top-0 translate-y-[-50px]"
+              />
+
+              <div className="px-8">
+                <div className="text-center bg-[#FFD68C] px-12 py-20 border-[5px] border-[#FFE8C3] rounded-tl-[68px] rounded-br-[68px] mb-20">
+                  <p className="leading-[180%] text-lg mb-8">
+                    Dan orang-orang yang berkata, “Ya Tuhan kami, anugerahkanlah
+                    kepada kami pasangan kami dan keturunan kami sebagai
+                    penyenang hati (kami), dan jadikanlah kami pemimpin bagi
+                    orang-orang yang bertakwa.”
+                  </p>
+                  <p className="text-xl font-bold">(QS. AL-FURQAN : 74)</p>
+                </div>
+
+                <p className="text-center mb-4">
+                  Atas kehadiran Bapak/Ibu/Saudara/i Kami ucapkan terima kasih
+                </p>
+                <p className="text-center mb-20">
+                  Wassalamualaikum Warahmatullahi Wabarakatuh
+                </p>
+              </div>
+
+              <div
+                className={classNames(
+                  css.nameBox,
+                  "bg-[#7EC1F5] text-white px-8 py-12 text-center",
+                )}
+              >
+                <p className="mb-2">Kami yang berbahagia:</p>
+                <p className="text-xl font-bold">
+                  Uin Rofiqoh &<br />
+                  Muhammad Khoyum Alfalah
+                </p>
+              </div>
+
+              <img
+                src={images.image7}
+                className="absolute w-[200px] bottom-0 left-1/2 -translate-x-1/2"
+              />
+
+              <div className="absolute w-full h-[40px] bottom-0">
+                <div className="w-full h-full bg-[#D3A043] rounded-t-[100%]"></div>
+              </div>
+            </div>
             <Ads />
           </div>
         )}

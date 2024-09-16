@@ -6,6 +6,7 @@ import image5 from "./5.png";
 import image6 from "./6.png";
 import image7 from "./7.png";
 import imagebaby from "./baby.jpg";
+import imagebaby2 from "./baby2.jpg";
 import imagecoverleft from "./cover-left.jpg";
 import imagecoverright from "./cover-right.jpg";
 import imagebg from "./bg.jpg";
@@ -19,6 +20,7 @@ export const images = {
   image6: image6.src,
   image7: image7.src,
   imagebaby: imagebaby.src,
+  imagebaby2: imagebaby2.src,
   imagecoverleft: imagecoverleft.src,
   imagecoverright: imagecoverright.src,
   imagebg: imagebg.src,

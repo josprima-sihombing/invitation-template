@@ -28,7 +28,8 @@
       "suspicious": {
         "noExplicitAny": "warn",
         "noAsyncPromiseExecutor": "off",
-        "noArrayIndexKey": "off"
+        "noArrayIndexKey": "off",
+        "noThenProperty": "off"
       },
       "correctness": {
         "useExhaustiveDependencies": "warn"

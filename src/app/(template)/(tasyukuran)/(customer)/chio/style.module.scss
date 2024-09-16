@@ -67,3 +67,24 @@
     transform: scale(1);
   }
 }
+
+.nameBox {
+  position: relative;
+
+  &::after, &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 7px;
+    left: 0;
+    background-image: linear-gradient(90deg, #FFD68C00, #FFD68C, #FFD68C00);
+  }
+
+  &::after {
+    top: 0;
+  }
+
+  &::before {
+    bottom: 0;
+  }
+}
