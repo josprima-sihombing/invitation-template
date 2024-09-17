@@ -230,7 +230,7 @@ export default function Page() {
                 </p>
                 <img
                   src={images.imagebaby2}
-                  className="rounded-2xl shadow-lg border-solid border-[10px] border-[#FFD68C] mb-8"
+                  className="rounded-[50%] shadow-lg border-solid border-[5px] border-[#FFD68C] mb-8"
                 />
                 <p
                   className={classNames(

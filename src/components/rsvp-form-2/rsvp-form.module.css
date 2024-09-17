@@ -53,9 +53,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  flex-basis: 60px;
-  flex-grow: 0;
-  flex-shrink: 0;
+  min-width: 60px;
 }
 
 .radio input[type="radio"] {
@@ -76,7 +74,6 @@
   font-size: 18px;
   border: 1px solid #000;
   padding: 8px;
-  text-wrap: nowrap;
 }
 
 .radio input[type="radio"]:checked ~ span {
