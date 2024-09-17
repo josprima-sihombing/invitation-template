@@ -238,7 +238,7 @@ export default function Page() {
                     "text-2xl text-[#D3A043]",
                   )}
                 >
-                  Muhammad Erza lechio alfahmi
+                  Muhammad Erza Lechio Alfahmi
                 </p>
                 <p className="font-bold">
                   Putra Dari Uin Rofiqoh & Muhammad Khoyum Alfalah
