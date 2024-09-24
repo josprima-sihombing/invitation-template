@@ -109,6 +109,13 @@ const templates: Record<string, InvitationTemplate[]> = {
       name: "Tasyukuran Bear Blue",
       price: 150000,
     },
+    {
+      id: "tasyukuran-3",
+      href: "/tasyukuran-islamic-blue",
+      imgSrc: "/assets/previews/templates/tasyukuran-islamic-blue.jpg",
+      name: "Tasyukuran Islamic Blue",
+      price: 150000,
+    },
   ],
 };
 
