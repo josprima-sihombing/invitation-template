@@ -1,0 +1,125 @@
+.cover_left {
+  transition: transform 2s ease;
+  
+  &--open {
+    transform: translateX(-100%);
+  }
+}
+
+.cover_right {
+  transition: transform 2s ease;
+
+  &--open {
+    transform: translateX(100%);
+  }
+}
+
+.cover_name {
+  transition: transform 2s ease, opacity 2s ease;
+
+  &--open {
+    opacity: 0;
+    transform: translateY(100%);
+    pointer-events: none;
+  }
+}
+
+.cover_logo {
+  transition: transform 2s ease, opacity 2s ease;
+
+  &--open {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+.button {
+  border: 1px solid #DAB96B;
+  color: #DAB96B;
+  padding: 8px 24px;
+  background-color: #662B32;
+  font-size: 14px;
+  transition: transform 0.35s ease;
+
+  &:active {
+    transform: translateY(4px);
+    transition: transform 0.35s ease;
+  }
+}
+
+.content {
+  opacity: 0;
+  animation: content-show 5s ease forwards 0.5s;
+}
+
+.ornament {
+  & > img {
+    opacity: 0;
+
+    &:nth-child(1) {
+      transform: translateY(100%);
+      animation: content-ornament-slide 5s ease forwards 0.5s;
+    }
+
+    &:nth-child(2) {
+      transform: translateY(100%);
+      animation: content-ornament-slide 3s ease forwards 1s;
+    }
+
+    &:nth-child(3) {
+      transform: translateY(100%);
+      animation: content-ornament-slide 2s ease forwards 1.5s;
+    }
+
+    &:nth-child(4) {
+      transform: translateY(100%);
+      animation: content-ornament-slide 2s ease forwards 2s;
+    }
+
+    &:nth-child(5) {
+      transform: translateY(100%);
+      animation: content-ornament-slide 1.5s ease forwards 2s;
+    }
+
+    &:nth-child(6) {
+      transform: translate(-50%, 100%);
+      animation: content-ornament-slide-up 3s ease forwards 3s;
+    }
+  }
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 2px #f0dfcf;
+}
+
+@keyframes content-show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes content-ornament-slide {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes content-ornament-slide-up {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
