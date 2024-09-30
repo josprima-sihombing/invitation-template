@@ -280,10 +280,19 @@ export default function Page() {
                 </div>
               </div>
 
+              <div className="mt-4">
+                <Countdown3
+                  date={new Date("2024-11-23")}
+                  bgColor="#662B32"
+                  textColor="#DAB96B"
+                  borderColor="#DAB96B"
+                />
+              </div>
+
               <h1
                 className={classNames(
                   solenoidalFont.className,
-                  "mt-14 mb-4 text-center text-xl text-[#662B32]",
+                  "mt-16 pt-12 mb-4 text-center text-xl text-[#662B32] border-t border-[#662B32]",
                 )}
               >
                 Sakramen Perkawinan
