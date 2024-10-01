@@ -55,7 +55,7 @@ export default function Page() {
     <AssetsLoader assets={images}>
       <div className="fixed top-0 left-0 h-full w-full flex">
         <div
-          className="basis-0 flex items-center justify-center overflow-hidden bg-red-500"
+          className="basis-0 flex flex-grow items-center justify-center overflow-hidden"
           style={{
             backgroundImage: `url(${images.imageBg})`,
             backgroundRepeat: "no-repeat",
@@ -65,13 +65,13 @@ export default function Page() {
         >
           <img src={images.imageLogo2} className="w-[80px]" />
         </div>
-        <div className="w-full max-w-screen-xs"></div>
+        <div className="w-full max-w-[430px]"></div>
       </div>
 
       <div
         className={classNames(
           "font-serif",
-          "relative h-full w-full max-w-screen-xs ml-auto",
+          "relative h-full w-full max-w-[430px] ml-auto",
         )}
       >
         <div
