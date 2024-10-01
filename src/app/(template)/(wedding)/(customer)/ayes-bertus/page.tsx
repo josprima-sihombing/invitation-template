@@ -5,7 +5,6 @@ import css from "./style.module.scss";
 import { images } from "./assets";
 import { useEffect, useRef, useState } from "react";
 import getName from "@/utils/get-name";
-import dayjs from "dayjs";
 import RsvpForm from "@/components/rsvp-form";
 import Countdown3 from "@/components/countdown/countdown-3";
 import {
@@ -17,7 +16,7 @@ import {
 } from "react-icons/fa6";
 import dynamic from "next/dynamic";
 import { Toaster } from "react-hot-toast";
-import { hirarkiSignatureFont, sofiaSans, solenoidalFont } from "@/fonts";
+import { playfair } from "@/fonts";
 import EnvelopeIcon from "@/components/icons/envelope";
 import BankCard from "@/components/bank-card";
 import AssetsLoader from "@/components/assets-loader";
@@ -54,10 +53,25 @@ export default function Page() {
 
   return (
     <AssetsLoader assets={images}>
+      <div className="fixed top-0 left-0 h-full w-full flex">
+        <div
+          className="basis-0 flex items-center justify-center overflow-hidden bg-red-500"
+          style={{
+            backgroundImage: `url(${images.imageBg})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <img src={images.imageLogo2} className="w-[80px]" />
+        </div>
+        <div className="w-full max-w-screen-xs"></div>
+      </div>
+
       <div
         className={classNames(
-          sofiaSans.className,
-          "h-full max-w-screen-md mx-auto",
+          "font-serif",
+          "relative h-full w-full max-w-screen-xs ml-auto",
         )}
       >
         <div
@@ -65,7 +79,7 @@ export default function Page() {
             {
               "pointer-events-none": isOpen,
             },
-            "fixed w-full h-full overflow-hidden bg-transparent z-30",
+            "absolute w-full h-full overflow-hidden bg-transparent z-30",
           )}
         >
           <div
@@ -142,7 +156,7 @@ export default function Page() {
             <div
               className={classNames(
                 css.content,
-                "relative pb-4 pt-28 px-4 h-full z-10 overflow-hidden",
+                "relative pb-4 pt-12 px-4 h-full z-10 overflow-hidden",
               )}
               style={{
                 backgroundImage: `url(${images.imageBg})`,
@@ -150,10 +164,21 @@ export default function Page() {
                 backgroundPosition: "top center",
               }}
             >
-              <p className="text-center px-10 leading-relaxed text-[#662B32]">
-                Dengan ungkapan puji syukur atas anugerah dan cinta kasih Allah
-                yang Maha Kuasa, mengundang Bapak/Ibu/Saudara/i dalam acara
-                Resepsi Pernikahan putra putri kami tercinta
+              <img src={images.imageLogo2} className="mx-auto w-[80px] mb-6" />
+              <p
+                className={classNames(
+                  css["text-shadow"],
+                  "text-center px-4 leading-relaxed text-sm relative z-10",
+                )}
+              >
+                Sebab pada awal dunia, Allah menjadikan mereka laki-laki dan
+                perempuan, sebab itu laki-laki akan meninggalkan ayahnya dan
+                ibunya dan bersatu dengan istrinya, sehingga keduanya itu
+                menjadi satu daging. <br /> Demikianlah mereka bukan lagi dua,
+                melainkan satu. Karena itu, apa yang telah dipersatukan Allah,
+                tidak boleh diceraikan manusia.
+                <br />
+                <span className="block mt-6">Markus 10:6-9</span>
               </p>
 
               <div className={css.ornament}>
@@ -186,25 +211,22 @@ export default function Page() {
               </div>
             </div>
 
-            <div
-              className="bg-[#f0dfcf] px-4 pb-56 pt-24"
-              style={{
-                backgroundImage: `url(${images.imageOrnament3})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "contain",
-                backgroundPosition: "bottom center",
-              }}
-            >
+            <div className="bg-[#f0dfcf] px-8 pb-8 pt-12">
+              <p className="text-center text-sm leading-loose mb-10">
+                Dengan ungkapan puji syukur atas anugerah dan cinta kasih Allah
+                yang Maha Kuasa, mengundang Bapak/Ibu/Saudara/i dalam acara
+                Resepsi Pernikahan putra-putri kami tercinta :
+              </p>
               <div className="text-center">
                 <h1
                   className={classNames(
-                    solenoidalFont.className,
-                    "text-4xl text-[#DAB96B] mb-2",
+                    playfair.className,
+                    "text-3xl text-[#DAB96B] mb-2",
                   )}
                 >
                   dr. Nareswari Dyah Wisesaningrum
                 </h1>
-                <h2 className="text-[#662B32]">
+                <h2 className="font-bold text-sm">
                   Putri Bapak R. Wahyu Wibihasmara, S.H & <br />
                   Ibu Wiwik Dwi Wisnuningdyah, S.H, M.H
                 </h2>
@@ -212,44 +234,50 @@ export default function Page() {
 
               <h1
                 className={classNames(
-                  hirarkiSignatureFont.className,
-                  "text-center my-10 text-xl text-[#662B32]",
+                  "text-center my-10 text-sm tracking-[8px] text-[#662B32]",
                 )}
               >
-                Dengan
+                DENGAN
               </h1>
 
               <div className="text-center">
                 <h1
                   className={classNames(
-                    solenoidalFont.className,
-                    "text-4xl text-[#DAB96B] mb-2",
+                    playfair.className,
+                    "text-3xl text-[#DAB96B] mb-2",
                   )}
                 >
                   IPDA Albertus Bagas Satria, S.TrK, M.H
                 </h1>
-                <h2 className="text-[#662B32]">
+                <h2 className="font-bold text-sm">
                   Putra Bapak Ir. Ferdinandus Suwarno & <br />
                   Ibu Margaretta Tutik Rahayuningsih, S.Pd
                 </h2>
               </div>
 
-              <h1 className="text-center mt-24 mb-4">
+              <h1 className="text-center text-sm mt-24 mb-4">
                 Yang akan diselenggarakan pada:
               </h1>
 
-              <div className="bg-[#662B32] text-[#DAB96B] p-2">
-                <div className="flex flex-col gap-4 border-2 border-[#DAB96B] px-4 pt-10 pb-4">
+              <h1
+                className={classNames(
+                  playfair.className,
+                  "text-xl text-center tracking-[6px] text-[#662B32] mb-4",
+                )}
+              >
+                RESEPSI
+              </h1>
+
+              <div className="bg-[#662B32] text-[#DAB96B] p-2 text-sm">
+                <div className="flex flex-col gap-4 border-2 border-[#DAB96B] p-4">
                   <div className="flex gap-4">
-                    <span className="mt-1 text-xl">
+                    <span className="mt-1 text-sm">
                       <FaCalendarDay />
                     </span>
-                    <span className="text-lg font-bold">
-                      Sabtu, 23 November 2024
-                    </span>
+                    <span>Sabtu, 23 November 2024</span>
                   </div>
                   <div className="flex gap-4">
-                    <span className="mt-1 text-xl">
+                    <span className="mt-1 text-sm">
                       <FaClock />
                     </span>
                     <span>
@@ -258,7 +286,7 @@ export default function Page() {
                     </span>
                   </div>
                   <div className="flex gap-4 mb-4">
-                    <span className="mt-1 text-xl">
+                    <span className="mt-1 text-sm">
                       <FaBuilding />
                     </span>
                     <span>
@@ -288,76 +316,79 @@ export default function Page() {
                   borderColor="#DAB96B"
                 />
               </div>
-
-              <h1
-                className={classNames(
-                  solenoidalFont.className,
-                  "mt-16 pt-12 mb-4 text-center text-xl text-[#662B32] border-t border-[#662B32]",
-                )}
-              >
-                Sakramen Perkawinan
-              </h1>
-
-              <div className="flex flex-col gap-4 border border-[#662B32] p-4 text-[#662B32]">
-                <div className="flex gap-4">
-                  <span className="mt-1 text-xl">
-                    <FaCalendarDay />
-                  </span>
-                  <span>Jumat, 22 November 2024</span>
-                </div>
-                <div className="flex gap-4">
-                  <span className="mt-1 text-xl">
-                    <FaChurch />
-                  </span>
-                  <span>Gereja Katolik Santo Petrus & Paulus Minomartani</span>
-                </div>
-              </div>
-
-              <p
-                className={classNames(
-                  solenoidalFont.className,
-                  "text-center mt-10 leading-loose text-[#662B32] text-lg",
-                )}
-              >
-                Merupakan suatu kehormatan dan kebahagiaan bagi kami, <br />
-                apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa
-                restu kepada kedua mempelai
-              </p>
             </div>
 
             <div
+              className="px-4 pt-10 pb-48"
               style={{
                 backgroundImage: `url(${images.imageBg2})`,
                 backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
                 backgroundPosition: "bottom center",
               }}
-              className="px-4 pt-10 pb-52"
             >
-              <img
-                src={images.imageLogo2}
-                className="w-[120px] mx-auto mb-10"
-              />
-
-              <p
+              <h1
                 className={classNames(
-                  solenoidalFont.className,
-                  css["text-shadow"],
-                  "text-center px-4 leading-loose mb-4 text-[#662B32]",
+                  playfair.className,
+                  "text-center text-[#662B32] mb-4",
                 )}
               >
-                Sebab pada awal dunia, Allah menjadikan mereka laki-laki dan
-                perempuan, sebab itu laki-laki akan meninggalkan ayahnya dan
-                ibunya dan bersatu dengan istrinya, sehingga keduanya itu
-                menjadi satu daging.
-                <br />
-                Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu,
-                apa yang telah dipersatukan Allah, tidak boleh diceraikan
-                manusia.
-              </p>
+                SAKRAMEN PERKAWINAN
+              </h1>
 
-              <p className="text-center font-bold text-[#662B32]">
-                Markus 10:6-9
-              </p>
+              <div className="bg-[#662B32] text-[#DAB96B] p-2 text-sm">
+                <div className="flex flex-col gap-4 border-2 border-[#DAB96B] p-4">
+                  <div className="flex gap-4">
+                    <span className="mt-1 text-sm">
+                      <FaCalendarDay />
+                    </span>
+                    <span>Jumat, 22 November 2024</span>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="mt-1 text-sm">
+                      <FaChurch />
+                    </span>
+                    <span>
+                      Gereja Katolik Santo Petrus & Paulus Minomartani
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-center text-sm">
+                <p className={classNames("mt-10 leading-loose")}>
+                  Merupakan suatu kehormatan dan kebahagiaan bagi kami, <br />
+                  apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan
+                  doa restu kepada kedua mempelai
+                </p>
+
+                <p className="my-10">Kami yang berbahagia</p>
+                <p className="mb-4">
+                  Putri Bapak R. Wahyu Wibihasmara, S.H &<br /> Ibu Wiwik Dwi
+                  Wisnuningdyah, S.H, M.H
+                </p>
+
+                <p className="mb-4">
+                  Putra Bapak Ir. Ferdinandus Suwarno &<br /> Ibu Margaretta T
+                  utik Rahayuningsih, S.Pd
+                </p>
+
+                <p className="tracking-wider">AYES & BERTUS</p>
+              </div>
+            </div>
+
+            <div
+              className="px-4 py-12 bg-[#f0dfcf]"
+              style={{
+                backgroundImage: `url(${images.imageOrnament3})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "contain",
+                backgroundPosition: "bottom center",
+              }}
+            >
+              <div className="bg-white/40 px-4 pt-12 pb-4">
+                <RsvpForm />
+              </div>
             </div>
 
             <Ads />

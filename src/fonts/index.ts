@@ -1,4 +1,11 @@
-import { Inter, Mitr, Amarante, Lemon, Sofia_Sans } from "next/font/google";
+import {
+  Inter,
+  Mitr,
+  Amarante,
+  Lemon,
+  Sofia_Sans,
+  Playfair_Display,
+} from "next/font/google";
 import localFont from "next/font/local";
 
 export const jaguarFont = localFont({ src: "./Jaguar.woff" });
@@ -59,6 +66,12 @@ export const lemon = Lemon({
 });
 
 export const sofiaSans = Sofia_Sans({
+  weight: ["400", "500", "600", "700", "900"],
+  style: ["italic", "normal"],
+  subsets: ["latin"],
+});
+
+export const playfair = Playfair_Display({
   weight: ["400", "500", "600", "700", "900"],
   style: ["italic", "normal"],
   subsets: ["latin"],

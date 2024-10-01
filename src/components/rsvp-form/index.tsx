@@ -3,7 +3,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { type SubmitHandler, useForm } from "react-hook-form";
 
 import css from "./rsvp-form.module.css";
-import { solenoidalFont } from "@/fonts";
 import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -93,61 +92,46 @@ export default function RsvpForm({
 
   return (
     <div className={css.form}>
-      <h1 className={solenoidalFont.className}>{t.formTitle}</h1>
+      <h1>{t.formTitle}</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={css.form_field}>
-          <label htmlFor="name" className={solenoidalFont.className}>
-            {t.name}
-          </label>
+          <label htmlFor="name">{t.name}</label>
           <input
             id="name"
             type="text"
             placeholder={t.namePlaceholder}
-            className={solenoidalFont.className}
             {...register("name")}
           />
           <p className={css.input_error}>{errors.name?.message}</p>
         </div>
         <div className={css.form_field}>
-          <label htmlFor="phone_number" className={solenoidalFont.className}>
-            {t.phoneNumber}
-          </label>
+          <label htmlFor="phone_number">{t.phoneNumber}</label>
           <input
             id="phone_number"
             type="text"
             placeholder={t.phoneNumberPlaceholder}
-            className={solenoidalFont.className}
             {...register("phoneNumber")}
           />
           <p className={css.input_error}>{errors.phoneNumber?.message}</p>
         </div>
         <div className={css.form_field}>
-          <label htmlFor="wish" className={solenoidalFont.className}>
-            {t.wish}
-          </label>
-          <textarea
-            id="wish"
-            className={solenoidalFont.className}
-            rows={2}
-            {...register("wish")}
-          />
+          <label htmlFor="wish">{t.wish}</label>
+          <textarea id="wish" rows={2} {...register("wish")} />
           <p className={css.input_error}>{errors.wish?.message}</p>
         </div>
 
         <div className={css.form_field}>
-          <label htmlFor="attend" className={solenoidalFont.className}>
-            {t.attend}
-          </label>
+          <label htmlFor="attend">{t.attend}</label>
 
           <div className={css.radio_container}>
             <div className={css.radio}>
               <input type="radio" value="true" {...register("attend")} />
-              <span className={solenoidalFont.className}>{t.yes}</span>
+              <span>{t.yes}</span>
             </div>
             <div className={css.radio}>
               <input type="radio" value="false" {...register("attend")} />
-              <span className={solenoidalFont.className}>{t.no}</span>
+              <span>{t.no}</span>
             </div>
           </div>
 
@@ -156,10 +140,7 @@ export default function RsvpForm({
 
         <button
           type="submit"
-          className={classNames(
-            solenoidalFont.className,
-            "disabled:opacity-40",
-          )}
+          className={classNames("disabled:opacity-40")}
           disabled={loadingForm}
         >
           {loadingForm ? "Loading..." : t.submit}
