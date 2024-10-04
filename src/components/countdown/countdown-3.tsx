@@ -34,6 +34,7 @@ export default function Countdown3({
             style={{
               color: textColor,
               backgroundColor: bgColor,
+              border: `1px solid ${borderColor}`,
             }}
           >
             <span>{hours}</span>

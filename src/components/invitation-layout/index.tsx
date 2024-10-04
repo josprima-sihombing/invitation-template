@@ -1,14 +1,16 @@
 import { Toaster } from "react-hot-toast";
 import AssetsLoader from "../assets-loader";
-import Particles from "../particles";
 import Music from "../music";
 import type { Dispatch, SetStateAction } from "react";
+import dynamic from "next/dynamic";
+
+const Particles = dynamic(() => import("../particles"), { ssr: false });
 
 type InvitationLayoutProps = {
   images: Record<string, string>;
   children: React.ReactNode;
   coverChildren: React.ReactNode;
-  imageBg: string;
+  imageBg?: string;
   play: boolean;
   hideMusic: boolean;
   setPlay: Dispatch<SetStateAction<boolean>>;
@@ -32,12 +34,16 @@ export default function InvitationLayout({
       <div className="fixed top-0 left-0 h-full w-full flex">
         <div
           className="basis-0 flex flex-grow items-center justify-center overflow-hidden"
-          style={{
-            backgroundImage: `url(${imageBg})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          style={
+            imageBg
+              ? {
+                  backgroundImage: `url(${imageBg})`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }
+              : {}
+          }
         >
           {coverChildren}
         </div>
