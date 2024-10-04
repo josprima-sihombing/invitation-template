@@ -40,7 +40,7 @@ export default function Page() {
       hideMusic={hideMusic}
       play={play}
       setPlay={setPlay}
-      musicURL="/assets/musics/amazing-grace-129645.mp3"
+      musicURL="/assets/musics/ave-maria-instrumental-224083.mp3"
     >
       <div className={classNames(sofiaSans.className, "h-full")}>
         <div className="relative h-full bg-[#E8E4D1]">
@@ -125,7 +125,7 @@ export default function Page() {
               </p>
               <p>yang telah ditahbiskan menjadi imam oleh</p>
               <p className={classNames(playfair.className, "font-black")}>
-                Mgr. Yustinus Harjsusanto, MSF
+                Mgr. Yustinus Harjosusanto, MSF
               </p>
             </div>
             <div
@@ -329,7 +329,7 @@ export default function Page() {
                 <li>Bpk Fernandes Pae/istri</li>
                 <li>Bpk Yakob Abubakar/istri</li>
                 <li>Bpk Mohamad Usman/istri</li>
-                <li>Bpk Malkoing Palang</li>
+                <li>Bpk Melkior Palang</li>
                 <li>Bpk Herman Huvat/istri</li>
                 <li>Bpk Bernabas Dan/istri</li>
                 <li>Bpk Muklas/istri</li>
