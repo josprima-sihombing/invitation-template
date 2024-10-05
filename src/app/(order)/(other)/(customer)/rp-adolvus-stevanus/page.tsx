@@ -7,7 +7,13 @@ import { useEffect, useRef, useState } from "react";
 import getName from "@/utils/get-name";
 import RsvpForm from "@/components/rsvp-form";
 import Countdown3 from "@/components/countdown/countdown-3";
-import { FaBuilding, FaCalendarDay, FaClock, FaCross } from "react-icons/fa6";
+import {
+  FaBuilding,
+  FaCalendarDay,
+  FaChurch,
+  FaClock,
+  FaCross,
+} from "react-icons/fa6";
 import { playfair, sofiaSans } from "@/fonts";
 import Ads from "@/components/ads";
 import InvitationLayout from "@/components/invitation-layout";
@@ -164,7 +170,7 @@ export default function Page() {
                     <span className="mt-1 text-sm">
                       <FaClock />
                     </span>
-                    <span>Pukul 09:00 WITA</span>
+                    <span>Pukul 19:00 WITA</span>
                   </div>
                   <div className="flex gap-4 mb-4">
                     <span className="mt-1 text-sm">
@@ -218,6 +224,12 @@ export default function Page() {
                   </div>
                   <div className="flex gap-4">
                     <span className="mt-1 text-sm">
+                      <FaClock />
+                    </span>
+                    <span>Pukul 08:00 WITA</span>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="mt-1 text-sm">
                       <FaBuilding />
                     </span>
                     <span>Selabing, SP 5 - Wahau</span>
@@ -244,9 +256,15 @@ export default function Page() {
                   </div>
                   <div className="flex gap-4">
                     <span className="mt-1 text-sm">
-                      <FaBuilding />
+                      <FaClock />
                     </span>
-                    <span>Selabing, SP 5 - Wahau</span>
+                    <span>Pukul 08:00 WITA</span>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="mt-1 text-sm">
+                      <FaChurch />
+                    </span>
+                    <span>Gereja Stasi St.Fransiskus Asisi SP 5 Wahau</span>
                   </div>
                 </div>
               </div>
