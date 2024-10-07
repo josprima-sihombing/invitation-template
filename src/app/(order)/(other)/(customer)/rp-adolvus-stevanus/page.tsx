@@ -114,8 +114,8 @@ export default function Page() {
               }}
             >
               <h1 className="leading-loose">
-                Puji Syukur Pada Tuhan karena kasih-Nya anak/adik kami yang
-                telah ditahbiskan menjadi Imam
+                Puji Syukur Pada Tuhan karena kasih-Nya anak/adik kami yang akan
+                ditabiskan menjadi Imam
               </h1>
 
               <p
@@ -129,7 +129,7 @@ export default function Page() {
               <p className="mb-10 font-bold text-[#f3c847]">
                 Putra dari Bpk. Aurelius Nesa dan Ibu Yofita Geta
               </p>
-              <p>yang telah ditahbiskan menjadi imam oleh</p>
+              <p>Yang akan ditabiskan menjadi imam oleh</p>
               <p className={classNames(playfair.className, "font-black")}>
                 Mgr. Yustinus Harjosusanto, MSF
               </p>
@@ -144,15 +144,93 @@ export default function Page() {
               }}
             >
               <p className="leading-loose mb-10 text-center">
-                Dengan hormat dan penuh rasa syukur kami mengundang
-                Bapak,Ibu,Saudara/i untuk menghadiri perayaan Misa Syukur dan
-                dilanjutkan Resepsi Tahbisan Imam yang akan dilaksanakan pada:
+                Dengan hormat dan penuh rasa syukur kami mengundang bapak ibu
+                saudara saudari untuk dapat menghadiri misa pentahbisan dan
+                nantinya dilanjutkan dengan misa syukur yang akan dilaksanakan
+                pada:
               </p>
 
               <h1
                 className={classNames(
                   playfair.className,
-                  "text-xl text-center tracking-[6px] text-[#2F318B] mb-4",
+                  "text-xl text-center font-bold tracking-[2px] text-[#2F318B] mb-4",
+                )}
+              >
+                TAHBISAN IMAMAT
+              </h1>
+
+              <div className="bg-[#2F318B] text-[#fff] p-2 text-sm mb-8">
+                <div className="flex flex-col gap-4 border-2 border-[#fff] p-4">
+                  <div className="flex gap-4">
+                    <span className="mt-1 text-sm">
+                      <FaCalendarDay />
+                    </span>
+                    <span>Rabu, 09 Oktober 2024</span>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="mt-1 text-sm">
+                      <FaClock />
+                    </span>
+                    <span>Pukul 08:00 WITA</span>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="mt-1 text-sm">
+                      <FaChurch />
+                    </span>
+                    <span>
+                      Gereja paroki St. Maria Ratu Damai, <br />
+                      Nehas Liah Bing
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <h1
+                className={classNames(
+                  playfair.className,
+                  "text-xl text-center font-bold tracking-[2px] text-[#2F318B] mb-4",
+                )}
+              >
+                MISA PERDANA
+              </h1>
+
+              <div className="bg-[#2F318B] text-[#fff] p-2 text-sm mb-10">
+                <div className="flex flex-col gap-4 border-2 border-[#fff] p-4">
+                  <div className="flex gap-4">
+                    <span className="mt-1 text-sm">
+                      <FaCalendarDay />
+                    </span>
+                    <span>Minggu, 13 Oktober 2024</span>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="mt-1 text-sm">
+                      <FaClock />
+                    </span>
+                    <span>Pukul 08:00 WITA</span>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="mt-1 text-sm">
+                      <FaChurch />
+                    </span>
+                    <span>Gereja Stasi St.Fransiskus Asisi SP 5 Wahau</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="px-8 py-32"
+              style={{
+                backgroundImage: `url(${images.imageBg3})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            >
+              <h1
+                className={classNames(
+                  playfair.className,
+                  "text-xl text-center font-bold tracking-[6px] text-[#fff] mb-4",
                 )}
               >
                 MISA SYUKUR
@@ -186,7 +264,7 @@ export default function Page() {
                 </div>
               </div>
 
-              <div className="mt-4">
+              <div className="mt-4 mb-8">
                 <Countdown3
                   date={new Date("2024-10-17")}
                   bgColor="#2F318B"
@@ -194,84 +272,10 @@ export default function Page() {
                   borderColor="#fff"
                 />
               </div>
-            </div>
-
-            <div
-              className="px-8 py-32"
-              style={{
-                backgroundImage: `url(${images.imageBg3})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-              }}
-            >
-              <h1
-                className={classNames(
-                  playfair.className,
-                  "text-xl text-center tracking-[2px] text-[#fff] mb-4",
-                )}
-              >
-                TAHBISAN IMAMAT
-              </h1>
-
-              <div className="bg-[#2F318B] text-[#fff] p-2 text-sm mb-8">
-                <div className="flex flex-col gap-4 border-2 border-[#fff] p-4">
-                  <div className="flex gap-4">
-                    <span className="mt-1 text-sm">
-                      <FaCalendarDay />
-                    </span>
-                    <span>Rabu, 09 Oktober 2024</span>
-                  </div>
-                  <div className="flex gap-4">
-                    <span className="mt-1 text-sm">
-                      <FaClock />
-                    </span>
-                    <span>Pukul 08:00 WITA</span>
-                  </div>
-                  <div className="flex gap-4">
-                    <span className="mt-1 text-sm">
-                      <FaBuilding />
-                    </span>
-                    <span>Selabing, SP 5 - Wahau</span>
-                  </div>
-                </div>
-              </div>
-
-              <h1
-                className={classNames(
-                  playfair.className,
-                  "text-xl text-center tracking-[2px] text-[#fff] mb-4",
-                )}
-              >
-                MISA PERDANA
-              </h1>
-
-              <div className="bg-[#2F318B] text-[#fff] p-2 text-sm mb-10">
-                <div className="flex flex-col gap-4 border-2 border-[#fff] p-4">
-                  <div className="flex gap-4">
-                    <span className="mt-1 text-sm">
-                      <FaCalendarDay />
-                    </span>
-                    <span>Minggu, 13 Oktober 2024</span>
-                  </div>
-                  <div className="flex gap-4">
-                    <span className="mt-1 text-sm">
-                      <FaClock />
-                    </span>
-                    <span>Pukul 08:00 WITA</span>
-                  </div>
-                  <div className="flex gap-4">
-                    <span className="mt-1 text-sm">
-                      <FaChurch />
-                    </span>
-                    <span>Gereja Stasi St.Fransiskus Asisi SP 5 Wahau</span>
-                  </div>
-                </div>
-              </div>
 
               <p className="text-center leading-loose text-[#fff]">
                 Kehadiran dan doa Bapak/Ibu/Saudara/i merupakan suatu kebanggaan
-                dan kebahagiaan untuk keluarga kami
+                dan kebahagiaan untuk keluarga kami.
               </p>
               <p className="text-center mt-4 text-[#fff]">
                 Terimakasih atas doa dan kehadiran kita semua
