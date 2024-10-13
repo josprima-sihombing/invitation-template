@@ -12,14 +12,22 @@ import dynamic from "next/dynamic";
 import {
   type AnimationEventHandler,
   type CSSProperties,
-  useCallback,
-  useEffect,
+  useMemo,
   useState,
 } from "react";
-import { TbBrandInstagram } from "react-icons/tb";
+import {
+  TbBrandInstagram,
+  TbBuildingChurch,
+  TbCalendarEvent,
+  TbCalendarPlus,
+  TbClock,
+  TbMap2,
+  TbWindow,
+} from "react-icons/tb";
 
 import "animate.css";
 import Animation from "@/components/animation";
+import Countdown from "react-countdown";
 
 const Particles = dynamic(() => import("@/components/particles"), {
   ssr: false,
@@ -32,12 +40,31 @@ const bgImage1Style: CSSProperties = {
   backgroundRepeat: "no-repeat",
 };
 
+const bgImage2Style: CSSProperties = {
+  backgroundImage: `url(${assets.asset3})`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+};
+
 export default function Page() {
   const [isOpen, setIsOpen] = useState(false);
   const [play, setPlay] = useState(false);
   const [hideMusic, setHideMusic] = useState(true);
 
-  const guestName = getName();
+  const guestName = useMemo(() => getName(), []);
+
+  const calendarURL = useMemo(() => {
+    const url = new URL("https://www.google.com/calendar/render");
+
+    url.searchParams.set("action", "TEMPLATE");
+    url.searchParams.set("text", "Wedding of Adi dan Yuli");
+    url.searchParams.set("dates", "20251225T110000/20251225T130000"); //YYYYMMDDTHHMMSS
+    url.searchParams.set("location", "Ballroom Hotel Tentrem, Yogyakarta");
+    url.searchParams.set("details", "Resepsi pernikahan Adi dan Yuli");
+
+    return url.toString();
+  }, []);
 
   const openInvitation = () => {
     setIsOpen(true);
@@ -276,7 +303,7 @@ export default function Page() {
                     <a
                       href="#"
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       className="border-b py-1 text-sm inline-flex gap-1 items-center"
                     >
                       <TbBrandInstagram className="text-lg" />
@@ -343,7 +370,7 @@ export default function Page() {
                     <a
                       href="#"
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       className="border-b py-1 text-sm inline-flex gap-1 items-center"
                     >
                       <TbBrandInstagram className="text-lg" />
@@ -352,6 +379,182 @@ export default function Page() {
                   </div>
                 </div>
               </Animation>
+            </div>
+
+            <div className="relative pt-12 pb-28 px-4" style={bgImage2Style}>
+              <div className="absolute bottom-0 left-0 w-full translate-y-[80px]">
+                <Animation>
+                  <img src={assets.asset5} className="w-full" />
+                </Animation>
+              </div>
+
+              <Animation>
+                <p className="text-center text-[#22294A] mb-8">
+                  Yang akan dilaksanakan pada:
+                </p>
+              </Animation>
+
+              <Animation>
+                <div>
+                  <p
+                    className={classNames(
+                      solenoidalFont.className,
+                      "text-center text-[#22294A] text-2xl mb-2",
+                    )}
+                  >
+                    Resepsi
+                  </p>
+
+                  <div className="p-4" style={bgImage1Style}>
+                    <div className="border border-[#DAC178] px-4 pt-6 pb-4">
+                      <div className="flex flex-col gap-6 text-[#fff] mb-6">
+                        <div className="flex gap-2">
+                          <TbCalendarEvent className="text-xl mt-1 shrink-0" />
+                          <span className="text-lg">
+                            Sabtu, 25 Desember 2025
+                          </span>
+                        </div>
+                        <div className="flex gap-2">
+                          <TbClock className="text-xl mt-1 shrink-0" />
+                          <span className="text-lg">Pukul 11.00-13.00 WIB</span>
+                        </div>
+                        <div className="flex gap-2">
+                          <TbWindow className="text-xl mt-1 shrink-0" />
+                          <span className="text-lg">
+                            Ballroom Hotel Tentrem <br /> Yogyakarta
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="text-center">
+                        <a
+                          href="https://maps.app.goo.gl/ytzj1NuM7QJdUZWKA"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-center inline-flex items-center gap-2 bg-[#DAC178] px-4 py-1 rounded"
+                        >
+                          <TbMap2 className="text-xl" />
+                          <span>Lihat Maps</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Animation>
+
+              <Animation>
+                <div className="py-8 flex gap-4 justify-between items-center">
+                  <Countdown
+                    date={new Date("2025-12-12")} // YYYY-MM-DD
+                    renderer={({ days, hours, minutes, seconds }) => (
+                      <div className="grid grid-cols-2 grid-rows-2 gap-2">
+                        <div className="flex flex-col items-center bg-[#22294A]/20 px-2 py-4 rounded-tl-[20px] rounded-br-[10px]">
+                          <span className="text-2xl text-[#DAC178] font-light">
+                            {days}
+                          </span>
+                          <span className="text-sm text-[#fff]">Hari</span>
+                        </div>
+                        <div className="flex flex-col items-center bg-[#22294A]/20 px-2 py-4 rounded-tr-[20px] rounded-bl-[10px]">
+                          <span className="text-2xl text-[#DAC178] font-light">
+                            {hours}
+                          </span>
+                          <span className="text-sm text-[#fff]">Jam</span>
+                        </div>
+                        <div className="flex flex-col items-center bg-[#22294A]/20 px-2 py-4 rounded-bl-[20px] rounded-tr-[10px]">
+                          <span className="text-2xl text-[#DAC178] font-light">
+                            {minutes}
+                          </span>
+                          <span className="text-sm text-[#fff]">Menit</span>
+                        </div>
+                        <div className="flex flex-col items-center bg-[#22294A]/20 px-2 py-4 rounded-br-[20px] rounded-tl-[10px]">
+                          <span className="text-2xl text-[#DAC178] font-light">
+                            {seconds}
+                          </span>
+                          <span className="text-sm text-[#fff]">Detik</span>
+                        </div>
+                      </div>
+                    )}
+                  />
+
+                  <a
+                    href={calendarURL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-1 rounded border border-[#354279] text-[#354279]"
+                  >
+                    <TbCalendarPlus className="text-xl" />
+                    <span>Simpan ke Calendar</span>
+                  </a>
+                </div>
+              </Animation>
+
+              <Animation>
+                <div>
+                  <p
+                    className={classNames(
+                      solenoidalFont.className,
+                      "text-center text-[#22294A] text-2xl mb-2",
+                    )}
+                  >
+                    Sakramen Perkawinan
+                  </p>
+
+                  <div className="p-4" style={bgImage1Style}>
+                    <div className="border border-[#DAC178] px-4 pt-6 pb-4">
+                      <div className="flex flex-col gap-6 text-[#fff]">
+                        <div className="flex gap-2">
+                          <TbCalendarEvent className="text-xl mt-1 shrink-0" />
+                          <span className="text-lg">
+                            Jumat, 24 Desember 2025
+                          </span>
+                        </div>
+                        <div className="flex gap-2">
+                          <TbBuildingChurch className="text-xl mt-1 shrink-0" />
+                          <span className="text-lg">
+                            Gereja Katolik Santo Petrus & Paulus Minomartani
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Animation>
+
+              <div className="text-center text-[#22294A] mt-12">
+                <Animation>
+                  <p className="leading-loose px-4 mb-8">
+                    Merupakan suatu kehormatan dan kebahagiaan bagi kami, <br />
+                    apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan
+                    doa restu kepada kedua mempelai
+                  </p>
+                </Animation>
+
+                <Animation>
+                  <p className="font-bold italic mb-2">Kami yang berbahagia:</p>
+
+                  <p className="mb-2">
+                    Putra dari Bapak Andi Gunawan & <br />
+                    Ibu Aulia Rahmawati
+                  </p>
+                  <p className="mb-8">
+                    Putri dari Bapak Yanto Wibowo & <br />
+                    Ibu Cahya Pratiwi
+                  </p>
+                </Animation>
+
+                <Animation>
+                  <div
+                    className={classNames(
+                      solenoidalFont.className,
+                      "flex items-center justify-center gap-1 text-3xl text-[#DAC178]",
+                    )}
+                  >
+                    <span>Adi</span>
+                    <span>&</span>
+                    <span className="ml-[-4px]">Yuli</span>
+                  </div>
+                </Animation>
+              </div>
             </div>
           </div>
         )}

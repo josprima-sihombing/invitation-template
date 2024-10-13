@@ -66,7 +66,7 @@ export const lemon = Lemon({
 });
 
 export const sofiaSans = Sofia_Sans({
-  weight: ["400", "500", "600", "700", "900"],
+  weight: ["300", "400", "500", "600", "700", "900"],
   style: ["italic", "normal"],
   subsets: ["latin"],
 });
