@@ -248,7 +248,7 @@ export default function Page() {
 
         {isOpen && (
           <div>
-            <div className="py-12 overflow-hidden" style={bgImage1Style}>
+            <div className="pt-12 pb-24 overflow-hidden" style={bgImage1Style}>
               <Animation>
                 <p className="px-8 text-center text-[#fff] leading-loose mb-8">
                   Dengan ungkapan puji syukur atas anugerah dan cinta kasih
@@ -556,6 +556,8 @@ export default function Page() {
                 </Animation>
               </div>
             </div>
+
+            <div className="py-12" style={bgImage1Style}></div>
           </div>
         )}
       </main>
