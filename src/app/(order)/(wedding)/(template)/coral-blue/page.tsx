@@ -33,6 +33,10 @@ const Particles = dynamic(() => import("@/components/particles"), {
   ssr: false,
 });
 
+const Music = dynamic(() => import("@/components/music"), {
+  ssr: false,
+});
+
 const bgImage1Style: CSSProperties = {
   backgroundImage: `url(${assets.asset1})`,
   backgroundSize: "cover",
@@ -561,7 +565,13 @@ export default function Page() {
           </div>
         )}
       </main>
-      <Particles />
+      <Particles size={2} sizeMin={1} color="#DAC178" />
+      <Music
+        musicURL="/assets/musics/sweet-moments.wav"
+        play={play}
+        setPlay={setPlay}
+        hide={hideMusic}
+      />
     </AssetsLoader>
   );
 }
