@@ -56,7 +56,7 @@ export default function Page() {
       <main
         className={classNames(
           sofiaSans.className,
-          "max-w-[460px] mx-auto h-full overflow-auto bg-black",
+          "max-w-[460px] mx-auto h-full overflow-auto bg-black pt-5",
         )}
       >
         <div className="h-full relative">
