@@ -8,7 +8,7 @@ export default function getName() {
   const guestName = url.searchParams.get("to");
 
   if (!guestName) {
-    return "Bapak/Ibu/Saudara/i";
+    return "Tamu Undangan";
   }
 
   return guestName.toLowerCase().replace(/\b\w/g, (s) => s.toUpperCase());
