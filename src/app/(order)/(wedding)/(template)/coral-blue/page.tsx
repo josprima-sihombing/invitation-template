@@ -12,6 +12,8 @@ import dynamic from "next/dynamic";
 import {
   type AnimationEventHandler,
   type CSSProperties,
+  useCallback,
+  useEffect,
   useState,
 } from "react";
 import { TbBrandInstagram } from "react-icons/tb";
