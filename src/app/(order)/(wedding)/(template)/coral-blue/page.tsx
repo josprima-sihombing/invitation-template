@@ -56,13 +56,28 @@ export default function Page() {
       <main
         className={classNames(
           sofiaSans.className,
-          "max-w-[460px] mx-auto h-full overflow-auto bg-black pt-5",
+          {
+            "pt-5": !isOpen,
+          },
+          "max-w-[460px] mx-auto h-full overflow-auto bg-black transition-all duration-[2s]",
         )}
       >
         <div className="h-full relative">
-          <div className="h-full relative bg-[#354279] p-[10px] rounded-t-[50px]">
+          <div
+            className={classNames(
+              {
+                "rounded-t-[50px]": !isOpen,
+              },
+              "h-full relative bg-[#354279] p-[10px] transition-all duration-[2s]",
+            )}
+          >
             <div
-              className="relative h-full rounded-t-[42px] overflow-hidden"
+              className={classNames(
+                {
+                  "rounded-t-[42px]": !isOpen,
+                },
+                "relative h-full overflow-hidden transition-all duration-[2s]",
+              )}
               style={{
                 backgroundImage: `url(${assets.asset3})`,
                 backgroundSize: "cover",

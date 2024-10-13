@@ -18,6 +18,11 @@
   animation: animate-photo 2s ease forwards;
 }
 
+.animate_cover {
+  padding-top: 0;
+  transition: padding-top 2s ease;
+}
+
 @keyframes animate-photo {
   to {
     opacity: 0.1;
