@@ -17,6 +17,7 @@ import {
 import { TbBrandInstagram } from "react-icons/tb";
 
 import "animate.css";
+import Animation from "@/components/animation";
 
 const Particles = dynamic(() => import("@/components/particles"), {
   ssr: false,
@@ -204,128 +205,136 @@ export default function Page() {
         {isOpen && (
           <div>
             <div className="py-12 overflow-hidden" style={bgImage1Style}>
-              <p className="px-8 text-center text-[#fff] leading-loose mb-8">
-                Dengan ungkapan puji syukur atas anugerah dan cinta kasih Allah
-                yang Maha Kuasa, mengundang Bapak/Ibu/Saudara/i dalam acara
-                Resepsi Pernikahan putra-putri kami tercinta:
-              </p>
+              <Animation>
+                <p className="px-8 text-center text-[#fff] leading-loose mb-8">
+                  Dengan ungkapan puji syukur atas anugerah dan cinta kasih
+                  Allah yang Maha Kuasa, mengundang Bapak/Ibu/Saudara/i dalam
+                  acara Resepsi Pernikahan putra-putri kami tercinta:
+                </p>
+              </Animation>
 
-              <div className="relative mx-4 px-4 py-8 rounded-tl-[50px] rounded-br-[50px] bg-[#FFFFFF]/15">
-                <div
+              <Animation animationClassName="animate__fadeInRight">
+                <div className="relative mx-4 px-4 py-8 rounded-tl-[50px] rounded-br-[50px] bg-[#FFFFFF]/15">
+                  <div
+                    className={classNames(
+                      css.gradient2,
+                      "absolute size-[300px] rounded-[50%] left-0 bottom-0 -translate-x-1/2 translate-y-1/2 opacity-60",
+                    )}
+                  />
+                  <img
+                    src={photos.photo2}
+                    className="absolute w-[120px] rounded-tl-[60px] right-0 top-0 translate-y-[-40px]"
+                  />
+
+                  <img
+                    src={assets.asset4}
+                    className="absolute w-[230px] right-[-16px] bottom-[-80px]"
+                  />
+
+                  <div className="relative inline-block mb-12">
+                    <p
+                      className={classNames(
+                        solenoidalFont.className,
+                        "text-[#DAC178] text-xl",
+                      )}
+                    >
+                      Adi Putra Wijaya
+                    </p>
+                    <p
+                      className={classNames(
+                        hirarkiSignatureFont.className,
+                        "absolute bottom-0 right-0 translate-y-full text-[#DAC178] text-2xl",
+                      )}
+                    >
+                      Adi
+                    </p>
+                  </div>
+
+                  <div className="relative text-[#fff]">
+                    <p className="text-sm mb-4">
+                      Putra dari Bapak Andi Gunawan & <br />
+                      Ibu Aulia Rahmawati
+                    </p>
+
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="border-b py-1 text-sm inline-flex gap-1 items-center"
+                    >
+                      <TbBrandInstagram className="text-lg" />
+                      <span>@adi_putra</span>
+                    </a>
+                  </div>
+                </div>
+              </Animation>
+
+              <Animation>
+                <p
                   className={classNames(
-                    css.gradient2,
-                    "absolute size-[300px] rounded-[50%] left-0 bottom-0 -translate-x-1/2 translate-y-1/2 opacity-60",
+                    solenoidalFont.className,
+                    "text-center my-24 text-[#fff] text-2xl",
                   )}
-                />
-                <img
-                  src={photos.photo2}
-                  className="absolute w-[120px] rounded-tl-[60px] right-0 top-0 translate-y-[-40px]"
-                />
+                >
+                  Dengan
+                </p>
+              </Animation>
 
-                <img
-                  src={assets.asset4}
-                  className="absolute w-[230px] right-[-16px] bottom-[-80px]"
-                />
-
-                <div className="relative inline-block mb-12">
-                  <p
+              <Animation animationClassName="animate__fadeInLeft">
+                <div className="relative mx-4 px-4 py-8 rounded-tr-[50px] rounded-br-[50px] bg-[#FFFFFF]/15">
+                  <div
                     className={classNames(
-                      solenoidalFont.className,
-                      "text-[#DAC178] text-xl",
+                      css.gradient2,
+                      "absolute size-[300px] rounded-[50%] right-0 bottom-0 translate-x-1/2 translate-y-1/2 opacity-60",
                     )}
-                  >
-                    Adi Putra Wijaya
-                  </p>
-                  <p
-                    className={classNames(
-                      hirarkiSignatureFont.className,
-                      "absolute bottom-0 right-0 translate-y-full text-[#DAC178] text-2xl",
-                    )}
-                  >
-                    Adi
-                  </p>
+                  />
+                  <img
+                    src={photos.photo3}
+                    className="absolute w-[120px] rounded-tr-[60px] left-0 top-0 translate-y-[-40px]"
+                  />
+
+                  <img
+                    src={assets.asset4}
+                    className="absolute w-[230px] left-[-16px] bottom-[-80px] scale-x-[-1]"
+                  />
+
+                  <div className="relative text-right mb-12">
+                    <p
+                      className={classNames(
+                        solenoidalFont.className,
+                        "text-[#DAC178] text-xl",
+                      )}
+                    >
+                      Yuliana Dewi Maharani
+                    </p>
+                    <p
+                      className={classNames(
+                        hirarkiSignatureFont.className,
+                        "absolute bottom-0 right-0 translate-y-full text-[#DAC178] text-2xl",
+                      )}
+                    >
+                      Yuli
+                    </p>
+                  </div>
+
+                  <div className="relative text-[#fff] text-right">
+                    <p className="text-sm mb-4">
+                      Putri dari Bapak Yanto Wibowo & <br />
+                      Ibu Cahya Pratiwi
+                    </p>
+
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="border-b py-1 text-sm inline-flex gap-1 items-center"
+                    >
+                      <TbBrandInstagram className="text-lg" />
+                      <span>@yuli_cantik</span>
+                    </a>
+                  </div>
                 </div>
-
-                <div className="relative text-[#fff]">
-                  <p className="text-sm mb-4">
-                    Putra dari Bapak Andi Gunawan & <br />
-                    Ibu Aulia Rahmawati
-                  </p>
-
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="border-b py-1 text-sm inline-flex gap-1 items-center"
-                  >
-                    <TbBrandInstagram className="text-lg" />
-                    <span>@adi_putra</span>
-                  </a>
-                </div>
-              </div>
-
-              <p
-                className={classNames(
-                  solenoidalFont.className,
-                  "text-center my-24 text-[#fff] text-2xl",
-                )}
-              >
-                Dengan
-              </p>
-
-              <div className="relative mx-4 px-4 py-8 rounded-tr-[50px] rounded-br-[50px] bg-[#FFFFFF]/15">
-                <div
-                  className={classNames(
-                    css.gradient2,
-                    "absolute size-[300px] rounded-[50%] right-0 bottom-0 translate-x-1/2 translate-y-1/2 opacity-60",
-                  )}
-                />
-                <img
-                  src={photos.photo3}
-                  className="absolute w-[120px] rounded-tr-[60px] left-0 top-0 translate-y-[-40px]"
-                />
-
-                <img
-                  src={assets.asset4}
-                  className="absolute w-[230px] left-[-16px] bottom-[-80px] scale-x-[-1]"
-                />
-
-                <div className="relative text-right mb-12">
-                  <p
-                    className={classNames(
-                      solenoidalFont.className,
-                      "text-[#DAC178] text-xl",
-                    )}
-                  >
-                    Yuliana Dewi Maharani
-                  </p>
-                  <p
-                    className={classNames(
-                      hirarkiSignatureFont.className,
-                      "absolute bottom-0 right-0 translate-y-full text-[#DAC178] text-2xl",
-                    )}
-                  >
-                    Yuli
-                  </p>
-                </div>
-
-                <div className="relative text-[#fff] text-right">
-                  <p className="text-sm mb-4">
-                    Putri dari Bapak Yanto Wibowo & <br />
-                    Ibu Cahya Pratiwi
-                  </p>
-
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="border-b py-1 text-sm inline-flex gap-1 items-center"
-                  >
-                    <TbBrandInstagram className="text-lg" />
-                    <span>@yuli_cantik</span>
-                  </a>
-                </div>
-              </div>
+              </Animation>
             </div>
           </div>
         )}
