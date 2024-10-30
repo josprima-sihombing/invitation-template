@@ -17,6 +17,10 @@ import {
 import { playfair } from "@/fonts";
 import Ads from "@/components/ads";
 import InvitationLayout from "@/components/invitation-layout";
+import { photos } from "./photos";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { galleries } from "./galleries";
 
 export default function Page() {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,7 +58,7 @@ export default function Page() {
           {
             "pointer-events-none": isOpen,
           },
-          "absolute w-full h-full overflow-hidden bg-transparent z-30",
+          "absolute w-full h-full overflow-hidden bg-transparent z-30 font-serif",
         )}
       >
         <div
@@ -127,7 +131,7 @@ export default function Page() {
       </div>
 
       {isOpen && (
-        <div className="h-full">
+        <div className="h-full font-serif">
           <div
             className={classNames(
               css.content,
@@ -193,6 +197,14 @@ export default function Page() {
               Resepsi Pernikahan putra-putri kami tercinta :
             </p>
             <div className="text-center">
+              <div className={css.person_image}>
+                <img
+                  src={images.imageBorder}
+                  className={css.person_image_border}
+                />
+                <img src={photos.photo2} className={css.person_image_groom} />
+              </div>
+
               <h1
                 className={classNames(
                   playfair.className,
@@ -202,7 +214,7 @@ export default function Page() {
                 dr. Nareswari Dyah Wisesaningrum
               </h1>
               <h2 className="font-bold text-sm">
-                Putri Bapak R. Wahyu Wibihasmara, S.H & <br />
+                Kel. Bapak R. Wahyu Wibihasmara, S.H & <br />
                 Ibu Wiwik Dwi Wisnuningdyah, S.H, M.H
               </h2>
             </div>
@@ -216,6 +228,14 @@ export default function Page() {
             </h1>
 
             <div className="text-center">
+              <div className={css.person_image}>
+                <img
+                  src={images.imageBorder}
+                  className={css.person_image_border}
+                />
+                <img src={photos.photo1} className={css.person_image_groom} />
+              </div>
+
               <h1
                 className={classNames(
                   playfair.className,
@@ -225,7 +245,7 @@ export default function Page() {
                 IPDA Albertus Bagas Satria, S.TrK, M.H
               </h1>
               <h2 className="font-bold text-sm">
-                Putra Bapak Ir. Ferdinandus Suwarno & <br />
+                Kel. Bapak Ir. Ferdinandus Suwarno & <br />
                 Ibu Margaretta Tutik Rahayuningsih, S.Pd
               </h2>
             </div>
@@ -337,13 +357,13 @@ export default function Page() {
 
               <p className="my-10">Kami yang berbahagia</p>
               <p className="mb-4">
-                Putri Bapak R. Wahyu Wibihasmara, S.H &<br /> Ibu Wiwik Dwi
+                Kel. Bapak R. Wahyu Wibihasmara, S.H &<br /> Ibu Wiwik Dwi
                 Wisnuningdyah, S.H, M.H
               </p>
 
               <p className="mb-4">
-                Putra Bapak Ir. Ferdinandus Suwarno &<br /> Ibu Margaretta T
-                utik Rahayuningsih, S.Pd
+                Kel Bapak Ir. Ferdinandus Suwarno &<br /> Ibu Margaretta Tutik
+                Rahayuningsih, S.Pd
               </p>
 
               <p className="tracking-wider">AYES & BERTUS</p>
@@ -362,6 +382,24 @@ export default function Page() {
             <div className="bg-white/40 px-4 pt-12 pb-4">
               <RsvpForm />
             </div>
+
+            <h1 className="text-center text-3xl mb-8 mt-24 text-[#662B32]">
+              Our Moments
+            </h1>
+
+            <Carousel showIndicators showArrows infiniteLoop autoPlay>
+              {Object.keys(galleries).map((key) => (
+                <div
+                  key={galleries[key as keyof typeof galleries]}
+                  className="w-full h-[500px] bg-black"
+                >
+                  <img
+                    src={galleries[key as keyof typeof galleries]}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              ))}
+            </Carousel>
           </div>
 
           <Ads />

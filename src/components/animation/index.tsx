@@ -16,7 +16,7 @@ export default function Animation({
   const elementRef = useRef<HTMLDivElement>(null);
 
   const callback = useCallback<IntersectionObserverCallback>(
-    (entries, observer) => {
+    (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           if (!entry.target.classList.contains(animationClassName)) {
@@ -25,7 +25,7 @@ export default function Animation({
         }
       });
     },
-    [children],
+    [animationClassName],
   );
 
   const observer = useMemo(

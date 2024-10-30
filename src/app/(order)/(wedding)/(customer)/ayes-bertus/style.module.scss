@@ -92,6 +92,32 @@
   text-shadow: 2px 2px 2px #f0dfcf;
 }
 
+.person_image {
+  position: relative;
+  width: 200px;
+  height: 230px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.person_image_border {
+  position: absolute;
+  width: 120%;
+  max-width: unset;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.person_image_groom {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 @keyframes content-show {
   from {
     opacity: 0;
