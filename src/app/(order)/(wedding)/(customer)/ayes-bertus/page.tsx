@@ -5,7 +5,7 @@ import css from "./style.module.scss";
 import { images } from "./assets";
 import { useEffect, useRef, useState } from "react";
 import getName from "@/utils/get-name";
-import RsvpForm from "@/components/rsvp-form";
+import RsvpForm from "@/components/new-rsvp-form";
 import Countdown3 from "@/components/countdown/countdown-3";
 import {
   FaArrowUpRightFromSquare,
@@ -380,10 +380,19 @@ export default function Page() {
             }}
           >
             <div className="bg-white/40 px-4 pt-12 pb-4">
-              <RsvpForm />
+              <RsvpForm
+                afterSubmit={() => {
+                  document.getElementById("moments")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+              />
             </div>
 
-            <h1 className="text-center text-3xl mb-8 mt-24 text-[#662B32]">
+            <h1
+              className="text-center text-3xl mb-8 mt-24 text-[#662B32]"
+              id="moments"
+            >
               Our Moments
             </h1>
 
