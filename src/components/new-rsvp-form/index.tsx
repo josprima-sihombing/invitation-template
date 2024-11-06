@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import { usePathname } from "next/navigation";
 import classNames from "classnames";
 import { createRSVP } from "@/app/actions/create-rsvp";
+import { sofiaSans } from "@/fonts";
 
 type RsvpFormProps = {
   language?: "id" | "en";
@@ -16,7 +17,7 @@ type RsvpFormProps = {
 
 const dictionary = {
   en: {
-    formTitle: "Please submit your rsvp below",
+    formTitle: "Please submit your RSVP below",
     name: "Name",
     namePlaceholder: "Your name...",
     phoneNumber: "Phone Number",
@@ -80,7 +81,7 @@ export default function RsvpForm({
   };
 
   return (
-    <div className={css.form}>
+    <div className={classNames(css.form, sofiaSans.className)}>
       <h1>{t.formTitle}</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>

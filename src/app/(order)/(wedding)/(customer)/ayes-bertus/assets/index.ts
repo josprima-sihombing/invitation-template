@@ -1,5 +1,6 @@
 import imageBg from "./bg.jpg";
 import imageBg2 from "./bg-2.jpg";
+import imageBg3 from "./bg-3.jpg";
 import imageCoverLeft from "./cover-left.jpg";
 import imageCoverRight from "./cover-right.jpg";
 import imageLogo from "./logo.png";
@@ -15,6 +16,7 @@ import border from "./border.png";
 export const images = {
   imageBg: imageBg.src,
   imageBg2: imageBg2.src,
+  imageBg3: imageBg3.src,
   imageCoverLeft: imageCoverLeft.src,
   imageCoverRight: imageCoverRight.src,
   imageLogo: imageLogo.src,

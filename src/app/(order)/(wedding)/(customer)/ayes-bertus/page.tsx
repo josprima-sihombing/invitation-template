@@ -190,7 +190,15 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="bg-[#f0dfcf] px-8 pb-8 pt-12">
+          <div
+            className="bg-[#f0dfce] px-8 pb-48 pt-12"
+            style={{
+              backgroundImage: `url(${images.imageBg3})`,
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "bottom center",
+            }}
+          >
             <p className="text-center text-sm leading-loose mb-10">
               Dengan ungkapan puji syukur atas anugerah dan cinta kasih Allah
               yang Maha Kuasa, mengundang Bapak/Ibu/Saudara/i dalam acara
@@ -198,22 +206,19 @@ export default function Page() {
             </p>
             <div className="text-center">
               <div className={css.person_image}>
-                <img
-                  src={images.imageBorder}
-                  className={css.person_image_border}
-                />
+                <div className={css.person_image_border} />
                 <img src={photos.photo2} className={css.person_image_groom} />
               </div>
 
               <h1
                 className={classNames(
                   playfair.className,
-                  "text-3xl text-[#DAB96B] mb-2",
+                  "text-xl text-[#DAB96B] mb-2",
                 )}
               >
                 dr. Nareswari Dyah Wisesaningrum
               </h1>
-              <h2 className="font-bold text-sm">
+              <h2 className="font-bold text-xs">
                 Kel. Bapak R. Wahyu Wibihasmara, S.H & <br />
                 Ibu Wiwik Dwi Wisnuningdyah, S.H, M.H
               </h2>
@@ -229,28 +234,35 @@ export default function Page() {
 
             <div className="text-center">
               <div className={css.person_image}>
-                <img
-                  src={images.imageBorder}
-                  className={css.person_image_border}
-                />
+                <div className={css.person_image_border} />
                 <img src={photos.photo1} className={css.person_image_groom} />
               </div>
 
               <h1
                 className={classNames(
                   playfair.className,
-                  "text-3xl text-[#DAB96B] mb-2",
+                  "text-xl text-[#DAB96B] mb-2",
                 )}
               >
                 IPDA Albertus Bagas Satria, S.TrK, M.H
               </h1>
-              <h2 className="font-bold text-sm">
+              <h2 className="font-bold text-xs">
                 Kel. Bapak Ir. Ferdinandus Suwarno & <br />
                 Ibu Margaretta Tutik Rahayuningsih, S.Pd
               </h2>
             </div>
+          </div>
 
-            <h1 className="text-center text-sm mt-24 mb-4">
+          <div
+            className="px-4 pt-10 pb-48 bg-[#f0dfce]"
+            style={{
+              backgroundImage: `url(${images.imageBg3})`,
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "bottom center",
+            }}
+          >
+            <h1 className="text-center text-sm mb-4">
               Yang akan diselenggarakan pada:
             </h1>
 
@@ -303,7 +315,7 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="mt-4">
+            <div className="mt-4 mb-16">
               <Countdown3
                 date={new Date("2024-11-23")}
                 bgColor="#662B32"
@@ -311,17 +323,7 @@ export default function Page() {
                 borderColor="#DAB96B"
               />
             </div>
-          </div>
 
-          <div
-            className="px-4 pt-10 pb-48"
-            style={{
-              backgroundImage: `url(${images.imageBg2})`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "bottom center",
-            }}
-          >
             <h1
               className={classNames(
                 playfair.className,
@@ -347,7 +349,17 @@ export default function Page() {
                 </div>
               </div>
             </div>
+          </div>
 
+          <div
+            className="px-4 pt-10 pb-80 bg-[#f0dfce]"
+            style={{
+              backgroundImage: `url(${images.imageBg2})`,
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "bottom center",
+            }}
+          >
             <div className="text-center text-sm">
               <p className={classNames("mt-10 leading-loose")}>
                 Merupakan suatu kehormatan dan kebahagiaan bagi kami, <br />
@@ -390,7 +402,7 @@ export default function Page() {
             </div>
 
             <h1
-              className="text-center text-3xl mb-8 mt-24 text-[#662B32]"
+              className="text-center text-xl mb-8 mt-24 text-[#662B32]"
               id="moments"
             >
               Our Moments
