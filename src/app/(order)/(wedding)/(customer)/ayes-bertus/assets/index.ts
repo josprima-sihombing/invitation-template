@@ -11,6 +11,8 @@ import ornament3 from "./ornament-3.png";
 import ornament4 from "./ornament-4.png";
 import ornament5 from "./ornament-5.png";
 import ornament6 from "./ornament-6.png";
+import ornament7 from "./ornament-7.png";
+import ornament8 from "./ornament-8.png";
 import border from "./border.png";
 
 export const images = {
@@ -27,5 +29,7 @@ export const images = {
   imageOrnament4: ornament4.src,
   imageOrnament5: ornament5.src,
   imageOrnament6: ornament6.src,
+  imageOrnament7: ornament7.src,
+  imageOrnament8: ornament8.src,
   imageBorder: border.src,
 };

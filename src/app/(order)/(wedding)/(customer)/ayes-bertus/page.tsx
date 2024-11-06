@@ -191,7 +191,7 @@ export default function Page() {
           </div>
 
           <div
-            className="bg-[#f0dfce] px-8 pb-64 pt-12"
+            className="bg-[#f0dfce] px-8 pb-64 pt-12 relative"
             style={{
               backgroundImage: `url(${images.imageBg3})`,
               backgroundSize: "100%",
@@ -199,62 +199,74 @@ export default function Page() {
               backgroundPosition: "bottom center",
             }}
           >
-            <p className="text-center text-sm leading-loose mb-10">
-              Dengan ungkapan puji syukur atas anugerah dan cinta kasih Allah
-              yang Maha Kuasa, mengundang Bapak/Ibu/Saudara/i dalam acara
-              Resepsi Pernikahan putra-putri kami tercinta :
-            </p>
-            <div className="text-center">
-              <div className={css.person_image}>
-                <div className={css.person_image_border} />
-                <img src={photos.photo2} className={css.person_image_groom} />
+            <img
+              src={images.imageOrnament7}
+              className="absolute left-0 top-[100px] opacity-20 w-[120px]"
+            />
+
+            <img
+              src={images.imageOrnament8}
+              className="absolute right-0 bottom-[200px] opacity-20 w-[120px]"
+            />
+
+            <div className="relative">
+              <p className="text-center text-sm leading-loose mb-10">
+                Dengan ungkapan puji syukur atas anugerah dan cinta kasih Allah
+                yang Maha Kuasa, mengundang Bapak/Ibu/Saudara/i dalam acara
+                Resepsi Pernikahan putra-putri kami tercinta :
+              </p>
+              <div className="text-center">
+                <div className={css.person_image}>
+                  <div className={css.person_image_border} />
+                  <img src={photos.photo2} className={css.person_image_groom} />
+                </div>
+
+                <h1
+                  className={classNames(
+                    playfair.className,
+                    "text-xl text-[#a98e4f] mb-2",
+                  )}
+                >
+                  dr. Nareswari Dyah Wisesaningrum
+                </h1>
+                <h2 className="font-bold text-xs">
+                  Putri Bapak R. Wahyu Wibihasmara, S.H & <br />
+                  Ibu Wiwik Dwi Wisnuningdyah, S.H, M.H
+                </h2>
               </div>
 
               <h1
                 className={classNames(
-                  playfair.className,
-                  "text-xl text-[#a98e4f] mb-2",
+                  "text-center my-10 text-sm tracking-[8px] text-[#662B32]",
                 )}
               >
-                dr. Nareswari Dyah Wisesaningrum
+                DENGAN
               </h1>
-              <h2 className="font-bold text-xs">
-                Putri Bapak R. Wahyu Wibihasmara, S.H & <br />
-                Ibu Wiwik Dwi Wisnuningdyah, S.H, M.H
-              </h2>
-            </div>
 
-            <h1
-              className={classNames(
-                "text-center my-10 text-sm tracking-[8px] text-[#662B32]",
-              )}
-            >
-              DENGAN
-            </h1>
+              <div className="text-center">
+                <div className={css.person_image}>
+                  <div className={css.person_image_border} />
+                  <img src={photos.photo1} className={css.person_image_groom} />
+                </div>
 
-            <div className="text-center">
-              <div className={css.person_image}>
-                <div className={css.person_image_border} />
-                <img src={photos.photo1} className={css.person_image_groom} />
+                <h1
+                  className={classNames(
+                    playfair.className,
+                    "text-xl text-[#a98e4f] mb-2",
+                  )}
+                >
+                  IPDA Albertus Bagas Satria, S.TrK, M.H
+                </h1>
+                <h2 className="font-bold text-xs">
+                  Putra Bapak Ir. Ferdinandus Suwarno & <br />
+                  Ibu Margaretta Tutik Rahayuningsih, S.Pd
+                </h2>
               </div>
-
-              <h1
-                className={classNames(
-                  playfair.className,
-                  "text-xl text-[#a98e4f] mb-2",
-                )}
-              >
-                IPDA Albertus Bagas Satria, S.TrK, M.H
-              </h1>
-              <h2 className="font-bold text-xs">
-                Putra Bapak Ir. Ferdinandus Suwarno & <br />
-                Ibu Margaretta Tutik Rahayuningsih, S.Pd
-              </h2>
             </div>
           </div>
 
           <div
-            className="px-4 pt-10 pb-48 bg-[#f0dfce]"
+            className="px-8 pt-20 pb-48 bg-[#f0dfce] relative"
             style={{
               backgroundImage: `url(${images.imageBg3})`,
               backgroundSize: "100%",
@@ -262,90 +274,104 @@ export default function Page() {
               backgroundPosition: "bottom center",
             }}
           >
-            <h1 className="text-center text-sm mb-4">
-              Yang akan diselenggarakan pada:
-            </h1>
+            <img
+              src={images.imageOrnament7}
+              className="absolute left-0 top-[100px] opacity-30"
+            />
 
-            <h1
-              className={classNames(
-                playfair.className,
-                "text-xl text-center tracking-[6px] text-[#662B32] mb-4",
-              )}
-            >
-              RESEPSI
-            </h1>
+            <img
+              src={images.imageOrnament8}
+              className="absolute right-0 top-[100px] opacity-30"
+            />
 
-            <div className="bg-[#662B32] text-[#DAB96B] p-2 text-sm">
-              <div className="flex flex-col gap-4 border-2 border-[#DAB96B] p-4">
-                <div className="flex gap-4">
-                  <span className="mt-1 text-sm">
-                    <FaCalendarDay />
-                  </span>
-                  <span>Sabtu, 23 November 2024</span>
-                </div>
-                <div className="flex gap-4">
-                  <span className="mt-1 text-sm">
-                    <FaClock />
-                  </span>
-                  <span>
-                    Pukul 11.00-13.00 WIB <br /> (Diawali dengan Prosesi Pedang
-                    Pora)
-                  </span>
-                </div>
-                <div className="flex gap-4 mb-4">
-                  <span className="mt-1 text-sm">
-                    <FaBuilding />
-                  </span>
-                  <span>
-                    BALLROOM HOTEL TENTREM YOGYAKARTA <br />
-                    Jl. P. Mangkubumi No. 72 A, Cokrodiningratan, Jetis,
-                    Yogyakarta
-                  </span>
-                </div>
+            <div className="relative">
+              <h1 className="text-center text-sm mb-4">
+                Yang akan diselenggarakan pada:
+              </h1>
 
-                <a
-                  href="https://maps.app.goo.gl/xVefXsThkPe4vffL9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-[140px] mx-auto p-2 border border-[#DAB96B] flex gap-2 items-center justify-center"
-                >
-                  <span>Google Map</span>
-                  <FaArrowUpRightFromSquare />
-                </a>
+              <h1
+                className={classNames(
+                  playfair.className,
+                  "text-xl text-center tracking-[6px] text-[#662B32] mb-4",
+                )}
+              >
+                RESEPSI
+              </h1>
+
+              <div className="bg-[#662B32] text-[#DAB96B] p-2 text-sm">
+                <div className="flex flex-col gap-4 border-2 border-[#DAB96B] p-4">
+                  <div className="flex gap-4">
+                    <span className="mt-1 text-sm">
+                      <FaCalendarDay />
+                    </span>
+                    <span>Sabtu, 23 November 2024</span>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="mt-1 text-sm">
+                      <FaClock />
+                    </span>
+                    <span>
+                      Pukul 11.00-13.00 WIB <br /> (Diawali dengan Prosesi
+                      Pedang Pora)
+                    </span>
+                  </div>
+                  <div className="flex gap-4 mb-4">
+                    <span className="mt-1 text-sm">
+                      <FaBuilding />
+                    </span>
+                    <span>
+                      BALLROOM HOTEL TENTREM YOGYAKARTA <br />
+                      Jl. P. Mangkubumi No. 72 A, Cokrodiningratan, Jetis,
+                      Yogyakarta
+                    </span>
+                  </div>
+
+                  <a
+                    href="https://maps.app.goo.gl/xVefXsThkPe4vffL9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-[140px] mx-auto p-2 border border-[#DAB96B] flex gap-2 items-center justify-center"
+                  >
+                    <span>Google Map</span>
+                    <FaArrowUpRightFromSquare />
+                  </a>
+                </div>
               </div>
-            </div>
 
-            <div className="mt-4 mb-16">
-              <Countdown3
-                date={new Date("2024-11-23")}
-                bgColor="#662B32"
-                textColor="#DAB96B"
-                borderColor="#DAB96B"
-              />
-            </div>
+              <div className="mt-4 mb-16">
+                <Countdown3
+                  date={new Date("2024-11-23")}
+                  bgColor="#662B32"
+                  textColor="#DAB96B"
+                  borderColor="#DAB96B"
+                />
+              </div>
 
-            <h1
-              className={classNames(
-                playfair.className,
-                "text-center text-[#662B32] mb-4",
-              )}
-            >
-              SAKRAMEN PERKAWINAN
-            </h1>
+              <h1
+                className={classNames(
+                  playfair.className,
+                  "text-center text-[#662B32] mb-4",
+                )}
+              >
+                SAKRAMEN PERKAWINAN
+              </h1>
 
-            <div className="bg-[#662B32] text-[#DAB96B] p-2 text-sm">
-              <div className="flex flex-col gap-4 border-2 border-[#DAB96B] p-4">
-                <div className="flex gap-4">
-                  <span className="mt-1 text-sm">
-                    <FaCalendarDay />
-                  </span>
-                  <span>Jumat, 22 November 2024</span>
-                </div>
-                <div className="flex gap-4">
-                  <span className="mt-1 text-sm">
-                    <FaChurch />
-                  </span>
-                  <span>Gereja Katolik Santo Petrus & Paulus Minomartani</span>
+              <div className="bg-[#662B32] text-[#DAB96B] p-2 text-sm">
+                <div className="flex flex-col gap-4 border-2 border-[#DAB96B] p-4">
+                  <div className="flex gap-4">
+                    <span className="mt-1 text-sm">
+                      <FaCalendarDay />
+                    </span>
+                    <span>Jumat, 22 November 2024</span>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="mt-1 text-sm">
+                      <FaChurch />
+                    </span>
+                    <span>
+                      Gereja Katolik Santo Petrus & Paulus Minomartani
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
