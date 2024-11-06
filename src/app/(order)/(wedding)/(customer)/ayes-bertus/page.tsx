@@ -191,10 +191,10 @@ export default function Page() {
           </div>
 
           <div
-            className="bg-[#f0dfce] px-8 pb-48 pt-12"
+            className="bg-[#f0dfce] px-8 pb-64 pt-12"
             style={{
               backgroundImage: `url(${images.imageBg3})`,
-              backgroundSize: "contain",
+              backgroundSize: "100%",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "bottom center",
             }}
@@ -213,13 +213,13 @@ export default function Page() {
               <h1
                 className={classNames(
                   playfair.className,
-                  "text-xl text-[#DAB96B] mb-2",
+                  "text-xl text-[#a98e4f] mb-2",
                 )}
               >
                 dr. Nareswari Dyah Wisesaningrum
               </h1>
               <h2 className="font-bold text-xs">
-                Kel. Bapak R. Wahyu Wibihasmara, S.H & <br />
+                Putri Bapak R. Wahyu Wibihasmara, S.H & <br />
                 Ibu Wiwik Dwi Wisnuningdyah, S.H, M.H
               </h2>
             </div>
@@ -241,13 +241,13 @@ export default function Page() {
               <h1
                 className={classNames(
                   playfair.className,
-                  "text-xl text-[#DAB96B] mb-2",
+                  "text-xl text-[#a98e4f] mb-2",
                 )}
               >
                 IPDA Albertus Bagas Satria, S.TrK, M.H
               </h1>
               <h2 className="font-bold text-xs">
-                Kel. Bapak Ir. Ferdinandus Suwarno & <br />
+                Putra Bapak Ir. Ferdinandus Suwarno & <br />
                 Ibu Margaretta Tutik Rahayuningsih, S.Pd
               </h2>
             </div>
@@ -257,7 +257,7 @@ export default function Page() {
             className="px-4 pt-10 pb-48 bg-[#f0dfce]"
             style={{
               backgroundImage: `url(${images.imageBg3})`,
-              backgroundSize: "contain",
+              backgroundSize: "100%",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "bottom center",
             }}
@@ -355,7 +355,7 @@ export default function Page() {
             className="px-4 pt-10 pb-80 bg-[#f0dfce]"
             style={{
               backgroundImage: `url(${images.imageBg2})`,
-              backgroundSize: "contain",
+              backgroundSize: "100%",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "bottom center",
             }}
@@ -385,9 +385,9 @@ export default function Page() {
           <div
             className="px-4 py-12 bg-[#f0dfcf]"
             style={{
-              backgroundImage: `url(${images.imageOrnament3})`,
+              backgroundImage: `url(${images.imageBg3})`,
+              backgroundSize: "100%",
               backgroundRepeat: "no-repeat",
-              backgroundSize: "contain",
               backgroundPosition: "bottom center",
             }}
           >
@@ -400,9 +400,19 @@ export default function Page() {
                 }}
               />
             </div>
+          </div>
 
+          <div
+            className="px-4 pt-12 pb-32 bg-[#f0dfcf]"
+            style={{
+              backgroundImage: `url(${images.imageOrnament3})`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "contain",
+              backgroundPosition: "bottom center",
+            }}
+          >
             <h1
-              className="text-center text-xl mb-8 mt-24 text-[#662B32]"
+              className="text-center text-xl mb-8 text-[#662B32]"
               id="moments"
             >
               Our Moments
