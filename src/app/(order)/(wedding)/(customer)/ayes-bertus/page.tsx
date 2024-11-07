@@ -458,7 +458,6 @@ export default function Page() {
               ))}
             </Carousel>
           </div>
-
           <Ads />
         </div>
       )}
