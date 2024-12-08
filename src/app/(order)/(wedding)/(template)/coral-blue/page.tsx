@@ -33,7 +33,7 @@ const Particles = dynamic(() => import("@/components/particles"), {
   ssr: false,
 });
 
-const Music = dynamic(() => import("@/components/music"), {
+const Music = dynamic(() => import("@/components/new-music"), {
   ssr: false,
 });
 
@@ -386,9 +386,9 @@ export default function Page() {
             </div>
 
             <div className="relative pt-12 pb-28 px-4" style={bgImage2Style}>
-              <div className="absolute bottom-0 left-0 w-full translate-y-[80px]">
+              <div className="absolute bottom-0 left-0 w-full translate-y-[60px]">
                 <Animation>
-                  <img src={assets.asset5} className="w-full" />
+                  <img src={assets.asset5} className="w-[240px] mx-auto" />
                 </Animation>
               </div>
 
@@ -523,8 +523,10 @@ export default function Page() {
                   </div>
                 </div>
               </Animation>
+            </div>
 
-              <div className="text-center text-[#22294A] mt-12">
+            <div className="py-12" style={bgImage1Style}>
+              <div className="text-center text-[#fff] mt-12">
                 <Animation>
                   <p className="leading-loose px-4 mb-8">
                     Merupakan suatu kehormatan dan kebahagiaan bagi kami, <br />
@@ -560,8 +562,6 @@ export default function Page() {
                 </Animation>
               </div>
             </div>
-
-            <div className="py-12" style={bgImage1Style}></div>
           </div>
         )}
       </main>
