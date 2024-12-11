@@ -9,12 +9,7 @@ import classNames from "classnames";
 import { hirarkiSignatureFont, sofiaSans, solenoidalFont } from "@/fonts";
 import getName from "@/utils/get-name";
 import dynamic from "next/dynamic";
-import {
-  type AnimationEventHandler,
-  type CSSProperties,
-  useMemo,
-  useState,
-} from "react";
+import { type CSSProperties, useMemo, useState } from "react";
 import {
   TbBrandInstagram,
   TbBuildingChurch,
@@ -26,7 +21,7 @@ import {
 } from "react-icons/tb";
 
 import "animate.css";
-import Animation from "@/components/animation";
+import { Fade } from "react-awesome-reveal";
 import Countdown from "react-countdown";
 
 const Particles = dynamic(() => import("@/components/particles"), {
@@ -74,12 +69,6 @@ export default function Page() {
     setIsOpen(true);
     setPlay(true);
     setHideMusic(false);
-  };
-
-  const onAnimationEnd: AnimationEventHandler<HTMLDivElement> = (e) => {
-    const target = e.target as Element;
-
-    target.remove();
   };
 
   return (
@@ -133,7 +122,6 @@ export default function Page() {
                   css.gradient1,
                   "absolute w-full top-0 px-8 py-8 flex items-center justify-between",
                 )}
-                onAnimationEnd={onAnimationEnd}
               >
                 <div
                   className={classNames(
@@ -205,7 +193,6 @@ export default function Page() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-            onAnimationEnd={onAnimationEnd}
           >
             <div className="absolute bottom-0 w-full h-[240px]">
               <div className="absolute w-full bottom-0">
@@ -253,15 +240,15 @@ export default function Page() {
         {isOpen && (
           <div>
             <div className="pt-12 pb-24 overflow-hidden" style={bgImage1Style}>
-              <Animation>
+              <Fade>
                 <p className="px-8 text-center text-[#fff] leading-loose mb-8">
                   Dengan ungkapan puji syukur atas anugerah dan cinta kasih
                   Allah yang Maha Kuasa, mengundang Bapak/Ibu/Saudara/i dalam
                   acara Resepsi Pernikahan putra-putri kami tercinta:
                 </p>
-              </Animation>
+              </Fade>
 
-              <Animation animationClassName="animate__fadeInRight">
+              <Fade>
                 <div className="relative mx-4 px-4 py-8 rounded-tl-[50px] rounded-br-[50px] bg-[#FFFFFF]/15">
                   <div
                     className={classNames(
@@ -315,9 +302,9 @@ export default function Page() {
                     </a>
                   </div>
                 </div>
-              </Animation>
+              </Fade>
 
-              <Animation>
+              <Fade>
                 <p
                   className={classNames(
                     solenoidalFont.className,
@@ -326,9 +313,9 @@ export default function Page() {
                 >
                   Dengan
                 </p>
-              </Animation>
+              </Fade>
 
-              <Animation animationClassName="animate__fadeInLeft">
+              <Fade>
                 <div className="relative mx-4 px-4 py-8 rounded-tr-[50px] rounded-br-[50px] bg-[#FFFFFF]/15">
                   <div
                     className={classNames(
@@ -382,23 +369,23 @@ export default function Page() {
                     </a>
                   </div>
                 </div>
-              </Animation>
+              </Fade>
             </div>
 
             <div className="relative pt-12 pb-28 px-4" style={bgImage2Style}>
               <div className="absolute bottom-0 left-0 w-full translate-y-[60px]">
-                <Animation>
+                <Fade>
                   <img src={assets.asset5} className="w-[240px] mx-auto" />
-                </Animation>
+                </Fade>
               </div>
 
-              <Animation>
+              <Fade>
                 <p className="text-center text-[#22294A] mb-8">
                   Yang akan dilaksanakan pada:
                 </p>
-              </Animation>
+              </Fade>
 
-              <Animation>
+              <Fade>
                 <div>
                   <p
                     className={classNames(
@@ -444,9 +431,9 @@ export default function Page() {
                     </div>
                   </div>
                 </div>
-              </Animation>
+              </Fade>
 
-              <Animation>
+              <Fade>
                 <div className="py-8 flex gap-4 justify-between items-center">
                   <Countdown
                     date={new Date("2025-12-12")} // YYYY-MM-DD
@@ -490,9 +477,9 @@ export default function Page() {
                     <span>Simpan ke Calendar</span>
                   </a>
                 </div>
-              </Animation>
+              </Fade>
 
-              <Animation>
+              <Fade>
                 <div>
                   <p
                     className={classNames(
@@ -522,20 +509,20 @@ export default function Page() {
                     </div>
                   </div>
                 </div>
-              </Animation>
+              </Fade>
             </div>
 
             <div className="py-12" style={bgImage1Style}>
               <div className="text-center text-[#fff] mt-12">
-                <Animation>
+                <Fade>
                   <p className="leading-loose px-4 mb-8">
                     Merupakan suatu kehormatan dan kebahagiaan bagi kami, <br />
                     apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan
                     doa restu kepada kedua mempelai
                   </p>
-                </Animation>
+                </Fade>
 
-                <Animation>
+                <Fade>
                   <p className="font-bold italic mb-2">Kami yang berbahagia:</p>
 
                   <p className="mb-2">
@@ -546,9 +533,9 @@ export default function Page() {
                     Putri dari Bapak Yanto Wibowo & <br />
                     Ibu Cahya Pratiwi
                   </p>
-                </Animation>
+                </Fade>
 
-                <Animation>
+                <Fade>
                   <div
                     className={classNames(
                       solenoidalFont.className,
@@ -559,7 +546,7 @@ export default function Page() {
                     <span>&</span>
                     <span className="ml-[-4px]">Yuli</span>
                   </div>
-                </Animation>
+                </Fade>
               </div>
             </div>
           </div>
