@@ -17,6 +17,9 @@ import dayjs from "dayjs";
 import Ads from "@/components/ads";
 import { FaCopy } from "react-icons/fa6";
 import toast, { Toaster } from "react-hot-toast";
+import { Carousel } from "react-responsive-carousel";
+import { galleries } from "./galleries";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Music = dynamic(() => import("@/components/music"), {
   ssr: false,
@@ -77,8 +80,8 @@ export default function Page() {
           </div>
 
           <div className="relative z-10">
-            <Fade duration={1500} direction="left" triggerOnce>
-              <div className="-translate-y-10 px-4">
+            <div className="-translate-y-10 px-4">
+              <Fade direction="up" cascade triggerOnce delay={1000}>
                 <h1>The Wedding of</h1>
                 <h1
                   className={classNames(
@@ -100,13 +103,37 @@ export default function Page() {
                   <FaRegEnvelope />
                   Buka Undangan
                 </button>
-              </div>
+              </Fade>
+            </div>
+          </div>
+
+          <div className="absolute top-0 left-0">
+            <Fade delay={200} triggerOnce>
+              <img
+                src={assets.asset6}
+                alt=""
+                className="w-[120px] xs:w-[130px] sm:w-[200px] translate-x-[-10px] translate-y-[-10px]"
+              />
+            </Fade>
+          </div>
+
+          <div className="absolute top-0 right-0">
+            <Fade delay={800} triggerOnce>
+              <img
+                src={assets.asset5}
+                alt=""
+                className="w-[300px] translate-x-[30px] translate-y-[-10px]"
+              />
             </Fade>
           </div>
 
           <div className="absolute bottom-0 right-0">
-            <Fade direction="right" duration={2000} triggerOnce>
-              <img src={assets.asset2} alt="" className="translate-x-5" />
+            <Fade delay={1000} triggerOnce>
+              <img
+                src={assets.asset4}
+                alt=""
+                className="w-[200px] translate-x-[60px] translate-y-[20px]"
+              />
             </Fade>
           </div>
         </div>
@@ -121,15 +148,26 @@ export default function Page() {
               }}
               className="px-4 py-20"
             >
-              <Fade direction="up" duration={1500} triggerOnce>
-                <p className="px-8 text-center text-slate-700 leading-loose mb-12">
+              <Fade direction="up" cascade triggerOnce>
+                <p
+                  className={classNames(
+                    "text-center font-bold",
+                    playfair.className,
+                  )}
+                >
+                  Bismillah
+                </p>
+                <p
+                  className={classNames(
+                    "px-8 text-center leading-loose mb-12",
+                    playfair.className,
+                  )}
+                >
                   Dengan ungkapan puji syukur atas anugerah dan cinta kasih
                   Allah yang Maha Kuasa, mengundang Bapak/Ibu/Saudara/i dalam
                   acara Resepsi Pernikahan putra-putri kami tercinta:
                 </p>
-              </Fade>
 
-              <Fade duration={1500} direction="left" triggerOnce>
                 <div className="text-center">
                   <h2
                     className={classNames(
@@ -154,20 +192,16 @@ export default function Page() {
                     mokodompit
                   </p>
                 </div>
-              </Fade>
 
-              <Fade duration={1500} direction="up" triggerOnce>
                 <p
                   className={classNames(
-                    hirarkiSignatureFont.className,
-                    "text-center py-12 text-xl",
+                    playfair.className,
+                    "text-center py-8 tracking-widest font-bold",
                   )}
                 >
-                  Dengan
+                  DENGAN
                 </p>
-              </Fade>
 
-              <Fade duration={1500} direction="right" triggerOnce>
                 <div className="text-center">
                   <h2
                     className={classNames(
@@ -203,11 +237,8 @@ export default function Page() {
                 backgroundPosition: "center",
               }}
             >
-              <Fade duration={1500} triggerOnce>
+              <Fade direction="up" cascade triggerOnce>
                 <p className="text-center mb-8">Yang akan dilaksanakan pada:</p>
-              </Fade>
-
-              <Fade duration={1500} direction="left" triggerOnce>
                 <div>
                   <p
                     className={classNames(
@@ -250,11 +281,8 @@ export default function Page() {
                     </div>
                   </div>
                 </div>
-              </Fade>
+                <div className="mb-12"></div>
 
-              <div className="mb-20"></div>
-
-              <Fade duration={1500} direction="right" triggerOnce>
                 <div>
                   <p
                     className={classNames(
@@ -297,9 +325,7 @@ export default function Page() {
                     </div>
                   </div>
                 </div>
-              </Fade>
 
-              <Fade duration={1500} direction="up" triggerOnce>
                 <div className="mt-12">
                   <Countdown3
                     date={dayjs("2024-12-21").toDate()}
@@ -319,21 +345,14 @@ export default function Page() {
                 backgroundPosition: "center",
               }}
             >
-              <Fade
-                cascade
-                triggerOnce
-                childClassName={classNames("leading-loose", playfair.className)}
-              >
-                <p>Dan di antara tanda-tanda (kebesaran)-Nya</p>
-                <p>
-                  ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu
-                  sendiri,
-                </p>
-                <p>agar kamu cenderung dan merasa tenteram kepadanya,</p>
-                <p>dan Dia menjadikan di antaramu rasa kasih dan sayang.</p>
-                <p>
-                  Sungguh, pada yang demikian itu benar-benar terdapat
-                  tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.
+              <Fade direction="up" cascade triggerOnce>
+                <p className={classNames("leading-loose", playfair.className)}>
+                  Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia
+                  menciptakan pasangan-pasangan untukmu dari jenismu sendiri,
+                  agar kamu cenderung dan merasa tenteram kepadanya, dan Dia
+                  menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada
+                  yang demikian itu benar-benar terdapat tanda-tanda (kebesaran
+                  Allah) bagi kaum yang berpikir.
                 </p>
 
                 <p className="font-bold text-xl mt-4">QS. Ar-Rum Ayat 21</p>
@@ -348,33 +367,22 @@ export default function Page() {
                 backgroundPosition: "center",
               }}
             >
-              <Fade triggerOnce>
+              <Fade direction="up" cascade triggerOnce>
                 <p className="leading-loose mb-12">
                   Merupakan suatu kehormatan dan kebahagiaan bagi kami, <br />
                   apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan
                   doa restu kepada kedua mempelai
                 </p>
-              </Fade>
-
-              <Fade triggerOnce>
                 <p className="font-bold italic mb-4">Kami yang berbahagia:</p>
-              </Fade>
-
-              <Fade triggerOnce>
                 <p className="mb-2">
                   Putri Dari Bapak Apollo Goni <br /> dan Almh. Ibu Misnawati
                   mokodompit
                 </p>
-              </Fade>
-
-              <Fade triggerOnce>
                 <p className="mb-8">
                   Putra Dari Alm. Bapak L Lasinggaru BA
                   <br /> dan Ibu yurico dasinangon
                 </p>
-              </Fade>
 
-              <Fade triggerOnce>
                 <div
                   className={classNames(
                     hirarkiSignatureFont.className,
@@ -416,41 +424,125 @@ export default function Page() {
                 backgroundPosition: "center",
               }}
             >
-              <p
-                className={classNames(
-                  "text-center text-2xl mb-4 font-bold",
-                  playfair.className,
-                )}
-              >
-                Amplop Digital
-              </p>
-              <p className="text-center text-lg mb-8 leading-loose">
-                Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.
-                Namun jika memberi adalah ungkapan tanda kasih Anda, Anda dapat
-                memberi kado secara cashless.
-              </p>
-
-              <div className="p-4 bg-gradient-to-b from-blue-800 to-blue-950 rounded-xl aspect-[3/1.8] max-w-[280px] mx-auto flex flex-col justify-between border border-white drop-shadow-2xl">
-                <h1 className="text-yellow-400">Bank Mandiri</h1>
+              <Fade direction="up" cascade triggerOnce>
+                <p
+                  className={classNames(
+                    "text-center text-2xl mb-4 font-bold",
+                    playfair.className,
+                  )}
+                >
+                  Amplop Digital
+                </p>
+                <p className="text-center text-lg mb-8 leading-loose">
+                  Doa Restu Anda merupakan karunia yang sangat berarti bagi
+                  kami. Namun jika memberi adalah ungkapan tanda kasih Anda,
+                  Anda dapat memberi kado secara cashless.
+                </p>
 
                 <div>
-                  <p className="text-lg text-white font-bold">1500032932301</p>
-                  <p className="text-white">a/n: Mohamad Iksan lasinggaru</p>
-                </div>
-              </div>
+                  <div className="p-4 bg-gradient-to-b from-blue-800 to-blue-950 rounded-xl aspect-[3/1.8] max-w-[280px] mx-auto flex flex-col justify-between border border-white drop-shadow-2xl">
+                    <h1 className="text-yellow-400">Bank Mandiri</h1>
 
-              <button
-                className="flex gap-2 items-center bg-white rounded-lg px-2 py-1 mx-auto mt-3 text-[#00529C]"
-                onClick={() => {
-                  navigator.clipboard.writeText("1500032932301");
-                  toast.success("No.Rekening disalin!", {
-                    position: "bottom-center",
-                  });
-                }}
+                    <div>
+                      <p className="text-lg text-white font-bold">
+                        1500032932301
+                      </p>
+                      <p className="text-white">
+                        a/n: Mohamad Iksan lasinggaru
+                      </p>
+                    </div>
+                  </div>
+
+                  <button
+                    className="flex gap-2 items-center bg-white rounded-lg px-2 py-1 mx-auto mt-3 text-[#00529C]"
+                    onClick={() => {
+                      navigator.clipboard.writeText("1500032932301");
+                      toast.success("No.Rekening disalin!", {
+                        position: "bottom-center",
+                      });
+                    }}
+                  >
+                    <FaCopy />
+                    <span>Salin No.Rekening</span>
+                  </button>
+                </div>
+
+                <div className="my-12"></div>
+
+                <div>
+                  <div className="p-4 bg-gradient-to-b from-red-700 to-red-900 rounded-xl aspect-[3/1.8] max-w-[280px] mx-auto flex flex-col justify-between border border-white drop-shadow-2xl">
+                    <h1 className="text-yellow-400">Bank Sulut</h1>
+
+                    <div>
+                      <p className="text-lg text-white font-bold">
+                        00202030066140
+                      </p>
+                      <p className="text-white">
+                        a/n: Mohamad Iksan lasinggaru
+                      </p>
+                    </div>
+                  </div>
+
+                  <button
+                    className="flex gap-2 items-center bg-white rounded-lg px-2 py-1 mx-auto mt-3 text-[#00529C]"
+                    onClick={() => {
+                      navigator.clipboard.writeText("00202030066140");
+                      toast.success("No.Rekening disalin!", {
+                        position: "bottom-center",
+                      });
+                    }}
+                  >
+                    <FaCopy />
+                    <span>Salin No.Rekening</span>
+                  </button>
+                </div>
+              </Fade>
+            </div>
+
+            <div
+              className="px-4 py-20"
+              style={{
+                backgroundImage: `url(${assets.asset1})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <h1
+                className={classNames(
+                  "text-center mb-8 text-pink-500 flex justify-center items-center gap-1",
+                )}
               >
-                <FaCopy />
-                <span>Salin No.Rekening</span>
-              </button>
+                <span
+                  className={classNames(
+                    playfair.className,
+                    "font-bold text-2xl",
+                  )}
+                >
+                  Our
+                </span>
+                <span
+                  className={classNames(
+                    hirarkiSignatureFont.className,
+                    "text-3xl mb-2",
+                  )}
+                >
+                  Moments
+                </span>
+              </h1>
+
+              <Carousel showIndicators showArrows infiniteLoop autoPlay>
+                {Object.keys(galleries).map((key) => (
+                  <div
+                    key={galleries[key as keyof typeof galleries]}
+                    className="w-full h-[400px] bg-transparent p-4"
+                  >
+                    <img
+                      src={galleries[key as keyof typeof galleries]}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                ))}
+              </Carousel>
             </div>
 
             <Ads />
@@ -465,7 +557,7 @@ export default function Page() {
         hide={hideMusic}
       />
 
-      <Particles color="#ebb8ff" opacity={0.8} />
+      <Particles color="#f9a8d4" opacity={0.8} />
       <Toaster />
     </AssetsLoader>
   );
