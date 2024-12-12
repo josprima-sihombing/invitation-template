@@ -9,7 +9,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} translate="no">
+      <meta name="google" content="notranslate" />
       <body>{children}</body>
     </html>
   );
