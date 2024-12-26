@@ -50,9 +50,11 @@ export default function Music({
 
   useEffect(() => {
     window.addEventListener("blur", stopMusic);
+    window.addEventListener("focusin", playMusic);
 
     return () => {
       window.removeEventListener("blur", stopMusic);
+      window.removeEventListener("focusin", playMusic);
     };
   }, []);
 
