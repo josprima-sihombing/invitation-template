@@ -58,7 +58,7 @@ export default function Page() {
   }, [isOpen]);
 
   return (
-    <AssetsLoader assets={assets}>
+    <AssetsLoader assets={{...assets, photo4: photos.photo4, photo6: photos.photo6}}>
       <div
         className={classNames(
           sofiaSans.className,
