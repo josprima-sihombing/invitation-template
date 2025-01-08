@@ -268,16 +268,17 @@ export default function Page() {
                     <span className="mb-[4px]">
                       <FaClock />
                     </span>
-                    <span className="font-bold">
-                      Jam 10.00 WITA
-                    </span>
+                    <span className="font-bold">Jam 10.00 WITA</span>
                   </div>
 
                   <div className="flex gap-2 items-center">
                     <span className="mb-[4px]">
                       <FaBuilding />
                     </span>
-                    <span>Bertempat di Perumahan Griya Paniki Indah, <br />Jln. Apel V no. 16</span>
+                    <span>
+                      Bertempat di Perumahan Griya Paniki Indah, <br />
+                      Jln. Apel V no. 16
+                    </span>
                   </div>
                 </div>
 
@@ -315,14 +316,46 @@ export default function Page() {
               />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4">
-                <img src={photos.photo6} loading="lazy" className="w-full h-full object-cover" />
-                <img src={photos.photo1} loading="lazy" className="w-full h-full object-cover" />
-                <img src={photos.photo2} loading="lazy" className="w-full h-full object-cover" />
-                <img src={photos.photo3} loading="lazy" className="w-full h-full object-cover" />
-                <img src={photos.photo4} loading="lazy" className="w-full h-full object-cover" />
-                <img src={photos.photo5} loading="lazy" className="w-full h-full object-cover" />
-                <img src={photos.photo7} loading="lazy" className="w-full h-full object-cover" />
-                <img src={photos.photo8} loading="lazy" className="w-full h-full object-cover" />
+                <img
+                  src={photos.photo6}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+                <img
+                  src={photos.photo1}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+                <img
+                  src={photos.photo2}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+                <img
+                  src={photos.photo3}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+                <img
+                  src={photos.photo4}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+                <img
+                  src={photos.photo5}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+                <img
+                  src={photos.photo7}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+                <img
+                  src={photos.photo8}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 

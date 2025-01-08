@@ -16,4 +16,4 @@ export default {
   photo6: photo6.src,
   photo7: photo7.src,
   photo8: photo8.src,
-}
+};
