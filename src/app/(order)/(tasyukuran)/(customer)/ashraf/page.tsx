@@ -99,7 +99,7 @@ export default function Page() {
                     "text-2xl mb-[10px]",
                   )}
                 >
-                  Tasyakuran Aqiqoh
+                  Tasyakuran Aqiqah
                 </h1>
 
                 <div>
@@ -229,7 +229,7 @@ export default function Page() {
                 </p>
                 <p className="mb-8">
                   Kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara
-                  Tasyakuran Aqiqoh Putra kami
+                  Tasyakuran Aqiqah Putra kami
                 </p>
                 <img
                   src={photos.photo6}
@@ -243,7 +243,7 @@ export default function Page() {
                 >
                   Ashraf Bilfaqih Putra
                 </p>
-                <p className="font-bold">Putra Dari Agus dan Arini</p>
+                <p className="font-bold">Putra dari Bapak Agus dan Ibu Arini</p>
               </div>
             </div>
 
