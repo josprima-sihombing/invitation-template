@@ -304,7 +304,6 @@ export default function Page() {
             </div>
 
             <div
-              id="pray"
               className="relative pt-[100px] pb-4"
               style={{
                 backgroundImage: `url(${assets.assetbg})`,
