@@ -7,7 +7,7 @@ import photos from "./photos";
 import { useEffect, useRef, useState } from "react";
 import getName from "@/utils/get-name";
 import dayjs from "dayjs";
-import RsvpForm from "@/components/rsvp-form-2";
+import RsvpForm from "@/components/new-rsvp-form";
 import Countdown3 from "@/components/countdown/countdown-3";
 import {
   FaBuilding,
@@ -365,9 +365,9 @@ export default function Page() {
               <div className="bg-white px-4 py-8 rounded-2xl border-[2px] border-[#FFD68C]">
                 <RsvpForm
                   afterSubmit={() => {
-                    document.getElementById("pray")?.scrollIntoView({
-                      behavior: "smooth",
-                    });
+                    document
+                      .querySelector("#pray")
+                      ?.scrollIntoView({ behavior: "smooth" });
                   }}
                 />
               </div>
